@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1012650309362030}
-  m_LocalRotation: {x: 0, y: 0, z: 0.052116092, w: 0.9986411}
+  m_LocalRotation: {x: 0, y: 0, z: 0.00695688, w: 0.9999758}
   m_LocalPosition: {x: -0.19, y: -0.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5178,7 +5178,7 @@ GameObject:
   - component: {fileID: 114576218883810672}
   - component: {fileID: 1793250968589525374}
   m_Layer: 0
-  m_Name: Warrior01
+  m_Name: Warrior02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5252,7 +5252,7 @@ MonoBehaviour:
   Earrings: {fileID: 0}
   Glasses: {fileID: 0}
   Mask: {fileID: 0}
-  PrimaryMeleeWeapon: {fileID: 21300000, guid: 905388f4250c4b74ae58970137aafcb1, type: 3}
+  PrimaryMeleeWeapon: {fileID: 21300000, guid: 2be1851c3c804bf4b3f2d9013882d152, type: 3}
   SecondaryMeleeWeapon: {fileID: 0}
   Armor:
   - {fileID: 21300004, guid: 2552032f57804288b1cf3512de976866, type: 3}
@@ -7817,7 +7817,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1471043012614032}
-  m_LocalRotation: {x: 0, y: 0, z: -0.035119474, w: 0.99938315}
+  m_LocalRotation: {x: 0, y: 0, z: -0.08022318, w: 0.99677694}
   m_LocalPosition: {x: 0.128, y: -0.175, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -19779,7 +19779,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1933805290767638}
-  m_LocalRotation: {x: 0, y: 0, z: 0.009449888, w: 0.99995536}
+  m_LocalRotation: {x: 0, y: 0, z: 0.016494695, w: 0.999864}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -26851,7 +26851,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 320
-  m_Sprite: {fileID: 21300000, guid: 905388f4250c4b74ae58970137aafcb1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2be1851c3c804bf4b3f2d9013882d152, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
