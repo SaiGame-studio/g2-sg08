@@ -5,7 +5,7 @@ using UnityEngine;
 public class HeroesManager : MonoBehaviour
 {
     [Header("Hero")]
-    public List<HeroCtrl> herros = new List<HeroCtrl>();
+    public List<HeroCtrl> heroes = new List<HeroCtrl>();
 
     private void Reset()
     {
@@ -19,12 +19,19 @@ public class HeroesManager : MonoBehaviour
 
     protected virtual void LoadHeros()
     {
-        if (this.herros.Count > 0) return;
+        if (this.heroes.Count > 0) return;
         foreach(HeroCtrl heroCtrl in transform.GetComponentsInChildren<HeroCtrl>())
         {
-            this.herros.Add(heroCtrl);
+            this.heroes.Add(heroCtrl);
         }
 
         Debug.Log(transform.name+ ": LoadHeros");
+    }
+
+    public virtual GameObject GetHero()
+    {
+        GameObject heroObj = this.heroes[0].gameObject;
+        GameObject hero = Instantiate(heroObj, new Vector3(0, 0, 0), transform.rotation);
+        return hero;
     }
 }

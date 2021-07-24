@@ -5524,6 +5524,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 114665035978887628}
   characterCtrl: {fileID: 2060800288}
+  firearm: {fileID: 8293370062714381484}
+  armL: {fileID: 4314069016542968}
+  armR: {fileID: 4957315015863976}
 --- !u!1 &1148429847025930
 GameObject:
   m_ObjectHideFlags: 0
