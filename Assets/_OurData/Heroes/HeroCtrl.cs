@@ -16,7 +16,7 @@ public class HeroCtrl : MonoBehaviour
 
     protected virtual void LoadComponents()
     {
-        this.LoadCharactor();
+        this.LoadCharacter();
         this.LoadCharCtrl();
     }
 
@@ -35,7 +35,7 @@ public class HeroCtrl : MonoBehaviour
         Debug.Log(transform.name + ": LoadCharCtrl");
     }
 
-    protected virtual void LoadCharactor()
+    protected virtual void LoadCharacter()
     {
         if (this.character != null) return;
         this.character = GetComponent<Character>();

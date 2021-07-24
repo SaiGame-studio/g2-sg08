@@ -5177,6 +5177,8 @@ GameObject:
   - component: {fileID: 114665035978887628}
   - component: {fileID: 114576218883810672}
   - component: {fileID: 1793250968589525374}
+  - component: {fileID: 1558821654}
+  - component: {fileID: 1558821653}
   m_Layer: 0
   m_Name: Warrior05
   m_TagString: Untagged
@@ -5191,7 +5193,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1109987028385428}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.1, y: 0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5490,6 +5492,38 @@ MonoBehaviour:
   - {fileID: 4526182659390974}
   - {fileID: 4526182659390974}
   Firearm: {fileID: 4298589388749716}
+--- !u!143 &1558821654
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109987028385428}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2.5
+  m_Radius: 0.75
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0
+  m_Center: {x: 0, y: 1.125, z: 0}
+--- !u!114 &1558821653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109987028385428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a10171026793c2543b83d9b2b353401d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 114665035978887628}
+  characterCtrl: {fileID: 1558821654}
 --- !u!1 &1148429847025930
 GameObject:
   m_ObjectHideFlags: 0
