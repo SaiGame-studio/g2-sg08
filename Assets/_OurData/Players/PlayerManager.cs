@@ -41,7 +41,7 @@ public class PlayerManager : MonoBehaviour
     protected virtual void LoadHeroComponents()
     {
         //TODO: this is not done
-        this.heroesManager = GameObject.Find("WarriorManager").GetComponent<HeroesManager>();
+        this.heroesManager = GameObject.Find("ShooterManager").GetComponent<HeroesManager>();
     }
 
     protected virtual void LoadPlayer()
