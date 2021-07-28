@@ -47,6 +47,19 @@ public class PlayerManager : MonoBehaviour
     protected virtual void LoadPlayer()
     {
         GameObject obj = this.heroesManager.GetHero();
+        this.SetPlayerCtrl(obj);
+    }
+
+    public virtual void SetPlayerCtrl(GameObject obj)
+    {
         this.currentHero = obj.GetComponent<HeroCtrl>();
+
+        this.playerAttacking.character = this.currentHero.character;
+        this.playerAttacking.firearm = this.currentHero.firearm;
+        this.playerAttacking.armL = this.currentHero.armL;
+        this.playerAttacking.armR = this.currentHero.armR;
+
+        this.playerMovement.character = this.currentHero.character;
+        this.playerMovement.charCtrl = this.currentHero.characterCtrl;
     }
 }

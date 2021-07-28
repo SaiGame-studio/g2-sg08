@@ -10,35 +10,35 @@ using UnityEngine;
 
 public class PlayerAttacking : MonoBehaviour
 {
-    public Character Character;
+    public Character character;
     public BowExample BowExample;
-    public Firearm Firearm;
-    public Transform ArmL;
-    public Transform ArmR;
+    public Firearm firearm;
+    public Transform armL;
+    public Transform armR;
     public KeyCode FireButton = KeyCode.Mouse1;
     public KeyCode ReloadButton = KeyCode.R;
     public bool FixedArm;
 
     public void Start()
     {
-        if ((Character.WeaponType == WeaponType.Firearms1H || Character.WeaponType == WeaponType.Firearms2H) && Firearm.Params.Type == FirearmType.Unknown)
-        {
-            throw new Exception("Firearm params not set.");
-        }
+        //if ((character.WeaponType == WeaponType.Firearms1H || character.WeaponType == WeaponType.Firearms2H) && firearm.Params.Type == FirearmType.Unknown)
+        //{
+        //    throw new Exception("Firearm params not set.");
+        //}
     }
 
     public void Update()
     {
-        if (Character.Animator.GetInteger("State") >= (int)CharacterState.DeathB) return;
+        if (character.Animator.GetInteger("State") >= (int)CharacterState.DeathB) return;
 
-        switch (Character.WeaponType)
+        switch (character.WeaponType)
         {
             case WeaponType.Melee1H:
             case WeaponType.Melee2H:
             case WeaponType.MeleePaired:
                 if (Input.GetKeyDown(FireButton))
                 {
-                    Character.Slash();
+                    character.Slash();
                 }
                 break;
             case WeaponType.Bow:
@@ -47,22 +47,22 @@ public class PlayerAttacking : MonoBehaviour
                 break;
             case WeaponType.Firearms1H:
             case WeaponType.Firearms2H:
-                Firearm.Fire.FireButtonDown = Input.GetKeyDown(FireButton);
-                Firearm.Fire.FireButtonPressed = Input.GetKey(FireButton);
-                Firearm.Fire.FireButtonUp = Input.GetKeyUp(FireButton);
-                Firearm.Reload.ReloadButtonDown = Input.GetKeyDown(ReloadButton);
+                firearm.Fire.FireButtonDown = Input.GetKeyDown(FireButton);
+                firearm.Fire.FireButtonPressed = Input.GetKey(FireButton);
+                firearm.Fire.FireButtonUp = Input.GetKeyUp(FireButton);
+                firearm.Reload.ReloadButtonDown = Input.GetKeyDown(ReloadButton);
                 break;
             case WeaponType.Supplies:
                 if (Input.GetKeyDown(FireButton))
                 {
-                    Character.Animator.Play(Time.frameCount % 2 == 0 ? "UseSupply" : "ThrowSupply", 0); // Play animation randomly.
+                    character.Animator.Play(Time.frameCount % 2 == 0 ? "UseSupply" : "ThrowSupply", 0); // Play animation randomly.
                 }
                 break;
         }
 
         if (Input.GetKeyDown(FireButton))
         {
-            Character.GetReady();
+            character.GetReady();
         }
     }
 
@@ -71,7 +71,7 @@ public class PlayerAttacking : MonoBehaviour
     /// </summary>
     public void LateUpdate()
     {
-        switch (Character.GetState())
+        switch (character.GetState())
         {
             case CharacterState.DeathB:
             case CharacterState.DeathF:
@@ -81,22 +81,22 @@ public class PlayerAttacking : MonoBehaviour
         Transform arm;
         Transform weapon;
 
-        switch (Character.WeaponType)
+        switch (character.WeaponType)
         {
             case WeaponType.Bow:
-                arm = ArmL;
-                weapon = Character.BowRenderers[3].transform;
+                arm = armL;
+                weapon = character.BowRenderers[3].transform;
                 break;
             case WeaponType.Firearms1H:
             case WeaponType.Firearms2H:
-                arm = ArmR;
-                weapon = Firearm.FireTransform;
+                arm = armR;
+                weapon = firearm.FireTransform;
                 break;
             default:
                 return;
         }
 
-        if (Character.IsReady())
+        if (character.IsReady())
         {
             RotateArm(arm, weapon, FixedArm ? arm.position + 1000 * Vector3.right : Camera.main.ScreenToWorldPoint(Input.mousePosition), -40, 40);
         }
