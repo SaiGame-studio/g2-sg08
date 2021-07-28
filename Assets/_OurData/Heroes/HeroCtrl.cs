@@ -10,6 +10,7 @@ public class HeroCtrl : MonoBehaviour
     public Character character;
     public CharacterController characterCtrl;
     public Firearm firearm;
+    public FirearmFire firearmFire;
     public Transform armL;
     public Transform armR;
 
@@ -63,6 +64,8 @@ public class HeroCtrl : MonoBehaviour
         this.armL = upper.Find("ArmL");
         this.armR = armR1;
         this.firearm = tranFirearm.GetComponent<Firearm>();
+        this.firearmFire = this.firearm.transform.GetComponent<FirearmFire>();
+        this.firearmFire.CreateBullets = true;
 
         Debug.Log(transform.name+ ": LoadCharBodyParts");
     }

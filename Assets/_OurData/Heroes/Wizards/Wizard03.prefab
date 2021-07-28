@@ -5525,6 +5525,7 @@ MonoBehaviour:
   character: {fileID: 114665035978887628}
   characterCtrl: {fileID: 296988420}
   firearm: {fileID: 8293370062714381484}
+  firearmFire: {fileID: 1283604481290215046}
   armL: {fileID: 4314069016542968}
   armR: {fileID: 4957315015863976}
 --- !u!1 &1148429847025930
@@ -8268,7 +8269,7 @@ MonoBehaviour:
   ArmR: {fileID: 4957315015863976}
   Shell: {fileID: 1692340995156084}
   FireMuzzle: {fileID: 198040722339201714}
-  CreateBullets: 0
+  CreateBullets: 1
   FireButtonDown: 0
   FireButtonPressed: 0
   FireButtonUp: 0
