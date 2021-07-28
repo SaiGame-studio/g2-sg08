@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    public HeroCtrl currentHero;
     public PlayerAttacking playerAttacking;
     public PlayerMovement playerMovement;
     public BowExample bowExample;
     public AnimationManager animationManager;
+    public HeroesManager[] heroManagers;
     public HeroesManager heroesManager;
-    public HeroCtrl currentHero;
 
     private void Start()
     {
-        this.LoadPlayer();
+        //this.LoadPlayer();
+        this.LoadPlayers();
     }
 
     private void Reset()
@@ -42,12 +44,27 @@ public class PlayerManager : MonoBehaviour
     {
         //TODO: this is not done
         this.heroesManager = GameObject.Find("ShooterManager").GetComponent<HeroesManager>();
+
+        if (this.heroManagers.Length > 0) return;
+        GameObject obj = GameObject.Find("HeroManagers");
+        this.heroManagers = obj.GetComponentsInChildren<HeroesManager>();
+        Debug.Log(transform.name + ": LoadHeroComponents");
     }
 
     protected virtual void LoadPlayer()
     {
         GameObject obj = this.heroesManager.GetHero();
         this.SetPlayerCtrl(obj);
+    }
+
+    protected virtual void LoadPlayers()
+    {
+        GameObject hero;
+        foreach (HeroesManager heroesManager in this.heroManagers)
+        {
+            hero = heroesManager.GetHero();
+            this.SetPlayerCtrl(hero);
+        }
     }
 
     public virtual void SetPlayerCtrl(GameObject obj)
