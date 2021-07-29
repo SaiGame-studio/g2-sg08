@@ -8,13 +8,11 @@ public class PlayerManager : MonoBehaviour
     public PlayerAttacking playerAttacking;
     public PlayerMovement playerMovement;
     public BowExample bowExample;
-    public AnimationManager animationManager;
     public HeroesManager[] heroManagers;
-    public HeroesManager heroesManager;
+    public GameObject playersHolder;
 
     private void Start()
     {
-        //this.LoadPlayer();
         this.LoadPlayers();
     }
 
@@ -35,26 +33,17 @@ public class PlayerManager : MonoBehaviour
         this.playerAttacking = transform.GetComponentInChildren<PlayerAttacking>();
         this.playerMovement = transform.GetComponentInChildren<PlayerMovement>();
         this.bowExample = transform.GetComponentInChildren<BowExample>();
-        this.animationManager = transform.GetComponentInChildren<AnimationManager>();
+        this.playersHolder = GameObject.Find("PlayersHolder");
 
         Debug.Log(transform.name + ": LoadPlayerComponents");
     }
 
     protected virtual void LoadHeroComponents()
     {
-        //TODO: this is not done
-        this.heroesManager = GameObject.Find("ShooterManager").GetComponent<HeroesManager>();
-
         if (this.heroManagers.Length > 0) return;
         GameObject obj = GameObject.Find("HeroManagers");
         this.heroManagers = obj.GetComponentsInChildren<HeroesManager>();
         Debug.Log(transform.name + ": LoadHeroComponents");
-    }
-
-    protected virtual void LoadPlayer()
-    {
-        GameObject obj = this.heroesManager.GetHero();
-        this.SetPlayerCtrl(obj);
     }
 
     protected virtual void LoadPlayers()
@@ -67,6 +56,8 @@ public class PlayerManager : MonoBehaviour
             vector3.x += 3;
             hero = heroesManager.GetHero();
             hero.transform.position = vector3;
+            hero.transform.parent = this.playersHolder.transform;
+
             this.SetPlayerCtrl(hero);
         }
     }
