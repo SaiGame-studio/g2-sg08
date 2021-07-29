@@ -6007,6 +6007,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1809952168}
+  - component: {fileID: 1809952169}
   m_Layer: 0
   m_Name: HeroManagers
   m_TagString: Untagged
@@ -6031,6 +6032,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1809952169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809952167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 128f637bb272e8444b14672c7ed7eb54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heroManagers:
+  - {fileID: 734732256}
+  - {fileID: 1608324485}
+  - {fileID: 2118954384}
 --- !u!1 &1816712790
 GameObject:
   m_ObjectHideFlags: 0
@@ -6328,7 +6345,6 @@ MonoBehaviour:
   playerAttacking: {fileID: 1816712791}
   playerMovement: {fileID: 306959738}
   bowExample: {fileID: 885178477}
-  animationManager: {fileID: 0}
   heroManagers:
   - {fileID: 734732256}
   - {fileID: 1608324485}
