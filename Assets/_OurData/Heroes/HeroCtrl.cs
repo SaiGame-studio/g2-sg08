@@ -7,6 +7,7 @@ using UnityEngine;
 public class HeroCtrl : MonoBehaviour
 {
     [Header("Hero")]
+    public string charName;
     public Character character;
     public CharacterController characterCtrl;
     public Firearm firearm;

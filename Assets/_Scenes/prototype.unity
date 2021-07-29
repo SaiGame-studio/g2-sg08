@@ -1352,6 +1352,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 331135939}
+  - component: {fileID: 331135940}
   m_Layer: 0
   m_Name: PlayersHolder
   m_TagString: Untagged
@@ -1373,6 +1374,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &331135940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331135938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b3c37d00facab041afee29db2c3648f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heroCtrls: []
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1697,6 +1711,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 734732257}
     m_Modifications:
+    - target: {fileID: 775720067, guid: 4ca2532ce7e899d4c8ec8e8e0a4e14ed, type: 3}
+      propertyPath: charName
+      value: Warrior
+      objectReference: {fileID: 0}
     - target: {fileID: 1109987028385428, guid: 4ca2532ce7e899d4c8ec8e8e0a4e14ed, type: 3}
       propertyPath: m_Name
       value: Warrior07
@@ -2060,6 +2078,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 734732257}
     m_Modifications:
+    - target: {fileID: 949194500, guid: bc8ee89adfc055046b70b0bedd71a550, type: 3}
+      propertyPath: charName
+      value: Warrior
+      objectReference: {fileID: 0}
     - target: {fileID: 1109987028385428, guid: bc8ee89adfc055046b70b0bedd71a550, type: 3}
       propertyPath: m_Name
       value: Warrior04
@@ -5655,6 +5677,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 734732257}
     m_Modifications:
+    - target: {fileID: 1537983266, guid: e7eb014c6da282f408ea22b4ba6f2b71, type: 3}
+      propertyPath: charName
+      value: Warrior
+      objectReference: {fileID: 0}
     - target: {fileID: 1109987028385428, guid: e7eb014c6da282f408ea22b4ba6f2b71, type: 3}
       propertyPath: m_Name
       value: Warrior03
@@ -5728,6 +5754,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 734732257}
     m_Modifications:
+    - target: {fileID: 1558821653, guid: aafa2706eb89f0a48ae0f3dd50c3e11e, type: 3}
+      propertyPath: charName
+      value: Warrior
+      objectReference: {fileID: 0}
     - target: {fileID: 1109987028385428, guid: aafa2706eb89f0a48ae0f3dd50c3e11e, type: 3}
       propertyPath: m_Name
       value: Warrior05
@@ -5859,6 +5889,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 734732257}
     m_Modifications:
+    - target: {fileID: 1700053148, guid: a95a4a2fd388d754c829b2488e79c253, type: 3}
+      propertyPath: charName
+      value: Warrior
+      objectReference: {fileID: 0}
     - target: {fileID: 1109987028385428, guid: a95a4a2fd388d754c829b2488e79c253, type: 3}
       propertyPath: m_Name
       value: Warrior02
@@ -6007,6 +6041,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1809952168}
+  - component: {fileID: 1809952169}
   m_Layer: 0
   m_Name: HeroManagers
   m_TagString: Untagged
@@ -6031,6 +6066,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1809952169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809952167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 128f637bb272e8444b14672c7ed7eb54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heroManagers:
+  - {fileID: 734732256}
+  - {fileID: 1608324485}
+  - {fileID: 2118954384}
 --- !u!1 &1816712790
 GameObject:
   m_ObjectHideFlags: 0
@@ -6328,11 +6379,6 @@ MonoBehaviour:
   playerAttacking: {fileID: 1816712791}
   playerMovement: {fileID: 306959738}
   bowExample: {fileID: 885178477}
-  heroManagers:
-  - {fileID: 734732256}
-  - {fileID: 1608324485}
-  - {fileID: 2118954384}
-  playersHolder: {fileID: 331135938}
 --- !u!1001 &1958652531
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6340,6 +6386,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 734732257}
     m_Modifications:
+    - target: {fileID: 1958652535, guid: 06ddc69de0551d04e9993fded4fb9365, type: 3}
+      propertyPath: charName
+      value: Warrior
+      objectReference: {fileID: 0}
     - target: {fileID: 1109987028385428, guid: 06ddc69de0551d04e9993fded4fb9365, type: 3}
       propertyPath: m_Name
       value: Warrior01
@@ -6413,6 +6463,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 734732257}
     m_Modifications:
+    - target: {fileID: 2060800287, guid: 39cda43735a9bb04a817ebfc18555cab, type: 3}
+      propertyPath: charName
+      value: Warrior
+      objectReference: {fileID: 0}
     - target: {fileID: 1109987028385428, guid: 39cda43735a9bb04a817ebfc18555cab, type: 3}
       propertyPath: m_Name
       value: Warrior06
