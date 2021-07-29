@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/HeroEditor/MilitaryHeroes [MH].unity
     guid: 16180b593f6143298124a5a8f38b5263
   - enabled: 1
+    path: Assets/HeroEditor/FantasyHeroes/Scenes/TestRoom [FH].unity
+    guid: 9d7571c448164cb1844f98a17559942c
+  - enabled: 1
     path: Assets/HeroEditor/QUICK START.unity
     guid: cb276a8ee57340c9a153edf75bd96b62
   - enabled: 1

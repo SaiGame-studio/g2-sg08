@@ -1617,7 +1617,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734732255}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.67, y: -12, z: 0}
+  m_LocalPosition: {x: 4, y: -12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1958652533}
@@ -5809,7 +5809,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1608324484}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.36, y: -12, z: 0}
+  m_LocalPosition: {x: -4, y: -12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 605195031}
@@ -6035,7 +6035,7 @@ MonoBehaviour:
   firearm: {fileID: 0}
   armL: {fileID: 0}
   armR: {fileID: 0}
-  FireButton: 324
+  FireButton: 323
   ReloadButton: 114
   FixedArm: 0
 --- !u!4 &1816712792
@@ -6300,9 +6300,9 @@ MonoBehaviour:
   bowExample: {fileID: 885178477}
   animationManager: {fileID: 0}
   heroManagers:
+  - {fileID: 2118954384}
   - {fileID: 734732256}
   - {fileID: 1608324485}
-  - {fileID: 2118954384}
   heroesManager: {fileID: 2118954384}
 --- !u!1001 &1958652531
 PrefabInstance:

@@ -60,9 +60,13 @@ public class PlayerManager : MonoBehaviour
     protected virtual void LoadPlayers()
     {
         GameObject hero;
+        Vector3 vector3 = transform.position;
+        vector3.x -= 7;
         foreach (HeroesManager heroesManager in this.heroManagers)
         {
+            vector3.x += 3;
             hero = heroesManager.GetHero();
+            hero.transform.position = vector3;
             this.SetPlayerCtrl(hero);
         }
     }

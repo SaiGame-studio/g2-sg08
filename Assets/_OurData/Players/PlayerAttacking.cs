@@ -15,7 +15,7 @@ public class PlayerAttacking : MonoBehaviour
     public Firearm firearm;
     public Transform armL;
     public Transform armR;
-    public KeyCode FireButton = KeyCode.Mouse1;
+    public KeyCode FireButton = KeyCode.Mouse0;
     public KeyCode ReloadButton = KeyCode.R;
     public bool FixedArm;
 
