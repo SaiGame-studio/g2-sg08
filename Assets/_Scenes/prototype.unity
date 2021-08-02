@@ -6388,7 +6388,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1958652535, guid: 06ddc69de0551d04e9993fded4fb9365, type: 3}
       propertyPath: charName
-      value: Warrior
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958652535, guid: 06ddc69de0551d04e9993fded4fb9365, type: 3}
+      propertyPath: heroProfile
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1109987028385428, guid: 06ddc69de0551d04e9993fded4fb9365, type: 3}
       propertyPath: m_Name
