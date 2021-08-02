@@ -5946,6 +5946,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2118954385}
     m_Modifications:
+    - target: {fileID: 1767632439, guid: 972886c449a92444c85f2f8f41f55c1d, type: 3}
+      propertyPath: heroProfile
+      value: 
+      objectReference: {fileID: 1767632436}
     - target: {fileID: 1168890840688405, guid: 972886c449a92444c85f2f8f41f55c1d, type: 3}
       propertyPath: m_Name
       value: Shooter01
@@ -6001,6 +6005,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4092847222685647, guid: 972886c449a92444c85f2f8f41f55c1d, type: 3}
   m_PrefabInstance: {fileID: 1767632434}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1767632436 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3965163526140239709, guid: 972886c449a92444c85f2f8f41f55c1d, type: 3}
+  m_PrefabInstance: {fileID: 1767632434}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2168fe88998da14391e0d09d8ab6b46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1767632443 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1767632439, guid: 972886c449a92444c85f2f8f41f55c1d, type: 3}

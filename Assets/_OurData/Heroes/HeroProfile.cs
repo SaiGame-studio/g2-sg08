@@ -4,5 +4,10 @@ using UnityEngine;
 
 public class HeroProfile : MonoBehaviour
 {
-    public string heroClass = "Hero";
+    [SerializeField] protected string heroClass = "Hero";
+
+    public virtual string HeroClass()
+    {
+        return this.heroClass;
+    }
 }

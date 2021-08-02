@@ -10467,7 +10467,7 @@ GameObject:
   - component: {fileID: 7837457147840869695}
   - component: {fileID: 1767632438}
   - component: {fileID: 1767632439}
-  - component: {fileID: 1767632442}
+  - component: {fileID: 3965163526140239709}
   m_Layer: 0
   m_Name: Shooter01
   m_TagString: Untagged
@@ -10824,8 +10824,8 @@ MonoBehaviour:
   firearmFire: {fileID: 114415008788196449}
   armL: {fileID: 4366828971121509}
   armR: {fileID: 4280411193927909}
-  heroProfile: {fileID: 1767632442}
---- !u!114 &1767632442
+  heroProfile: {fileID: 0}
+--- !u!114 &3965163526140239709
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
