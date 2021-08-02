@@ -5522,7 +5522,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a10171026793c2543b83d9b2b353401d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charName: 
   character: {fileID: 114665035978887628}
   characterCtrl: {fileID: 525860234}
   firearm: {fileID: 8293370062714381484}

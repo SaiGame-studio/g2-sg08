@@ -7,14 +7,12 @@ using UnityEngine;
 public class HeroCtrl : MonoBehaviour
 {
     [Header("Hero")]
-    public string charName;
     public Character character;
     public CharacterController characterCtrl;
     public Firearm firearm;
     public FirearmFire firearmFire;
     public Transform armL;
     public Transform armR;
-    //public HeroProfile heroProfile;
 
     private void Reset()
     {
