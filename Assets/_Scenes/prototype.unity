@@ -6113,17 +6113,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4092847222685647, guid: 972886c449a92444c85f2f8f41f55c1d, type: 3}
   m_PrefabInstance: {fileID: 1767632434}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1767632439 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1767632439, guid: 972886c449a92444c85f2f8f41f55c1d, type: 3}
-  m_PrefabInstance: {fileID: 1767632434}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a10171026793c2543b83d9b2b353401d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1809952167
 GameObject:
   m_ObjectHideFlags: 0
@@ -6691,7 +6680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heroes:
-  - {fileID: 1767632439}
+  - {fileID: 0}
   - {fileID: 928938518}
   - {fileID: 201392696}
   - {fileID: 135757313}
