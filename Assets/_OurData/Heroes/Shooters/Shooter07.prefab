@@ -10467,6 +10467,7 @@ GameObject:
   - component: {fileID: 7837457147840869695}
   - component: {fileID: 162790143}
   - component: {fileID: 162790144}
+  - component: {fileID: 878064547423834799}
   m_Layer: 0
   m_Name: Shooter07
   m_TagString: Untagged
@@ -10817,13 +10818,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a10171026793c2543b83d9b2b353401d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heroClass: Hero
   character: {fileID: 114189776605576749}
   characterCtrl: {fileID: 162790143}
   firearm: {fileID: 114190225916829101}
   firearmFire: {fileID: 114415008788196449}
   armL: {fileID: 4366828971121509}
   armR: {fileID: 4280411193927909}
+  heroProfile: {fileID: 878064547423834799}
+--- !u!114 &878064547423834799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168890840688405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2168fe88998da14391e0d09d8ab6b46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heroClass: Shooter
 --- !u!1 &1179323503465415
 GameObject:
   m_ObjectHideFlags: 0

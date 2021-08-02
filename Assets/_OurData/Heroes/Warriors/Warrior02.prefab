@@ -5523,13 +5523,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a10171026793c2543b83d9b2b353401d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heroClass: Hero
   character: {fileID: 114665035978887628}
   characterCtrl: {fileID: 1700053149}
   firearm: {fileID: 8293370062714381484}
   firearmFire: {fileID: 1283604481290215046}
   armL: {fileID: 4314069016542968}
   armR: {fileID: 4957315015863976}
+  heroProfile: {fileID: 481542308}
 --- !u!114 &481542308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5542,7 +5542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83dd1a316f9dd434f88a0cb5e2655f9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heroClass: 
+  heroClass: Warrior
 --- !u!1 &1148429847025930
 GameObject:
   m_ObjectHideFlags: 0

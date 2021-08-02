@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class HeroProfile : MonoBehaviour
 {
-    public string heroClass;
+    public string heroClass = "Hero";
 }

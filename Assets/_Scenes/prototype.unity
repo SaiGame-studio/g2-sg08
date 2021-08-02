@@ -1231,10 +1231,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1608324486}
     m_Modifications:
-    - target: {fileID: 296988421, guid: 4631b7e1af4ee304ba50a480fdaaac12, type: 3}
-      propertyPath: charName
-      value: Wizard
-      objectReference: {fileID: 0}
     - target: {fileID: 1109987028385428, guid: 4631b7e1af4ee304ba50a480fdaaac12, type: 3}
       propertyPath: m_Name
       value: Wizard03
@@ -1481,10 +1477,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1608324486}
     m_Modifications:
-    - target: {fileID: 525860235, guid: 41ff1bdddd544e947a3b2c2f6f1ecea9, type: 3}
-      propertyPath: charName
-      value: Wizard
-      objectReference: {fileID: 0}
     - target: {fileID: 1109987028385428, guid: 41ff1bdddd544e947a3b2c2f6f1ecea9, type: 3}
       propertyPath: m_Name
       value: Wizard04
@@ -1558,10 +1550,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1608324486}
     m_Modifications:
-    - target: {fileID: 605195035, guid: 54186c893da3d83459e9e16093541761, type: 3}
-      propertyPath: charName
-      value: Wizard
-      objectReference: {fileID: 0}
     - target: {fileID: 1109987028385428, guid: 54186c893da3d83459e9e16093541761, type: 3}
       propertyPath: m_Name
       value: Wizard01
@@ -5162,10 +5150,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1608324486}
     m_Modifications:
-    - target: {fileID: 1024427556, guid: 00d29fe06f79c8048812ca8d6433f76e, type: 3}
-      propertyPath: charName
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1109987028385428, guid: 00d29fe06f79c8048812ca8d6433f76e, type: 3}
       propertyPath: m_Name
       value: Wizard02
@@ -5407,10 +5391,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1608324486}
     m_Modifications:
-    - target: {fileID: 1417965006, guid: c1cf6c3c717c8ec4e8339ef0a97341e3, type: 3}
-      propertyPath: charName
-      value: Wizard
-      objectReference: {fileID: 0}
     - target: {fileID: 1109987028385428, guid: c1cf6c3c717c8ec4e8339ef0a97341e3, type: 3}
       propertyPath: m_Name
       value: Wizard05
@@ -5515,10 +5495,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1608324486}
     m_Modifications:
-    - target: {fileID: 1470814161, guid: 0fbafcdf126f04f40bb5e380f68b2aa1, type: 3}
-      propertyPath: charName
-      value: Wizard
-      objectReference: {fileID: 0}
     - target: {fileID: 1109987028385428, guid: 0fbafcdf126f04f40bb5e380f68b2aa1, type: 3}
       propertyPath: m_Name
       value: Wizard06
@@ -6025,6 +6001,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4092847222685647, guid: 972886c449a92444c85f2f8f41f55c1d, type: 3}
   m_PrefabInstance: {fileID: 1767632434}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1767632443 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1767632439, guid: 972886c449a92444c85f2f8f41f55c1d, type: 3}
+  m_PrefabInstance: {fileID: 1767632434}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a10171026793c2543b83d9b2b353401d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1809952167
 GameObject:
   m_ObjectHideFlags: 0
@@ -6178,10 +6165,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1608324486}
     m_Modifications:
-    - target: {fileID: 1842229257, guid: f323ee77f8d2fa74ab84505705b3472d, type: 3}
-      propertyPath: charName
-      value: Wizard
-      objectReference: {fileID: 0}
     - target: {fileID: 1109987028385428, guid: f323ee77f8d2fa74ab84505705b3472d, type: 3}
       propertyPath: m_Name
       value: Wizard07
@@ -6552,7 +6535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heroes:
-  - {fileID: 0}
+  - {fileID: 1767632443}
   - {fileID: 928938518}
   - {fileID: 201392696}
   - {fileID: 135757313}

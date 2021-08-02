@@ -7,13 +7,18 @@ using UnityEngine;
 public class HeroCtrl : MonoBehaviour
 {
     [Header("Hero")]
-    public string heroClass = "Hero";
     public Character character;
     public CharacterController characterCtrl;
     public Firearm firearm;
     public FirearmFire firearmFire;
     public Transform armL;
     public Transform armR;
+    public HeroProfile heroProfile;
+
+    private void Start()
+    {
+        Debug.Log(transform.name + ": " + this.heroProfile.heroClass);
+    }
 
     private void Reset()
     {
@@ -25,6 +30,13 @@ public class HeroCtrl : MonoBehaviour
         this.LoadCharacter();
         this.LoadCharCtrl();
         this.LoadCharBodyParts();
+        this.LoadHeroProfile();
+    }
+
+    protected virtual void LoadHeroProfile()
+    {
+        this.heroProfile = GetComponent<HeroProfile>();
+        Debug.Log(transform.name + ": LoadHeroProfile");
     }
 
     protected virtual void LoadCharCtrl()
