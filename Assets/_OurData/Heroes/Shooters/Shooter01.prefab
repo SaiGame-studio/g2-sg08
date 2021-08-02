@@ -10824,7 +10824,6 @@ MonoBehaviour:
   firearmFire: {fileID: 114415008788196449}
   armL: {fileID: 4366828971121509}
   armR: {fileID: 4280411193927909}
-  heroProfile: {fileID: 0}
 --- !u!1 &1179323503465415
 GameObject:
   m_ObjectHideFlags: 0
