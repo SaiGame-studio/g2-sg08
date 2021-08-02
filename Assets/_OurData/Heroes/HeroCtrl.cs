@@ -14,6 +14,7 @@ public class HeroCtrl : MonoBehaviour
     public FirearmFire firearmFire;
     public Transform armL;
     public Transform armR;
+    public HeroProfile heroProfile;
 
     private void Reset()
     {
