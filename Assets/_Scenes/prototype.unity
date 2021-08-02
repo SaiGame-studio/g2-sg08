@@ -123,28 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &54024760 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1283604481290215046, guid: 06ddc69de0551d04e9993fded4fb9365, type: 3}
-  m_PrefabInstance: {fileID: 1958652531}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe6073c44d26430a87a351b9a430bd08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &54024761 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8293370062714381484, guid: 06ddc69de0551d04e9993fded4fb9365, type: 3}
-  m_PrefabInstance: {fileID: 1958652531}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0105e23e272418c94b0bbf1e7d02dee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &61354227
 GameObject:
   m_ObjectHideFlags: 0
@@ -1745,14 +1723,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 734732257}
     m_Modifications:
-    - target: {fileID: 775720067, guid: 4ca2532ce7e899d4c8ec8e8e0a4e14ed, type: 3}
-      propertyPath: charName
-      value: Warrior
-      objectReference: {fileID: 0}
-    - target: {fileID: 775720067, guid: 4ca2532ce7e899d4c8ec8e8e0a4e14ed, type: 3}
-      propertyPath: heroProfile
-      value: 
-      objectReference: {fileID: 11400000, guid: 60a44937bc2310b4d975b6beb3f6b60e, type: 2}
     - target: {fileID: 1109987028385428, guid: 4ca2532ce7e899d4c8ec8e8e0a4e14ed, type: 3}
       propertyPath: m_Name
       value: Warrior07
@@ -1885,22 +1855,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &873666164 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114665035978887628, guid: 06ddc69de0551d04e9993fded4fb9365, type: 3}
-  m_PrefabInstance: {fileID: 1958652531}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9bab99a464f488298c9d9629a889d97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!143 &873666166 stripped
-CharacterController:
-  m_CorrespondingSourceObject: {fileID: 1958652536, guid: 06ddc69de0551d04e9993fded4fb9365, type: 3}
-  m_PrefabInstance: {fileID: 1958652531}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &882077489
 GameObject:
   m_ObjectHideFlags: 0
@@ -2132,14 +2086,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 734732257}
     m_Modifications:
-    - target: {fileID: 949194500, guid: bc8ee89adfc055046b70b0bedd71a550, type: 3}
-      propertyPath: charName
-      value: Warrior
-      objectReference: {fileID: 0}
-    - target: {fileID: 949194500, guid: bc8ee89adfc055046b70b0bedd71a550, type: 3}
-      propertyPath: heroProfile
-      value: 
-      objectReference: {fileID: 11400000, guid: 60a44937bc2310b4d975b6beb3f6b60e, type: 2}
     - target: {fileID: 1109987028385428, guid: bc8ee89adfc055046b70b0bedd71a550, type: 3}
       propertyPath: m_Name
       value: Warrior04
@@ -5454,11 +5400,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1100689312}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1285040900 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4957315015863976, guid: 06ddc69de0551d04e9993fded4fb9365, type: 3}
-  m_PrefabInstance: {fileID: 1958652531}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1417965001
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5752,14 +5693,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 734732257}
     m_Modifications:
-    - target: {fileID: 1537983266, guid: e7eb014c6da282f408ea22b4ba6f2b71, type: 3}
-      propertyPath: charName
-      value: Warrior
-      objectReference: {fileID: 0}
-    - target: {fileID: 1537983266, guid: e7eb014c6da282f408ea22b4ba6f2b71, type: 3}
-      propertyPath: heroProfile
-      value: 
-      objectReference: {fileID: 11400000, guid: 60a44937bc2310b4d975b6beb3f6b60e, type: 2}
     - target: {fileID: 1109987028385428, guid: e7eb014c6da282f408ea22b4ba6f2b71, type: 3}
       propertyPath: m_Name
       value: Warrior03
@@ -5833,14 +5766,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 734732257}
     m_Modifications:
-    - target: {fileID: 1558821653, guid: aafa2706eb89f0a48ae0f3dd50c3e11e, type: 3}
-      propertyPath: charName
-      value: Warrior
-      objectReference: {fileID: 0}
-    - target: {fileID: 1558821653, guid: aafa2706eb89f0a48ae0f3dd50c3e11e, type: 3}
-      propertyPath: heroProfile
-      value: 
-      objectReference: {fileID: 11400000, guid: 60a44937bc2310b4d975b6beb3f6b60e, type: 2}
     - target: {fileID: 1109987028385428, guid: aafa2706eb89f0a48ae0f3dd50c3e11e, type: 3}
       propertyPath: m_Name
       value: Warrior05
@@ -5965,11 +5890,6 @@ Transform:
   m_Father: {fileID: 1809952168}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1686312820 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4314069016542968, guid: 06ddc69de0551d04e9993fded4fb9365, type: 3}
-  m_PrefabInstance: {fileID: 1958652531}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1700053144
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5977,14 +5897,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 734732257}
     m_Modifications:
-    - target: {fileID: 1700053148, guid: a95a4a2fd388d754c829b2488e79c253, type: 3}
-      propertyPath: charName
-      value: Warrior
-      objectReference: {fileID: 0}
-    - target: {fileID: 1700053148, guid: a95a4a2fd388d754c829b2488e79c253, type: 3}
-      propertyPath: heroProfile
-      value: 
-      objectReference: {fileID: 11400000, guid: 60a44937bc2310b4d975b6beb3f6b60e, type: 2}
     - target: {fileID: 1109987028385428, guid: a95a4a2fd388d754c829b2488e79c253, type: 3}
       propertyPath: m_Name
       value: Warrior02
@@ -6471,38 +6383,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 734732257}
     m_Modifications:
-    - target: {fileID: 1958652535, guid: 06ddc69de0551d04e9993fded4fb9365, type: 3}
-      propertyPath: armL
-      value: 
-      objectReference: {fileID: 1686312820}
-    - target: {fileID: 1958652535, guid: 06ddc69de0551d04e9993fded4fb9365, type: 3}
-      propertyPath: armR
-      value: 
-      objectReference: {fileID: 1285040900}
-    - target: {fileID: 1958652535, guid: 06ddc69de0551d04e9993fded4fb9365, type: 3}
-      propertyPath: firearm
-      value: 
-      objectReference: {fileID: 54024761}
-    - target: {fileID: 1958652535, guid: 06ddc69de0551d04e9993fded4fb9365, type: 3}
-      propertyPath: charName
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1958652535, guid: 06ddc69de0551d04e9993fded4fb9365, type: 3}
-      propertyPath: character
-      value: 
-      objectReference: {fileID: 873666164}
-    - target: {fileID: 1958652535, guid: 06ddc69de0551d04e9993fded4fb9365, type: 3}
-      propertyPath: firearmFire
-      value: 
-      objectReference: {fileID: 54024760}
-    - target: {fileID: 1958652535, guid: 06ddc69de0551d04e9993fded4fb9365, type: 3}
-      propertyPath: heroProfile
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1958652535, guid: 06ddc69de0551d04e9993fded4fb9365, type: 3}
-      propertyPath: characterCtrl
-      value: 
-      objectReference: {fileID: 873666166}
     - target: {fileID: 1109987028385428, guid: 06ddc69de0551d04e9993fded4fb9365, type: 3}
       propertyPath: m_Name
       value: Warrior01
@@ -6576,14 +6456,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 734732257}
     m_Modifications:
-    - target: {fileID: 2060800287, guid: 39cda43735a9bb04a817ebfc18555cab, type: 3}
-      propertyPath: charName
-      value: Warrior
-      objectReference: {fileID: 0}
-    - target: {fileID: 2060800287, guid: 39cda43735a9bb04a817ebfc18555cab, type: 3}
-      propertyPath: heroProfile
-      value: 
-      objectReference: {fileID: 11400000, guid: 60a44937bc2310b4d975b6beb3f6b60e, type: 2}
     - target: {fileID: 1109987028385428, guid: 39cda43735a9bb04a817ebfc18555cab, type: 3}
       propertyPath: m_Name
       value: Warrior06

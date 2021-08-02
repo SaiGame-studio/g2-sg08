@@ -5179,6 +5179,7 @@ GameObject:
   - component: {fileID: 1793250968589525374}
   - component: {fileID: 1558821654}
   - component: {fileID: 1558821653}
+  - component: {fileID: 1303008382}
   m_Layer: 0
   m_Name: Warrior05
   m_TagString: Untagged
@@ -5529,6 +5530,19 @@ MonoBehaviour:
   firearmFire: {fileID: 1283604481290215046}
   armL: {fileID: 4314069016542968}
   armR: {fileID: 4957315015863976}
+--- !u!114 &1303008382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109987028385428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83dd1a316f9dd434f88a0cb5e2655f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heroClass: 
 --- !u!1 &1148429847025930
 GameObject:
   m_ObjectHideFlags: 0
