@@ -1,7 +1,5 @@
 using Assets.HeroEditor.Common.CharacterScripts;
 using Assets.HeroEditor.Common.CharacterScripts.Firearms;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HeroCtrl : MonoBehaviour
@@ -14,11 +12,6 @@ public class HeroCtrl : MonoBehaviour
     public Transform armL;
     public Transform armR;
     public HeroProfile heroProfile;
-
-    private void Start()
-    {
-        Debug.Log(transform.name + ": " + this.heroProfile.heroClass);
-    }
 
     private void Reset()
     {
@@ -59,7 +52,7 @@ public class HeroCtrl : MonoBehaviour
         if (this.character != null) return;
         this.character = GetComponent<Character>();
 
-        Debug.Log(transform.name + ": LoadCharactor");
+        Debug.Log(transform.name + ": LoadCharacter");
     }
 
     protected virtual void LoadCharBodyParts()
@@ -80,6 +73,6 @@ public class HeroCtrl : MonoBehaviour
         this.firearmFire = this.firearm.transform.GetComponent<FirearmFire>();
         this.firearmFire.CreateBullets = true;
 
-        Debug.Log(transform.name+ ": LoadCharBodyParts");
+        Debug.Log(transform.name + ": LoadCharBodyParts");
     }
 }
