@@ -1,13 +1,20 @@
-using Assets.HeroEditor.Common.EditorScripts;
 using Assets.HeroEditor.Common.ExampleScripts;
 using UnityEngine;
 
 public class PlayerManager : SaiBehaviour
 {
+    public static PlayerManager instance;
+
     public HeroCtrl currentHero;
     public PlayerAttacking playerAttacking;
     public PlayerMovement playerMovement;
     public BowExample bowExample;
+
+    private void Awake()
+    {
+        if (PlayerManager.instance != null) Debug.LogError("Only 1 PlayerManager allow");
+        PlayerManager.instance = this;
+    }
 
     private void Start()
     {
@@ -28,7 +35,7 @@ public class PlayerManager : SaiBehaviour
 
         Debug.Log(transform.name + ": LoadPlayerComponents");
     }
-    
+
     protected virtual void LoadPlayers()
     {
         GameObject hero;
@@ -59,5 +66,24 @@ public class PlayerManager : SaiBehaviour
 
         this.playerMovement.character = this.currentHero.character;
         this.playerMovement.charCtrl = this.currentHero.characterCtrl;
+    }
+
+    public virtual bool ChoosePlayer(string chooseClass)
+    {
+        Debug.Log("Choose:" + chooseClass);
+
+        string profileClass;
+        foreach (HeroCtrl heroCtrl in PlayersHolder.instance.heroCtrls)
+        {
+            profileClass = heroCtrl.heroProfile.HeroClass();
+            if (profileClass == chooseClass)
+            {
+                this.SetPlayerCtrl(heroCtrl.gameObject);
+                return true;
+            }
+        }
+
+        Debug.LogError("Class you choose not exist:" + chooseClass);
+        return false;
     }
 }
