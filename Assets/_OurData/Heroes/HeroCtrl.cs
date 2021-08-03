@@ -2,7 +2,7 @@ using Assets.HeroEditor.Common.CharacterScripts;
 using Assets.HeroEditor.Common.CharacterScripts.Firearms;
 using UnityEngine;
 
-public class HeroCtrl : MonoBehaviour
+public class HeroCtrl : SaiBehaviour
 {
     [Header("Hero")]
     public Character character;
@@ -13,7 +13,7 @@ public class HeroCtrl : MonoBehaviour
     public Transform armR;
     public HeroProfile heroProfile;
 
-    protected virtual void LoadComponents()
+    protected override void LoadComponents()
     {
         this.LoadCharacter();
         this.LoadCharCtrl();
