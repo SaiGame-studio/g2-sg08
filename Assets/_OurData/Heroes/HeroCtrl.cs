@@ -13,11 +13,6 @@ public class HeroCtrl : MonoBehaviour
     public Transform armR;
     public HeroProfile heroProfile;
 
-    private void Reset()
-    {
-        this.LoadComponents();
-    }
-
     protected virtual void LoadComponents()
     {
         this.LoadCharacter();
@@ -28,6 +23,7 @@ public class HeroCtrl : MonoBehaviour
 
     protected virtual void LoadHeroProfile()
     {
+        if (this.heroProfile != null) return;
         this.heroProfile = GetComponent<HeroProfile>();
         Debug.Log(transform.name + ": LoadHeroProfile");
     }

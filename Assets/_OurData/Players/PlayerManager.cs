@@ -2,7 +2,7 @@ using Assets.HeroEditor.Common.EditorScripts;
 using Assets.HeroEditor.Common.ExampleScripts;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : SaiBehaviour
 {
     public HeroCtrl currentHero;
     public PlayerAttacking playerAttacking;
@@ -14,12 +14,7 @@ public class PlayerManager : MonoBehaviour
         this.LoadPlayers();
     }
 
-    private void Reset()
-    {
-        this.LoadComponents();
-    }
-
-    protected virtual void LoadComponents()
+    protected override void LoadComponents()
     {
         this.LoadPlayerComponents();
     }

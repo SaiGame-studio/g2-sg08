@@ -5961,7 +5961,7 @@ PrefabInstance:
     - target: {fileID: 1767632439, guid: 972886c449a92444c85f2f8f41f55c1d, type: 3}
       propertyPath: character
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1767632437}
     - target: {fileID: 1767632439, guid: 972886c449a92444c85f2f8f41f55c1d, type: 3}
       propertyPath: firearmFire
       value: 
@@ -5973,7 +5973,7 @@ PrefabInstance:
     - target: {fileID: 1767632439, guid: 972886c449a92444c85f2f8f41f55c1d, type: 3}
       propertyPath: characterCtrl
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1767632446}
     - target: {fileID: 1168890840688405, guid: 972886c449a92444c85f2f8f41f55c1d, type: 3}
       propertyPath: m_Name
       value: Shooter01
@@ -6034,6 +6034,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4280411193927909, guid: 972886c449a92444c85f2f8f41f55c1d, type: 3}
   m_PrefabInstance: {fileID: 1767632434}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1767632437 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114189776605576749, guid: 972886c449a92444c85f2f8f41f55c1d, type: 3}
+  m_PrefabInstance: {fileID: 1767632434}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9bab99a464f488298c9d9629a889d97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1767632438 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114415008788196449, guid: 972886c449a92444c85f2f8f41f55c1d, type: 3}
@@ -6083,6 +6094,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a10171026793c2543b83d9b2b353401d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!143 &1767632446 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 1767632438, guid: 972886c449a92444c85f2f8f41f55c1d, type: 3}
+  m_PrefabInstance: {fileID: 1767632434}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1809952167
 GameObject:
   m_ObjectHideFlags: 0
