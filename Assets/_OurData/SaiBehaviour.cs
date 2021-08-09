@@ -16,6 +16,6 @@ public class SaiBehaviour : MonoBehaviour
 
     protected virtual void LoadComponents()
     {
-        Debug.Log("Need overide");
+        //Debug.Log("Need overide");
     }
 }

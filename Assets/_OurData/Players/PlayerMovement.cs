@@ -33,9 +33,7 @@ public class PlayerMovement : MonoBehaviour
     protected virtual void Turning()
     {
         Vector3 mouse = Input.mousePosition;
-
         Vector3 vec3 = new Vector3(mouse.x, mouse.y, this.character.transform.position.y);
-
         Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(vec3);
         this.mouseToChar = mouseWorld - this.character.transform.position;
         this.character.transform.localScale = new Vector3(Mathf.Sign(this.mouseToChar.x), 1, 1);
