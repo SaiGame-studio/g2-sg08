@@ -5,7 +5,7 @@ using UnityEngine;
 public class DamageReceiver : SaiBehaviour
 {
     [Header("DamageReceiver")]
-    public int hp = 1;
+    [SerializeField] protected int hp = 1;
 
     public virtual bool IsDead()
     {
