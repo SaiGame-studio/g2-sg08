@@ -1878,7 +1878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59dfbc0f4f3a98b4ebf4ad40fc3f43aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolName: 
+  poolName: ObjPool
   matchPoolScale: 0
   matchPoolLayer: 0
   dontReparent: 0
