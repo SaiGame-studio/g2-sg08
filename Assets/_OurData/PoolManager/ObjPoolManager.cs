@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class ObjPoolManager : SaiBehaviour
 {
+    public static ObjPoolManager instance;
     [SerializeField] protected string poolName = "ObjPool";
     [SerializeField] protected SpawnPool pool;
     [SerializeField] protected List<Transform> objs;
+
+    private void Awake()
+    {
+        if (ObjPoolManager.instance != null) Debug.LogError("Only 1 ObjPoolManager allow");
+        ObjPoolManager.instance = this;
+    }
 
     private void Start()
     {
@@ -58,6 +65,11 @@ public class ObjPoolManager : SaiBehaviour
     {
         this.LoadPool();
         return this.pool;
+    }
+
+    public virtual Transform Spawn(string objName, Transform parent)
+    {
+        return this.Pool().Spawn(objName, parent);
     }
 
     public virtual Transform Spawn(string objName, Vector3 pos, Quaternion rot)
