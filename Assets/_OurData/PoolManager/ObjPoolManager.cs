@@ -81,4 +81,9 @@ public class ObjPoolManager : SaiBehaviour
     {
         return this.Pool().Spawn(objName, pos, rot, parent);
     }
+
+    public virtual void Despawn(Transform instance)
+    {
+        this.Pool().Despawn(instance);
+    }
 }
