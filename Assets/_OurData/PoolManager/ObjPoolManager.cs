@@ -53,7 +53,7 @@ public class ObjPoolManager : SaiBehaviour
         {
             PrefabPool prefabPool = new PrefabPool(obj)
             {
-                preloadAmount = 3
+                preloadAmount = 2
             };
 
             bool isAlreadyPool = this.pool.GetPrefabPool(prefabPool.prefab) == null ? false : true;
