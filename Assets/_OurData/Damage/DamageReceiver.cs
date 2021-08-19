@@ -34,15 +34,6 @@ public class DamageReceiver : SaiBehaviour
 
     protected virtual void Despawn()
     {
-        bool isAlreadyPool = ObjPoolManager.instance.Pool().GetPrefabPool(transform) == null ? false : true;
-        if (isAlreadyPool)
-        {
-            ObjPoolManager.instance.Despawn(transform);
-        }
-        else
-        {
-            Destroy(gameObject);
-            Debug.Log(transform.name + ": Not in Pool Delete");
-        }
+        ObjPoolManager.instance.Despawn(transform);
     }
 }
