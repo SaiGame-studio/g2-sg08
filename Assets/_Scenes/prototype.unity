@@ -1774,7 +1774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3094585aec232f44cb94f608ae09267b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
+  hp: 2
 --- !u!1 &497974654
 GameObject:
   m_ObjectHideFlags: 0
@@ -2937,7 +2937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3094585aec232f44cb94f608ae09267b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 10
+  hp: 2
 --- !u!1001 &885178476
 PrefabInstance:
   m_ObjectHideFlags: 0
