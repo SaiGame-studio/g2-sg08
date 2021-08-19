@@ -14,12 +14,12 @@ public class ObjPoolManager : SaiBehaviour
         if (ObjPoolManager.instance != null) Debug.LogError("Only 1 ObjPoolManager allow");
         ObjPoolManager.instance = this;
 
-        this.AddObjToPool();
+        //this.AddObjToPool();
     }
 
     private void Start()
     {
-        //this.AddObjToPool();
+        this.AddObjToPool();
     }
 
     protected override void LoadComponents()

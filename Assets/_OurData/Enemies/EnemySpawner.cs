@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnemySpawner : SaiBehaviour
 {
     [SerializeField] protected string enemyName = "Cube";
+    [SerializeField] protected int spawnLimit = 2;
 
     private void Start()
     {
@@ -11,15 +12,24 @@ public class EnemySpawner : SaiBehaviour
 
     protected virtual void Spawning()
     {
+        Invoke("Spawning", 2);
+
+        if (!this.CanSpawn()) return;
+
         float x = Random.Range(-7.0f, 7.0f);
         float y = Random.Range(3.0f, 6.0f);
 
         Vector3 spawnPos = new Vector3(x, y, 0);
-        Debug.Log(spawnPos.ToString());
 
         Transform obj = ObjPoolManager.instance.Spawn(this.enemyName, spawnPos, transform.rotation, transform);
         obj.gameObject.SetActive(true);
+    }
 
-        Invoke("Spawning", 2);
+    protected virtual bool CanSpawn()
+    {
+        int childCount = transform.childCount;
+        Debug.Log(childCount);
+        if (childCount >= this.spawnLimit) return false;
+        return true;
     }
 }

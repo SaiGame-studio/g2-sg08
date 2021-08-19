@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DamageReceiver : SaiBehaviour
@@ -37,7 +35,14 @@ public class DamageReceiver : SaiBehaviour
     protected virtual void Despawn()
     {
         bool isAlreadyPool = ObjPoolManager.instance.Pool().GetPrefabPool(transform) == null ? false : true;
-        if (isAlreadyPool) ObjPoolManager.instance.Despawn(transform);
-        else Destroy(gameObject);
+        if (isAlreadyPool)
+        {
+            ObjPoolManager.instance.Despawn(transform);
+        }
+        else
+        {
+            Destroy(gameObject);
+            Debug.Log(transform.name + ": Not in Pool Delete");
+        }
     }
 }
