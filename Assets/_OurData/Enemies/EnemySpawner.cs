@@ -4,6 +4,7 @@ public class EnemySpawner : SaiBehaviour
 {
     [SerializeField] protected string enemyName = "Cube";
     [SerializeField] protected int spawnLimit = 2;
+    [SerializeField] protected float spawnDelay = 2;
 
     private void Start()
     {
@@ -12,7 +13,7 @@ public class EnemySpawner : SaiBehaviour
 
     protected virtual void Spawning()
     {
-        Invoke("Spawning", 2);
+        Invoke("Spawning", this.spawnDelay);
 
         if (!this.CanSpawn()) return;
 

@@ -2315,7 +2315,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: Cube
-  spawnLimit: 20
+  spawnLimit: 200
+  spawnDelay: 0.2
 --- !u!4 &656806288
 Transform:
   m_ObjectHideFlags: 0
@@ -2893,7 +2894,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &851630298
 BoxCollider:
   m_ObjectHideFlags: 0
