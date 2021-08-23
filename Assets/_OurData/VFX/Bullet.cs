@@ -9,6 +9,9 @@ public class Bullet : SaiBehaviour
     [SerializeField] protected Rigidbody _rigidbody;
     [SerializeField] protected SpriteRenderer spriteRenderer;
     [SerializeField] protected Collider _collider;
+    [SerializeField] protected bool isDespawn = false;
+    [SerializeField] protected float despawnTimer = 0f;
+    [SerializeField] protected float despawnDelay = 1f;
 
     public void Update()
     {
@@ -16,6 +19,11 @@ public class Bullet : SaiBehaviour
         {
             transform.right = _rigidbody.velocity.normalized;
         }
+    }
+
+    private void FixedUpdate()
+    {
+        this.Despawn();
     }
 
     public void OnTriggerEnter(Collider other)
@@ -60,11 +68,15 @@ public class Bullet : SaiBehaviour
         this.spriteRenderer.enabled = false;
         this._collider.enabled = false;
         this._rigidbody.isKinematic = true;
-        Invoke("Despawn", 1);//TODO: this may bad idea
+        this.isDespawn = true;
     }
 
     protected virtual void Despawn()
     {
+        if (!this.isDespawn) return;
+        this.despawnTimer += Time.fixedDeltaTime;
+        if (this.despawnTimer < this.despawnDelay) return;
+
         ObjPoolManager.instance.Despawn(transform);
     }
 
@@ -74,6 +86,8 @@ public class Bullet : SaiBehaviour
         this.spriteRenderer.enabled = true;
         this._collider.enabled = true;
         this._rigidbody.isKinematic = false;
+        this.isDespawn = false;
+        this.despawnTimer = 0f;
     }
 
     private void OnEnable()
