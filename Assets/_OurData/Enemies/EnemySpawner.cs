@@ -29,7 +29,6 @@ public class EnemySpawner : SaiBehaviour
     protected virtual bool CanSpawn()
     {
         int childCount = transform.childCount;
-        Debug.Log(childCount);
         if (childCount >= this.spawnLimit) return false;
         return true;
     }
