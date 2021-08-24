@@ -40,8 +40,8 @@ public class PlayerMovement : MonoBehaviour
         this.IsGrounded();
         this.InputToDirection();
         this.CharacterStateUpdate();
-        this.Move();
         this.Turning();
+        this.Move();
     }
 
     protected virtual Vector2 InputToDirection()
@@ -101,6 +101,7 @@ public class PlayerMovement : MonoBehaviour
         this.Jumbing();
 
         this.speed.y -= this.fallingSpeed * Time.deltaTime;
+
         this.charCtrl.Move(this.speed * Time.deltaTime);
     }
 
@@ -129,10 +130,5 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("Jumbing");
 
         this.speed.y = this.jumpSpeed * this.direction.y;
-    }
-
-    public void Turn(float direction)
-    {
-        this.character.transform.localScale = new Vector3(Mathf.Sign(direction), 1, 1);
     }
 }
