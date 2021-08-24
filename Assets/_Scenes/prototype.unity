@@ -1440,10 +1440,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 0}
   charCtrl: {fileID: 0}
-  walkingSpeed: 5
-  jumpSpeed: 10
+  walkingSpeed: 7
+  jumpSpeed: 9
   fallingSpeed: 25
+  jumbCount: 3
   isGrounded: 1
+  inputHorizontal: 0
+  inputHorizontalRaw: 0
+  inputVertical: 0
+  inputVerticalRaw: 0
+  inputJumbRaw: 0
+  pressJumb: 0
   speed: {x: 0, y: 0, z: 0}
   direction: {x: 0, y: 0}
   mouseToChar: {x: 0, y: 0, z: 0}

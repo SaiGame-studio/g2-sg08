@@ -11,8 +11,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] protected float walkingSpeed = 7;
     [SerializeField] protected float jumpSpeed = 9;
     [SerializeField] protected float fallingSpeed = 25;
+    [SerializeField] protected int jumbMax = 3;
     [SerializeField] protected int jumbCount = 3;
     [SerializeField] protected bool isGrounded = true;
+    [SerializeField] protected bool canJumb = false;
+    [SerializeField] protected bool jumbing = false;
 
     [Header("Input")]
     [SerializeField] protected float inputHorizontal = 0f;
@@ -49,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
         direction.x = this.inputHorizontalRaw;
         direction.y = this.inputVerticalRaw;
-        if(this.inputVerticalRaw == 0) direction.y = this.inputJumbRaw;
+        if (this.inputVerticalRaw == 0) direction.y = this.inputJumbRaw;
 
         if (direction.y > 0) this.pressJumb = true;
         else this.pressJumb = false;
@@ -61,6 +64,13 @@ public class PlayerMovement : MonoBehaviour
     protected virtual bool IsGrounded()
     {
         this.isGrounded = this.charCtrl.isGrounded;
+
+        if (this.isGrounded)
+        {
+            this.jumbCount = this.jumbMax;
+            this.canJumb = true;
+            this.jumbing = false;
+        }
         return this.isGrounded;
     }
 
@@ -82,15 +92,38 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move()
     {
-        this.SpeedCalculate();
+        this.Walking();
+        this.Jumbing();
+
         this.speed.y -= this.fallingSpeed * Time.deltaTime;
         this.charCtrl.Move(this.speed * Time.deltaTime);
     }
 
-    protected virtual void SpeedCalculate()
+    protected virtual void Walking()
     {
         if (!this.IsGrounded()) return;
-        this.speed = new Vector3(this.walkingSpeed * this.direction.x, this.jumpSpeed * this.direction.y);
+        this.speed.x = this.walkingSpeed * this.direction.x;
+    }
+
+    protected virtual void Jumbing()
+    {
+        if (this.jumbing && !this.pressJumb)
+        {
+            this.canJumb = true;
+            this.jumbCount--;
+            this.jumbing = false;
+        }
+
+        if (!this.pressJumb) return;
+        if (!this.canJumb) return;
+        if (this.jumbCount < 1) return;
+
+        this.jumbing = true;
+        this.canJumb = false;
+
+        Debug.Log("Jumbing");
+
+        this.speed.y = this.jumpSpeed * this.direction.y;
     }
 
     public void Turn(float direction)
