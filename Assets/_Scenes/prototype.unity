@@ -1440,9 +1440,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 0}
   charCtrl: {fileID: 0}
-  mouseToChar: {x: 0, y: 0, z: 0}
+  walkingSpeed: 5
+  jumpSpeed: 10
+  fallingSpeed: 25
+  isGrounded: 1
   speed: {x: 0, y: 0, z: 0}
   direction: {x: 0, y: 0}
+  mouseToChar: {x: 0, y: 0, z: 0}
 --- !u!1 &327829792
 GameObject:
   m_ObjectHideFlags: 0
@@ -2317,7 +2321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: Cube
-  spawnLimit: 20
+  spawnLimit: 2
   spawnDelay: 0.2
 --- !u!4 &656806288
 Transform:

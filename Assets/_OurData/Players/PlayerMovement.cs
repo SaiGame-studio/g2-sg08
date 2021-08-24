@@ -3,17 +3,33 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Components")]
     public Character character;
     public CharacterController charCtrl;
-    [SerializeField] protected float walkingSpeed = 5;
-    [SerializeField] protected float jumpSpeed = 10;
+
+    [Header("Movement")]
+    [SerializeField] protected float walkingSpeed = 7;
+    [SerializeField] protected float jumpSpeed = 9;
     [SerializeField] protected float fallingSpeed = 25;
+    [SerializeField] protected int jumbCount = 3;
+    [SerializeField] protected bool isGrounded = true;
+
+    [Header("Input")]
+    [SerializeField] protected float inputHorizontal = 0f;
+    [SerializeField] protected float inputHorizontalRaw = 0f;
+    [SerializeField] protected float inputVertical = 0f;
+    [SerializeField] protected float inputVerticalRaw = 0f;
+    [SerializeField] protected float inputJumbRaw = 0f;
+    [SerializeField] protected bool pressJumb = false;
+
+    [Header("Vectors")]
     [SerializeField] protected Vector3 speed = Vector3.zero;
     [SerializeField] protected Vector2 direction;
     [SerializeField] protected Vector3 mouseToChar = Vector3.zero;
 
     public void Update()
     {
+        this.IsGrounded();
         this.InputToDirection();
         this.CharacterStateUpdate();
         this.Move();
@@ -24,11 +40,28 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 direction = Vector2.zero;
 
-        if (Input.GetKey(KeyCode.LeftArrow)) direction.x = -1;
-        if (Input.GetKey(KeyCode.RightArrow)) direction.x = 1;
-        if (Input.GetKey(KeyCode.UpArrow)) direction.y = 1;
+        this.inputHorizontal = Input.GetAxis("Horizontal");
+        this.inputVertical = Input.GetAxis("Vertical");
+
+        this.inputHorizontalRaw = Input.GetAxisRaw("Horizontal");
+        this.inputVerticalRaw = Input.GetAxisRaw("Vertical");
+        this.inputJumbRaw = Input.GetAxisRaw("Jump");
+
+        direction.x = this.inputHorizontalRaw;
+        direction.y = this.inputVerticalRaw;
+        if(this.inputVerticalRaw == 0) direction.y = this.inputJumbRaw;
+
+        if (direction.y > 0) this.pressJumb = true;
+        else this.pressJumb = false;
+
         this.direction = direction;
         return direction;
+    }
+
+    protected virtual bool IsGrounded()
+    {
+        this.isGrounded = this.charCtrl.isGrounded;
+        return this.isGrounded;
     }
 
     protected virtual void Turning()
@@ -44,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (this.direction != Vector2.zero) this.character.SetState(CharacterState.Run);
         else if (this.character.GetState() < CharacterState.DeathB) this.character.SetState(CharacterState.Idle);
-        if (!this.charCtrl.isGrounded) this.character.SetState(CharacterState.Jump);
+        if (!this.IsGrounded()) this.character.SetState(CharacterState.Jump);
     }
 
     public void Move()
@@ -56,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
 
     protected virtual void SpeedCalculate()
     {
-        if (!this.charCtrl.isGrounded) return;
+        if (!this.IsGrounded()) return;
         this.speed = new Vector3(this.walkingSpeed * this.direction.x, this.jumpSpeed * this.direction.y);
     }
 
