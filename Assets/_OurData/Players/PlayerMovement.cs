@@ -5,14 +5,18 @@ public class PlayerMovement : MonoBehaviour
 {
     public Character character;
     public CharacterController charCtrl;
-    public Vector3 mouseToChar = Vector3.zero;
+    [SerializeField] protected float walkingSpeed = 5;
+    [SerializeField] protected float jumpSpeed = 10;
+    [SerializeField] protected float fallingSpeed = 25;
     [SerializeField] protected Vector3 speed = Vector3.zero;
     [SerializeField] protected Vector2 direction;
+    [SerializeField] protected Vector3 mouseToChar = Vector3.zero;
 
     public void Update()
     {
-        this.direction = this.InputToDirection();
-        this.Move(direction);
+        this.InputToDirection();
+        this.CharacterStateUpdate();
+        this.Move();
         this.Turning();
     }
 
@@ -23,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow)) direction.x = -1;
         if (Input.GetKey(KeyCode.RightArrow)) direction.x = 1;
         if (Input.GetKey(KeyCode.UpArrow)) direction.y = 1;
+        this.direction = direction;
         return direction;
     }
 
@@ -35,18 +40,24 @@ public class PlayerMovement : MonoBehaviour
         this.character.transform.localScale = new Vector3(Mathf.Sign(this.mouseToChar.x), 1, 1);
     }
 
-    public void Move(Vector2 direction)
+    protected virtual void CharacterStateUpdate()
     {
-        if (charCtrl.isGrounded)
-        {
-            this.speed = new Vector3(5 * direction.x, 10 * direction.y);
-            if (direction != Vector2.zero) this.character.SetState(CharacterState.Run);
-            else if (this.character.GetState() < CharacterState.DeathB) this.character.SetState(CharacterState.Idle);
-        }
-        else this.character.SetState(CharacterState.Jump);
+        if (this.direction != Vector2.zero) this.character.SetState(CharacterState.Run);
+        else if (this.character.GetState() < CharacterState.DeathB) this.character.SetState(CharacterState.Idle);
+        if (!this.charCtrl.isGrounded) this.character.SetState(CharacterState.Jump);
+    }
 
-        this.speed.y -= 25 * Time.deltaTime; // Depends on project physics settings
+    public void Move()
+    {
+        this.SpeedCalculate();
+        this.speed.y -= this.fallingSpeed * Time.deltaTime;
         this.charCtrl.Move(this.speed * Time.deltaTime);
+    }
+
+    protected virtual void SpeedCalculate()
+    {
+        if (!this.charCtrl.isGrounded) return;
+        this.speed = new Vector3(this.walkingSpeed * this.direction.x, this.jumpSpeed * this.direction.y);
     }
 
     public void Turn(float direction)
