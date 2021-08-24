@@ -1441,6 +1441,8 @@ MonoBehaviour:
   character: {fileID: 0}
   charCtrl: {fileID: 0}
   mouseToChar: {x: 0, y: 0, z: 0}
+  speed: {x: 0, y: 0, z: 0}
+  direction: {x: 0, y: 0}
 --- !u!1 &327829792
 GameObject:
   m_ObjectHideFlags: 0
@@ -2315,7 +2317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: Cube
-  spawnLimit: 200
+  spawnLimit: 20
   spawnDelay: 0.2
 --- !u!4 &656806288
 Transform:
@@ -22396,6 +22398,7 @@ GameObject:
   - component: {fileID: 8522592278267222770}
   - component: {fileID: 2607641243704168697}
   - component: {fileID: 8539141135165332017}
+  - component: {fileID: 8539141135165332018}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -22421,6 +22424,24 @@ MonoBehaviour:
   _rigidbody: {fileID: 8522592278267222770}
   spriteRenderer: {fileID: 8391738237074463198}
   _collider: {fileID: 8603751207227613548}
+  isDespawn: 0
+  despawnTimer: 0
+  despawnDelay: 1
+--- !u!114 &8539141135165332018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8539141135165332016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10616e2f6138ffd4a98fa721dd485617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  distance: 0
+  distanceLimit: 20
 --- !u!1 &8539282837852522284
 GameObject:
   m_ObjectHideFlags: 0

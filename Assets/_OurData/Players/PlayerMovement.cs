@@ -6,28 +6,24 @@ public class PlayerMovement : MonoBehaviour
     public Character character;
     public CharacterController charCtrl;
     public Vector3 mouseToChar = Vector3.zero;
-    private Vector3 _speed = Vector3.zero;
-
-    //public void Start()
-    //{
-    //    this.character.Animator.SetBool("Ready", true);
-    //}
+    [SerializeField] protected Vector3 speed = Vector3.zero;
+    [SerializeField] protected Vector2 direction;
 
     public void Update()
     {
-        var direction = Vector2.zero;
+        this.direction = this.InputToDirection();
+        this.Move(direction);
+        this.Turning();
+    }
+
+    protected virtual Vector2 InputToDirection()
+    {
+        Vector2 direction = Vector2.zero;
 
         if (Input.GetKey(KeyCode.LeftArrow)) direction.x = -1;
         if (Input.GetKey(KeyCode.RightArrow)) direction.x = 1;
         if (Input.GetKey(KeyCode.UpArrow)) direction.y = 1;
-
-        this.Move(direction);
-        this.Turning();
-
-        //if (Input.GetKeyDown(KeyCode.D))
-        //{
-        //    Character.SetState(CharacterState.DeathB);
-        //}
+        return direction;
     }
 
     protected virtual void Turning()
@@ -39,42 +35,22 @@ public class PlayerMovement : MonoBehaviour
         this.character.transform.localScale = new Vector3(Mathf.Sign(this.mouseToChar.x), 1, 1);
     }
 
-
-
     public void Move(Vector2 direction)
     {
         if (charCtrl.isGrounded)
         {
-            _speed = new Vector3(5 * direction.x, 10 * direction.y);
-
-            if (direction != Vector2.zero)
-            {
-                //Turn(_speed.x);
-            }
+            this.speed = new Vector3(5 * direction.x, 10 * direction.y);
+            if (direction != Vector2.zero) this.character.SetState(CharacterState.Run);
+            else if (this.character.GetState() < CharacterState.DeathB) this.character.SetState(CharacterState.Idle);
         }
+        else this.character.SetState(CharacterState.Jump);
 
-        if (charCtrl.isGrounded)
-        {
-            if (direction != Vector2.zero)
-            {
-                character.SetState(CharacterState.Run);
-            }
-            else if (character.GetState() < CharacterState.DeathB)
-            {
-                character.SetState(CharacterState.Idle);
-            }
-        }
-        else
-        {
-            character.SetState(CharacterState.Jump);
-        }
-
-        _speed.y -= 25 * Time.deltaTime; // Depends on project physics settings
-        charCtrl.Move(_speed * Time.deltaTime);
+        this.speed.y -= 25 * Time.deltaTime; // Depends on project physics settings
+        this.charCtrl.Move(this.speed * Time.deltaTime);
     }
 
     public void Turn(float direction)
     {
-        character.transform.localScale = new Vector3(Mathf.Sign(direction), 1, 1);
+        this.character.transform.localScale = new Vector3(Mathf.Sign(direction), 1, 1);
     }
 }
