@@ -11,8 +11,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] protected float walkingSpeed = 7;
     [SerializeField] protected float jumpSpeed = 9;
     [SerializeField] protected float fallingSpeed = 25;
-    [SerializeField] protected int jumbMax = 3;
-    [SerializeField] protected int jumbCount = 3;
+    [SerializeField] protected int jumbMax = 2;
+    [SerializeField] protected int jumbCount = 2;
     [SerializeField] protected bool isGrounded = true;
     [SerializeField] protected bool canJumb = false;
     [SerializeField] protected bool jumbing = false;
@@ -29,6 +29,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] protected Vector3 speed = Vector3.zero;
     [SerializeField] protected Vector2 direction;
     [SerializeField] protected Vector3 mouseToChar = Vector3.zero;
+
+    private void Awake()
+    {
+        this.jumbCount = this.jumbMax;
+    }
 
     public void Update()
     {
