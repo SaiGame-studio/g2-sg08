@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] protected float jumpSpeed = 9;
     [SerializeField] protected float fallingSpeed = 25;
     [SerializeField] protected int jumbMax = 2;
-    [SerializeField] protected int jumbCount = 2;
+    [SerializeField] protected int jumbCount = 0;
     [SerializeField] protected bool isGrounded = true;
     [SerializeField] protected bool canJumb = false;
     [SerializeField] protected bool jumbing = false;

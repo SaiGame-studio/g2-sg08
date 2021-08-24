@@ -1443,8 +1443,11 @@ MonoBehaviour:
   walkingSpeed: 7
   jumpSpeed: 9
   fallingSpeed: 25
-  jumbCount: 3
+  jumbMax: 2
+  jumbCount: 0
   isGrounded: 1
+  canJumb: 0
+  jumbing: 0
   inputHorizontal: 0
   inputHorizontalRaw: 0
   inputVertical: 0
