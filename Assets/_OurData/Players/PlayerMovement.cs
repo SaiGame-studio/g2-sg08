@@ -18,9 +18,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] protected bool jumbing = false;
 
     [Header("Input")]
-    [SerializeField] protected float inputHorizontal = 0f;
     [SerializeField] protected float inputHorizontalRaw = 0f;
-    [SerializeField] protected float inputVertical = 0f;
     [SerializeField] protected float inputVerticalRaw = 0f;
     [SerializeField] protected float inputJumbRaw = 0f;
     [SerializeField] protected bool pressJumb = false;
@@ -47,9 +45,6 @@ public class PlayerMovement : MonoBehaviour
     protected virtual Vector2 InputToDirection()
     {
         Vector2 direction = Vector2.zero;
-
-        this.inputHorizontal = Input.GetAxis("Horizontal");
-        this.inputVertical = Input.GetAxis("Vertical");
 
         this.inputHorizontalRaw = Input.GetAxisRaw("Horizontal");
         this.inputVerticalRaw = Input.GetAxisRaw("Vertical");
