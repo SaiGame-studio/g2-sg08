@@ -1,11 +1,17 @@
 using Assets.HeroEditor.Common.CharacterScripts;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : SaiBehaviour
 {
     [Header("Components")]
     public Character character;
     public CharacterController charCtrl;
+    [SerializeField] protected Transform myGround;
+
+    [Header("Layers")]
+    [SerializeField] protected int layerHero;
+    [SerializeField] protected int layerGround;
+    [SerializeField] protected int layerCeiling;
 
     [Header("Movement")]
     [SerializeField] protected float walkingSpeed = 7;
@@ -15,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] protected int jumbCount = 0;
     [SerializeField] protected bool isGrounded = true;
     [SerializeField] protected bool canJumb = false;
-    [SerializeField] protected bool jumbing = false;
+    [SerializeField] protected bool jumbed = false;
 
     [Header("Input")]
     [SerializeField] protected float inputHorizontalRaw = 0f;
@@ -31,15 +37,56 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         this.jumbCount = this.jumbMax;
+        Physics.IgnoreLayerCollision(this.layerHero, this.layerCeiling, true);
     }
 
     public void Update()
     {
-        this.IsGrounded();
+        this.GroundFinding();
         this.InputToDirection();
+        //this.IsGrounded();
+        this.IsGoingDown();
         this.CharacterStateUpdate();
         this.Turning();
         this.Move();
+    }
+
+    protected override void LoadComponents()
+    {
+        base.LoadComponents();
+        this.GetPlayers();
+    }
+
+    protected virtual void GetPlayers()
+    {
+        if (this.layerHero > 0 && this.layerGround > 0 && this.layerCeiling > 0) return;
+
+        this.layerHero = LayerMask.NameToLayer("Hero");
+        this.layerGround = LayerMask.NameToLayer("Ground");
+        this.layerCeiling = LayerMask.NameToLayer("Ceiling");
+
+        if (this.layerHero < 0) Debug.LogError("Layer Hero is mising");
+        if (this.layerGround < 0) Debug.LogError("Layer Ground is mising");
+        if (this.layerCeiling < 0) Debug.LogError("Layer Ceiling is mising");
+
+        Debug.Log(transform.name + ": GetPlayers");
+    }
+
+    protected virtual void GroundFinding()
+    {
+        Vector3 direction = Vector3.down;
+        Vector3 position = this.character.transform.position;
+        Physics.Raycast(position, direction, out RaycastHit hit);
+        if (hit.transform == null) return;
+
+        Ground ground = hit.transform.GetComponent<Ground>();
+        if (ground == null) return;
+        if (this.myGround == hit.transform) return;
+
+        ground.ChangeLayer(this.layerGround);
+        this.myGround = hit.transform;
+
+        Debug.Log(hit.transform.name + ": New Ground");
     }
 
     protected virtual Vector2 InputToDirection()
@@ -65,13 +112,29 @@ public class PlayerMovement : MonoBehaviour
     {
         this.isGrounded = this.charCtrl.isGrounded;
 
-        if (this.isGrounded)
-        {
-            this.jumbCount = this.jumbMax;
-            this.canJumb = true;
-            this.jumbing = false;
-        }
+        if (this.isGrounded) this.ResetJumb();
         return this.isGrounded;
+    }
+
+    protected virtual void ResetJumb()
+    {
+        this.jumbCount = this.jumbMax;
+        this.canJumb = true;
+        this.jumbed = false;
+    }
+
+    protected virtual bool IsGoingDown()
+    {
+        bool isGoingDown = this.direction.y < 0;
+        if (isGoingDown) this.ResetMyGround();
+        return isGoingDown;
+    }
+
+    public virtual void ResetMyGround()
+    {
+        if (this.myGround == null) return;
+        this.myGround.GetComponent<Ground>().ChangeLayer(this.layerCeiling);
+        this.myGround = null;
     }
 
     protected virtual void Turning()
@@ -106,18 +169,18 @@ public class PlayerMovement : MonoBehaviour
 
     protected virtual void Jumbing()
     {
-        if (this.jumbing && !this.pressJumb)
+        if (this.jumbed && !this.pressJumb)
         {
             this.canJumb = true;
             this.jumbCount--;
-            this.jumbing = false;
+            this.jumbed = false;
         }
 
         if (!this.pressJumb) return;
         if (!this.canJumb) return;
         if (this.jumbCount < 1) return;
 
-        this.jumbing = true;
+        this.jumbed = true;
         this.canJumb = false;
 
         this.speed.y = this.jumpSpeed * this.direction.y;

@@ -10468,7 +10468,7 @@ GameObject:
   - component: {fileID: 135757312}
   - component: {fileID: 135757313}
   - component: {fileID: 571709426913444102}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Shooter04
   m_TagString: Untagged
   m_Icon: {fileID: 0}

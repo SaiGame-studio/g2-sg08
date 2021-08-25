@@ -5180,7 +5180,7 @@ GameObject:
   - component: {fileID: 2060800288}
   - component: {fileID: 2060800287}
   - component: {fileID: 1255739388}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Warrior06
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -699,6 +699,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 0}
   charCtrl: {fileID: 0}
+  myGround: {fileID: 0}
+  layerHero: 3
+  layerGround: 6
+  layerCeiling: 7
   walkingSpeed: 7
   jumpSpeed: 9
   fallingSpeed: 25
@@ -706,10 +710,8 @@ MonoBehaviour:
   jumbCount: 0
   isGrounded: 1
   canJumb: 0
-  jumbing: 0
-  inputHorizontal: 0
+  jumbed: 0
   inputHorizontalRaw: 0
-  inputVertical: 0
   inputVerticalRaw: 0
   inputJumbRaw: 0
   pressJumb: 0
@@ -886,7 +888,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 336931268}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 1}
+  m_LocalPosition: {x: 0, y: 2.5, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1761491331}
@@ -10174,7 +10176,8 @@ GameObject:
   - component: {fileID: 1984699133}
   - component: {fileID: 1984699132}
   - component: {fileID: 1984699131}
-  m_Layer: 0
+  - component: {fileID: 1984699134}
+  m_Layer: 7
   m_Name: Ground1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10189,7 +10192,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1984699129}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 2.5, z: 0}
   m_LocalScale: {x: 90, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1115132691}
@@ -10257,6 +10260,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1984699129}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1984699134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984699129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f9221a4d3560d4a9b053393680ac78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2060800283
 PrefabInstance:
   m_ObjectHideFlags: 0

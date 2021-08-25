@@ -5180,7 +5180,7 @@ GameObject:
   - component: {fileID: 296988420}
   - component: {fileID: 296988421}
   - component: {fileID: 7852454786498027359}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wizard03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
