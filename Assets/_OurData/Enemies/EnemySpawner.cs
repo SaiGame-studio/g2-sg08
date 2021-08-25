@@ -18,7 +18,7 @@ public class EnemySpawner : SaiBehaviour
         if (!this.CanSpawn()) return;
 
         float x = Random.Range(-7.0f, 7.0f);
-        float y = Random.Range(3.0f, 6.0f);
+        float y = Random.Range(7.0f, 9.0f);
 
         Vector3 spawnPos = new Vector3(x, y, 0);
 

@@ -99,9 +99,7 @@ public class PlayerMovement : MonoBehaviour
     {
         this.Walking();
         this.Jumbing();
-
         this.speed.y -= this.fallingSpeed * Time.deltaTime;
-
         this.charCtrl.Move(this.speed * Time.deltaTime);
     }
 
@@ -126,8 +124,6 @@ public class PlayerMovement : MonoBehaviour
 
         this.jumbing = true;
         this.canJumb = false;
-
-        Debug.Log("Jumbing");
 
         this.speed.y = this.jumpSpeed * this.direction.y;
     }
