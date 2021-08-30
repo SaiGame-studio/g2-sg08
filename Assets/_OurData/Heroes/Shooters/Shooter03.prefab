@@ -10818,6 +10818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a10171026793c2543b83d9b2b353401d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   character: {fileID: 114189776605576749}
   characterCtrl: {fileID: 201392695}
   firearm: {fileID: 114190225916829101}

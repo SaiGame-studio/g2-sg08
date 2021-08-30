@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class PlayerMovement : SaiBehaviour
 {
-    [SerializeField] protected bool showRaycast = false;
-
     [Header("Components")]
     public Character character;
     public CharacterController charCtrl;
@@ -90,22 +88,6 @@ public class PlayerMovement : SaiBehaviour
         this.myGround = hit.transform;
     }
 
-    protected virtual void DebugRaycast(Vector3 start, RaycastHit hit, Vector3 direction)
-    {
-        if (!this.showRaycast) return;
-
-        if (hit.transform == null)
-        {
-            Debug.DrawRay(start, direction, Color.red);
-            Debug.Log(transform.name + ": Hit Nothing");
-        }
-        else
-        {
-            Debug.DrawLine(start, hit.point, Color.green);
-            Debug.Log(transform.name + ": Hit " + hit.transform.name);
-        }
-
-    }
 
     protected virtual Vector2 InputToDirection()
     {

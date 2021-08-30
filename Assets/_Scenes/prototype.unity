@@ -627,6 +627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3094585aec232f44cb94f608ae09267b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   hp: 2
   deadEffect: EnemyDeath1
 --- !u!65 &292367545
@@ -807,7 +808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92fcef6449b65a54890a0e5ce490967a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showRaycast: 0
+  debug: 0
   character: {fileID: 0}
   charCtrl: {fileID: 0}
   myGround: {fileID: 0}
@@ -1193,6 +1194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3094585aec232f44cb94f608ae09267b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   hp: 2
   deadEffect: EnemyDeath1
 --- !u!1 &497974654
@@ -1733,8 +1735,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c50f722f6105c3c4f9c7cea5fc384058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   enemyName: Cube
-  spawnLimit: 2
+  spawnLimit: 20
   spawnDelay: 0.2
 --- !u!4 &656806288
 Transform:
@@ -1838,7 +1841,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &754851924
 Transform:
   m_ObjectHideFlags: 0
@@ -2170,6 +2173,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &831044245
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 831044247}
+  - component: {fileID: 831044246}
+  m_Layer: 0
+  m_Name: MyLayerManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &831044246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831044245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0e58dd7c1ba5954e87aefb0418f5406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  layerHero: 3
+  layerGround: 6
+  layerCeiling: 7
+--- !u!4 &831044247
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831044245}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &847842027
 GameObject:
   m_ObjectHideFlags: 0
@@ -2403,6 +2453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3094585aec232f44cb94f608ae09267b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   hp: 2
   deadEffect: EnemyDeath1
 --- !u!1001 &885178476
@@ -10030,6 +10081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9c99eb70cd6f948bbbbba8a13c3d2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   poolName: ObjPool
   pool: {fileID: 546164485}
   objs:
@@ -10104,6 +10156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7ea0f7a6d1fed74b9300079d4d9d0ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   currentHero: {fileID: 0}
   playerAttacking: {fileID: 1816712791}
   playerMovement: {fileID: 306959738}
@@ -10384,6 +10437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77f9221a4d3560d4a9b053393680ac78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
 --- !u!1001 &2060800283
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10667,6 +10721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3be55f87327cc8b49a41bbc599ea2e84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   damage: 1
 --- !u!199 &8376951933461882224
 ParticleSystemRenderer:
@@ -24938,6 +24993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3950534fa80f7b4ba63202bbaf73a7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 1
   Renderers: []
   trail: {fileID: 8540800425313585758}
   impact: {fileID: 8540824174763004736}
@@ -24947,6 +25003,8 @@ MonoBehaviour:
   isDespawn: 0
   despawnTimer: 0
   despawnDelay: 1
+  hitObject: {fileID: 0}
+  lastPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &8539141135165332018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24959,9 +25017,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10616e2f6138ffd4a98fa721dd485617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
   target: {fileID: 0}
   distance: 0
-  distanceLimit: 20
+  distanceLimit: 70
 --- !u!1 &8539282837852522284
 GameObject:
   m_ObjectHideFlags: 0

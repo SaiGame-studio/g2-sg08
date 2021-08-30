@@ -12,13 +12,17 @@ public class Bullet : SaiBehaviour
     [SerializeField] protected bool isDespawn = false;
     [SerializeField] protected float despawnTimer = 0f;
     [SerializeField] protected float despawnDelay = 1f;
+    [SerializeField] protected Transform hitObject;
+    [SerializeField] protected Vector3 lastPosition = Vector3.zero;
 
-    public void Update()
+    private void Update()
     {
         if (_rigidbody != null && _rigidbody.useGravity)
         {
             transform.right = _rigidbody.velocity.normalized;
         }
+
+        this.Raycasting();
     }
 
     private void FixedUpdate()
@@ -26,14 +30,16 @@ public class Bullet : SaiBehaviour
         this.Despawn();
     }
 
-    public void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        Bang(other.gameObject);
+        Debug.Log(transform.name + ": OnTriggerEnter " + other.transform.name);
+        this.Bang(other.gameObject);
     }
 
-    public void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter(Collision other)
     {
-        Bang(other.gameObject);
+        Debug.Log(transform.name + ": OnCollisionEnter " + other.transform.name);
+        this.Bang(other.gameObject);
     }
 
     private void Bang(GameObject other)
@@ -52,6 +58,31 @@ public class Bullet : SaiBehaviour
         }
     }
 
+    protected virtual void Raycasting()
+    {
+        Vector3 direction = (transform.position - this.lastPosition).normalized;
+        Vector3 position = transform.position;
+        Physics.Raycast(position, direction, out RaycastHit hit);
+        this.DebugRaycast(position, hit, direction);
+        this.lastPosition = transform.position;
+        if (hit.transform == null) return;
+        int hitLayer = hit.transform.gameObject.layer;
+
+
+        Debug.Log(transform.name + " => " + hit.transform.name + " : " + hitLayer);
+
+        Collider hitCollider = hit.transform.GetComponent<Collider>();
+
+        Physics.IgnoreCollision(this._collider, hitCollider, true);
+        if (hitLayer == MyLayerManager.instance.layerHero) return;
+        if (hitLayer == MyLayerManager.instance.layerCeiling) return;
+        Physics.IgnoreCollision(this._collider, hitCollider, false);
+
+        this.hitObject = hit.transform;        
+        Debug.Log(transform.name + ": Hit " + hit.transform.name);
+    }
+
+
     private void ReplaceImpactSound(GameObject other)
     {
         var sound = other.GetComponent<AudioSource>();
@@ -69,6 +100,12 @@ public class Bullet : SaiBehaviour
         this._collider.enabled = false;
         this._rigidbody.isKinematic = true;
         this.isDespawn = true;
+
+        //if (this.hitObject)
+        //{
+        //    Collider hitCollider = this.hitObject.GetComponent<Collider>();
+        //    Physics.IgnoreCollision(this._collider, hitCollider, true);
+        //}
     }
 
     protected virtual void Despawn()
@@ -88,6 +125,7 @@ public class Bullet : SaiBehaviour
         this._rigidbody.isKinematic = false;
         this.isDespawn = false;
         this.despawnTimer = 0f;
+        this.hitObject = null;
     }
 
     private void OnEnable()
