@@ -88,8 +88,6 @@ public class PlayerMovement : SaiBehaviour
 
         ground.ChangeLayer(this.layerGround);
         this.myGround = hit.transform;
-
-
     }
 
     protected virtual void DebugRaycast(Vector3 start, RaycastHit hit, Vector3 direction)
