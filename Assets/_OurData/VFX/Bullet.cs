@@ -12,7 +12,6 @@ public class Bullet : SaiBehaviour
     [SerializeField] protected bool isDespawn = false;
     [SerializeField] protected float despawnTimer = 0f;
     [SerializeField] protected float despawnDelay = 1f;
-    [SerializeField] protected Transform hitObject;
     [SerializeField] protected Vector3 lastPosition = Vector3.zero;
 
     private void Update()
@@ -22,7 +21,7 @@ public class Bullet : SaiBehaviour
             transform.right = _rigidbody.velocity.normalized;
         }
 
-        //this.Raycasting();
+        this.Raycasting();
     }
 
     private void FixedUpdate()
@@ -32,13 +31,11 @@ public class Bullet : SaiBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log(transform.name + ": OnTriggerEnter " + other.transform.name);
         this.Bang(other.gameObject);
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        //Debug.Log(transform.name + ": OnCollisionEnter " + other.transform.name);
         this.Bang(other.gameObject);
     }
 
@@ -65,20 +62,18 @@ public class Bullet : SaiBehaviour
         Physics.Raycast(position, direction, out RaycastHit hit);
         this.DebugRaycast(position, hit, direction);
         this.lastPosition = transform.position;
+
         if (hit.transform == null) return;
+
         int hitLayer = hit.transform.gameObject.layer;
 
-        //Debug.Log(transform.name + " => " + hit.transform.name + " : " + hitLayer);
-
         Collider hitCollider = hit.transform.GetComponent<Collider>();
-
         Physics.IgnoreCollision(this._collider, hitCollider, true);
+
         if (hitLayer == MyLayerManager.instance.layerHero) return;
         if (hitLayer == MyLayerManager.instance.layerCeiling) return;
-        Physics.IgnoreCollision(this._collider, hitCollider, false);
 
-        this.hitObject = hit.transform;        
-        //Debug.Log(transform.name + ": Hit " + hit.transform.name);
+        Physics.IgnoreCollision(this._collider, hitCollider, false);
     }
 
 
@@ -118,7 +113,6 @@ public class Bullet : SaiBehaviour
         this._rigidbody.isKinematic = false;
         this.isDespawn = false;
         this.despawnTimer = 0f;
-        this.hitObject = null;
     }
 
     private void OnEnable()
