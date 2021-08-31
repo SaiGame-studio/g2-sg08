@@ -24993,7 +24993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3950534fa80f7b4ba63202bbaf73a7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 1
+  debug: 0
   Renderers: []
   trail: {fileID: 8540800425313585758}
   impact: {fileID: 8540824174763004736}

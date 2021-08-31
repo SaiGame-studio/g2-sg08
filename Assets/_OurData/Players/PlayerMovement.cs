@@ -88,7 +88,6 @@ public class PlayerMovement : SaiBehaviour
         this.myGround = hit.transform;
     }
 
-
     protected virtual Vector2 InputToDirection()
     {
         Vector2 direction = Vector2.zero;

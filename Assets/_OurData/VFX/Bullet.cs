@@ -22,7 +22,7 @@ public class Bullet : SaiBehaviour
             transform.right = _rigidbody.velocity.normalized;
         }
 
-        this.Raycasting();
+        //this.Raycasting();
     }
 
     private void FixedUpdate()
@@ -32,13 +32,13 @@ public class Bullet : SaiBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(transform.name + ": OnTriggerEnter " + other.transform.name);
+        //Debug.Log(transform.name + ": OnTriggerEnter " + other.transform.name);
         this.Bang(other.gameObject);
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log(transform.name + ": OnCollisionEnter " + other.transform.name);
+        //Debug.Log(transform.name + ": OnCollisionEnter " + other.transform.name);
         this.Bang(other.gameObject);
     }
 
@@ -68,8 +68,7 @@ public class Bullet : SaiBehaviour
         if (hit.transform == null) return;
         int hitLayer = hit.transform.gameObject.layer;
 
-
-        Debug.Log(transform.name + " => " + hit.transform.name + " : " + hitLayer);
+        //Debug.Log(transform.name + " => " + hit.transform.name + " : " + hitLayer);
 
         Collider hitCollider = hit.transform.GetComponent<Collider>();
 
@@ -79,7 +78,7 @@ public class Bullet : SaiBehaviour
         Physics.IgnoreCollision(this._collider, hitCollider, false);
 
         this.hitObject = hit.transform;        
-        Debug.Log(transform.name + ": Hit " + hit.transform.name);
+        //Debug.Log(transform.name + ": Hit " + hit.transform.name);
     }
 
 
@@ -100,12 +99,6 @@ public class Bullet : SaiBehaviour
         this._collider.enabled = false;
         this._rigidbody.isKinematic = true;
         this.isDespawn = true;
-
-        //if (this.hitObject)
-        //{
-        //    Collider hitCollider = this.hitObject.GetComponent<Collider>();
-        //    Physics.IgnoreCollision(this._collider, hitCollider, true);
-        //}
     }
 
     protected virtual void Despawn()
