@@ -28,8 +28,20 @@ public class EnemySpawner : SaiBehaviour
 
     protected virtual bool CanSpawn()
     {
-        int childCount = transform.childCount;
+        int childCount = this.CountActiveObject();
+
         if (childCount >= this.spawnLimit) return false;
         return true;
+    }
+
+    protected virtual int CountActiveObject()
+    {
+        int count = 0;
+        foreach(Transform child in transform)
+        {
+            if (child.gameObject.activeSelf) count++;
+        }
+
+        return count;
     }
 }

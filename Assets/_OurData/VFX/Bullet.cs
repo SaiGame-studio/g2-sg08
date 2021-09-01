@@ -49,9 +49,14 @@ public class Bullet : SaiBehaviour
             ps.Stop();
         }
 
+        this.TrailStatus(false);
+    }
+
+    protected virtual void TrailStatus(bool status)
+    {
         foreach (var tr in trail.GetComponentsInChildren<TrailRenderer>())
         {
-            tr.enabled = false;
+            tr.enabled = status;
         }
     }
 
@@ -113,6 +118,8 @@ public class Bullet : SaiBehaviour
         this._rigidbody.isKinematic = false;
         this.isDespawn = false;
         this.despawnTimer = 0f;
+
+        this.TrailStatus(true);
     }
 
     private void OnEnable()
