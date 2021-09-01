@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1012650309362030}
-  m_LocalRotation: {x: 0, y: 0, z: 0.052116092, w: 0.9986411}
+  m_LocalRotation: {x: 0, y: 0, z: 0.042733684, w: 0.9990865}
   m_LocalPosition: {x: -0.19, y: -0.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5177,9 +5177,9 @@ GameObject:
   - component: {fileID: 114665035978887628}
   - component: {fileID: 114576218883810672}
   - component: {fileID: 1793250968589525374}
-  - component: {fileID: 1958652536}
-  - component: {fileID: 1958652535}
-  - component: {fileID: 1103593765}
+  - component: {fileID: 1961021136}
+  - component: {fileID: 1961021135}
+  - component: {fileID: 1961021137}
   m_Layer: 3
   m_Name: Warrior01
   m_TagString: Untagged
@@ -5358,6 +5358,9 @@ MonoBehaviour:
   - {fileID: 212595174435722440}
   - {fileID: 212563918803649054}
   - {fileID: 212294529632118400}
+  DefaultMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  EyesPaintMaterial: {fileID: 2100000, guid: 76c39f1b79f94a6093d87b9b386ee91c, type: 2}
+  EquipmentPaintMaterial: {fileID: 2100000, guid: 422f5f2ea71549499f154becb259725a, type: 2}
   Animator: {fileID: 95570844872250018}
   WeaponType: 0
   MeleeWeapon: {fileID: 4167466494787575452}
@@ -5493,7 +5496,7 @@ MonoBehaviour:
   - {fileID: 4526182659390974}
   - {fileID: 4526182659390974}
   Firearm: {fileID: 4298589388749716}
---- !u!143 &1958652536
+--- !u!143 &1961021136
 CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5511,7 +5514,20 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 1.125, z: 0}
---- !u!114 &1958652535
+--- !u!114 &1961021135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109987028385428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83dd1a316f9dd434f88a0cb5e2655f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heroClass: Warrior
+--- !u!114 &1961021137
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5525,25 +5541,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 0
   character: {fileID: 114665035978887628}
-  characterCtrl: {fileID: 1958652536}
+  characterCtrl: {fileID: 1961021136}
   firearm: {fileID: 8293370062714381484}
   firearmFire: {fileID: 1283604481290215046}
   armL: {fileID: 4314069016542968}
   armR: {fileID: 4957315015863976}
-  heroProfile: {fileID: 1103593765}
---- !u!114 &1103593765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1109987028385428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83dd1a316f9dd434f88a0cb5e2655f9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heroClass: Warrior
+  heroProfile: {fileID: 1961021135}
 --- !u!1 &1148429847025930
 GameObject:
   m_ObjectHideFlags: 0
@@ -5958,7 +5961,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 422f5f2ea71549499f154becb259725a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7871,7 +7874,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1471043012614032}
-  m_LocalRotation: {x: 0, y: 0, z: -0.035119474, w: 0.99938315}
+  m_LocalRotation: {x: 0, y: 0, z: -0.044505004, w: 0.9990092}
   m_LocalPosition: {x: 0.128, y: -0.175, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -8285,7 +8288,7 @@ MonoBehaviour:
   ArmR: {fileID: 4957315015863976}
   Shell: {fileID: 1692340995156084}
   FireMuzzle: {fileID: 198040722339201714}
-  CreateBullets: 1
+  CreateBullets: 0
   FireButtonDown: 0
   FireButtonPressed: 0
   FireButtonUp: 0
@@ -19833,7 +19836,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1933805290767638}
-  m_LocalRotation: {x: 0, y: 0, z: 0.009449888, w: 0.99995536}
+  m_LocalRotation: {x: 0, y: 0, z: 0.01105541, w: 0.9999389}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

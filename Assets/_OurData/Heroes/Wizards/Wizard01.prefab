@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1012650309362030}
-  m_LocalRotation: {x: 0, y: 0, z: 0.000011516091, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.06869953, w: 0.9976374}
   m_LocalPosition: {x: -0.19, y: -0.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5177,9 +5177,9 @@ GameObject:
   - component: {fileID: 114665035978887628}
   - component: {fileID: 114576218883810672}
   - component: {fileID: 1793250968589525374}
-  - component: {fileID: 605195034}
-  - component: {fileID: 605195035}
-  - component: {fileID: 8096160349255471542}
+  - component: {fileID: 7443985754731826515}
+  - component: {fileID: 8715101830275086754}
+  - component: {fileID: 3706504746987738117}
   m_Layer: 3
   m_Name: Wizard01
   m_TagString: Untagged
@@ -5358,6 +5358,9 @@ MonoBehaviour:
   - {fileID: 212595174435722440}
   - {fileID: 212563918803649054}
   - {fileID: 212294529632118400}
+  DefaultMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  EyesPaintMaterial: {fileID: 2100000, guid: 76c39f1b79f94a6093d87b9b386ee91c, type: 2}
+  EquipmentPaintMaterial: {fileID: 2100000, guid: 422f5f2ea71549499f154becb259725a, type: 2}
   Animator: {fileID: 95570844872250018}
   WeaponType: 0
   MeleeWeapon: {fileID: 4167466494787575452}
@@ -5493,7 +5496,27 @@ MonoBehaviour:
   - {fileID: 4526182659390974}
   - {fileID: 4526182659390974}
   Firearm: {fileID: 4298589388749716}
---- !u!143 &605195034
+--- !u!114 &7443985754731826515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109987028385428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a10171026793c2543b83d9b2b353401d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  character: {fileID: 114665035978887628}
+  characterCtrl: {fileID: 8715101830275086754}
+  firearm: {fileID: 8293370062714381484}
+  firearmFire: {fileID: 1283604481290215046}
+  armL: {fileID: 4314069016542968}
+  armR: {fileID: 4957315015863976}
+  heroProfile: {fileID: 3706504746987738117}
+--- !u!143 &8715101830275086754
 CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5511,27 +5534,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 1.125, z: 0}
---- !u!114 &605195035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1109987028385428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a10171026793c2543b83d9b2b353401d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debug: 0
-  character: {fileID: 114665035978887628}
-  characterCtrl: {fileID: 605195034}
-  firearm: {fileID: 8293370062714381484}
-  firearmFire: {fileID: 1283604481290215046}
-  armL: {fileID: 4314069016542968}
-  armR: {fileID: 4957315015863976}
-  heroProfile: {fileID: 8096160349255471542}
---- !u!114 &8096160349255471542
+--- !u!114 &3706504746987738117
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7871,7 +7874,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1471043012614032}
-  m_LocalRotation: {x: 0, y: 0, z: -0.08714422, w: 0.99619573}
+  m_LocalRotation: {x: 0, y: 0, z: -0.01851176, w: 0.9998287}
   m_LocalPosition: {x: 0.128, y: -0.175, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -19833,7 +19836,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1933805290767638}
-  m_LocalRotation: {x: 0, y: 0, z: 0.017450858, w: 0.99984777}
+  m_LocalRotation: {x: 0, y: 0, z: 0.0062642447, w: 0.9999804}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

@@ -14,11 +14,20 @@ public class HeroCtrl : SaiBehaviour
     public HeroProfile heroProfile;
 
     protected override void LoadComponents()
-    {
+    {        
         this.LoadCharacter();
         this.LoadCharCtrl();
         this.LoadCharBodyParts();
         this.LoadHeroProfile();
+        this.SetLayer();
+    }
+
+    protected virtual void SetLayer()
+    {
+        if (MyLayerManager.instance == null) return;
+        if (gameObject.layer != 0) return;
+        gameObject.layer = MyLayerManager.instance.layerHero;
+        Debug.LogWarning(transform.name+ ": Setlayer");
     }
 
     protected virtual void LoadHeroProfile()
