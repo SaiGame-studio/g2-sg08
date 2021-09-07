@@ -8,37 +8,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/prototype.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/HeroEditor/CyberpunkHeroes [CPH].unity
-    guid: 5cd70015b0574ef5b6ce3ec6a7445d72
-  - enabled: 1
-    path: Assets/HeroEditor/FantasyHeroes [FH].unity
-    guid: 97bd551564f449d89ed52d0cd06064b7
-  - enabled: 1
-    path: Assets/HeroEditor/Megapack.unity
-    guid: 44e64b29e7a9ff540a198446fc05c595
-  - enabled: 1
-    path: Assets/HeroEditor/MilitaryHeroes [MH].unity
-    guid: 16180b593f6143298124a5a8f38b5263
-  - enabled: 1
-    path: Assets/HeroEditor/FantasyHeroes/Scenes/TestRoom [FH].unity
-    guid: 9d7571c448164cb1844f98a17559942c
-  - enabled: 1
-    path: Assets/HeroEditor/QUICK START.unity
-    guid: cb276a8ee57340c9a153edf75bd96b62
-  - enabled: 1
-    path: Assets/HeroEditor/SpriteSequenceCapture.unity
-    guid: 1f5a1bce492e47e0af3dfb046d56d524
-  - enabled: 1
-    path: Assets/HeroEditor/UndeadHeroes [UH].unity
-    guid: 5413fbae07cc40238f383cd7ca6ec540
-  - enabled: 1
-    path: Assets/HeroEditor/MilitaryHeroes/Scenes/TestRoom [MH].unity
-    guid: 2fa87f2227f1484c83ee22c485367fda
-  - enabled: 1
-    path: Assets/HeroEditor/Megapack/Scenes/TestRoom [Megapack].unity
-    guid: 21494f4e4290f604c9776b4aa10ce143
-  - enabled: 1
-    path: Assets/HeroEditor/WesternHeroes [WH].unity
-    guid: 6e0bfdd4c21b4092aa2306ff3f51603c
   m_configObjects: {}

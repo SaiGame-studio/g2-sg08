@@ -80,10 +80,4 @@ public class HeroCtrl : SaiBehaviour
 
         Debug.Log(transform.name + ": LoadCharBodyParts");
     }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log(transform.name + ": This");
-        Debug.Log(collision.gameObject.name + ": collision");
-    }
 }
