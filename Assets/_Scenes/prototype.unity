@@ -1375,6 +1375,7 @@ MonoBehaviour:
   enemyName: Cube
   spawnLimit: 2
   spawnDelay: 2
+  spawnTimer: 0
 --- !u!4 &656806288
 Transform:
   m_ObjectHideFlags: 0
@@ -9016,6 +9017,7 @@ MonoBehaviour:
   enemyName: Scarecrow
   spawnLimit: 1
   spawnDelay: 2
+  spawnTimer: 0
   height: 4.3
 --- !u!4 &1896473219
 Transform:
