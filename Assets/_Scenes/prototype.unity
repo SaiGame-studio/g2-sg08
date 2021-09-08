@@ -404,6 +404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
+  hpMax: 1
   hp: 2
   deadEffect: EnemyDeath1
 --- !u!65 &292367545
@@ -904,7 +905,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
-  hp: 2
+  hpMax: 2
+  hp: 0
   deadEffect: EnemyDeath1
 --- !u!1 &497974654
 GameObject:
@@ -1371,8 +1373,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 0
   enemyName: Cube
-  spawnLimit: 20
-  spawnDelay: 0.2
+  spawnLimit: 2
+  spawnDelay: 2
 --- !u!4 &656806288
 Transform:
   m_ObjectHideFlags: 0
@@ -1996,6 +1998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
+  hpMax: 1
   hp: 2
   deadEffect: EnemyDeath1
 --- !u!1001 &885178476

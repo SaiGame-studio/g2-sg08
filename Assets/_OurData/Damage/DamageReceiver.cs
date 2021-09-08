@@ -3,8 +3,24 @@ using UnityEngine;
 public class DamageReceiver : SaiBehaviour
 {
     [Header("DamageReceiver")]
-    [SerializeField] protected int hp = 1;
+    [SerializeField] protected int hpMax = 2;
+    [SerializeField] protected int hp = 0;
     [SerializeField] protected string deadEffect = "EnemyDeath1";
+
+    private void Star()
+    {
+        this.Revival();
+    }
+
+    private void OnEnable()
+    {
+        this.Revival();
+    }
+
+    protected virtual void Revival()
+    {
+        this.hp = this.hpMax;
+    }
 
     public virtual bool IsDead()
     {
