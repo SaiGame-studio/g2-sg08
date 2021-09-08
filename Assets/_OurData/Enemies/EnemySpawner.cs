@@ -6,17 +6,27 @@ public class EnemySpawner : SaiBehaviour
     [SerializeField] protected string enemyName = "Cube";
     [SerializeField] protected int spawnLimit = 2;
     [SerializeField] protected float spawnDelay = 2;
+    [SerializeField] protected float spawnTimer = 0;
 
     private void Start()
+    {
+        //this.Spawning();
+    }
+
+    private void FixedUpdate()
     {
         this.Spawning();
     }
 
     protected virtual void Spawning()
     {
-        Invoke("Spawning", this.spawnDelay);
+        //Invoke("Spawning", this.spawnDelay);
 
         if (!this.CanSpawn()) return;
+
+        this.spawnTimer += Time.fixedDeltaTime;
+        if (this.spawnTimer < this.spawnDelay) return;
+        this.spawnTimer = 0;
 
         Vector3 spawnPos = this.SpawnPos();
 
@@ -29,9 +39,7 @@ public class EnemySpawner : SaiBehaviour
         float x = Random.Range(-7.0f, 7.0f);
         float y = Random.Range(7.0f, 9.0f);
 
-        Vector3 spawnPos = new Vector3(x, y, 0);
-
-        return spawnPos;
+        return new Vector3(x, y, 0);
     }
 
     protected virtual bool CanSpawn()
