@@ -13,10 +13,16 @@ public class SaiBehaviour : MonoBehaviour
 
     private void Reset()
     {
+        this.ResetValue();
         this.LoadComponents();
     }
 
     protected virtual void LoadComponents()
+    {
+        //Debug.Log("Need overide");
+    }
+
+    protected virtual void ResetValue()
     {
         //Debug.Log("Need overide");
     }
