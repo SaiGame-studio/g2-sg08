@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ScarecrowSpawner : EnemySpawner
+public class ScarecrowSpawner : Spawner
 {
     public static ScarecrowSpawner instance;
 

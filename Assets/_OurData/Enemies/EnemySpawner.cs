@@ -1,63 +1,51 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawner : SaiBehaviour
+public class EnemySpawner : Spawner
 {
     [Header("Enemy")]
-    [SerializeField] protected string enemyName = "Cube";
-    [SerializeField] protected int spawnLimit = 2;
-    [SerializeField] protected float spawnDelay = 2;
-    [SerializeField] protected float spawnTimer = 0;
+    [SerializeField] protected List<Transform> spawnPos;
+    [SerializeField] protected List<string> nameEnemies;
 
-    private void Start()
+    protected override void ResetValue()
     {
-        //this.Spawning();
+        base.ResetValue();
+        this.nameEnemies.Add("Larva");
     }
 
-    private void FixedUpdate()
+    protected override void LoadComponents()
     {
-        this.Spawning();
+        base.LoadComponents();
+        this.LoadSpawnPos();
     }
 
-    protected virtual void Spawning()
+    protected virtual void LoadSpawnPos()
     {
-        //Invoke("Spawning", this.spawnDelay);
-
-        if (!this.CanSpawn()) return;
-
-        this.spawnTimer += Time.fixedDeltaTime;
-        if (this.spawnTimer < this.spawnDelay) return;
-        this.spawnTimer = 0;
-
-        Vector3 spawnPos = this.SpawnPos();
-
-        Transform obj = ObjPoolManager.instance.Spawn(this.enemyName, spawnPos, transform.rotation, transform);
-        obj.gameObject.SetActive(true);
-    }
-
-    protected virtual Vector3 SpawnPos()
-    {
-        float x = Random.Range(-7.0f, 7.0f);
-        float y = Random.Range(7.0f, 9.0f);
-
-        return new Vector3(x, y, 0);
-    }
-
-    protected virtual bool CanSpawn()
-    {
-        int childCount = this.CountActiveObject();
-
-        if (childCount >= this.spawnLimit) return false;
-        return true;
-    }
-
-    protected virtual int CountActiveObject()
-    {
-        int count = 0;
-        foreach(Transform child in transform)
+        if (this.spawnPos.Count > 0) return;
+        foreach (Transform child in transform)
         {
-            if (child.gameObject.activeSelf) count++;
+            this.spawnPos.Add(child);
+            child.gameObject.SetActive(false);
         }
-
-        return count;
+        Debug.Log(transform.name + ": LoadSpawnPos");
     }
+
+    protected override Vector3 SpawnPos()
+    {
+        int rand = Random.Range(0, this.spawnPos.Count);
+        Transform pos = this.spawnPos[rand];
+
+        return pos.position;
+    }
+
+    protected override void BeforeSpawn()
+    {
+        this.enemyName = this.GetEnemyName();
+    }
+
+    protected virtual string GetEnemyName()
+    {
+        return this.nameEnemies[0];
+    }
+
 }

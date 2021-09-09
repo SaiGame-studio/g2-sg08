@@ -11,6 +11,7 @@ public class MyLayerManager : SaiBehaviour
     public int layerGround;
     public int layerCeiling;
     public int layerEnemy;
+    public int layerBullet;
 
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class MyLayerManager : SaiBehaviour
 
         Physics.IgnoreLayerCollision(this.layerHero, this.layerHero, true);
         Physics.IgnoreLayerCollision(this.layerHero, this.layerEnemy, true);
+        Physics.IgnoreLayerCollision(this.layerHero, this.layerBullet, true);
         Physics.IgnoreLayerCollision(this.layerEnemy, this.layerEnemy, true);
     }
 
@@ -38,11 +40,12 @@ public class MyLayerManager : SaiBehaviour
         this.layerGround = LayerMask.NameToLayer("Ground");
         this.layerCeiling = LayerMask.NameToLayer("Ceiling");
         this.layerEnemy = LayerMask.NameToLayer("Enemy");
+        this.layerBullet = LayerMask.NameToLayer("Bullet");
 
         if (this.layerHero < 0) Debug.LogError("Layer Hero is mising");
         if (this.layerGround < 0) Debug.LogError("Layer Ground is mising");
         if (this.layerCeiling < 0) Debug.LogError("Layer Ceiling is mising");
-        if (this.layerEnemy < 0) Debug.LogError("Layer Enemy is mising");
+        if (this.layerBullet < 0) Debug.LogError("Layer Bullet is mising");
 
         Debug.Log(transform.name + ": GetPlayers");
     }
