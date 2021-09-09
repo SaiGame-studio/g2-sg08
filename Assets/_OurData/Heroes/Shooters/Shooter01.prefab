@@ -10334,7 +10334,7 @@ GameObject:
   - component: {fileID: 9080448647135724171}
   - component: {fileID: 3553109738410075071}
   - component: {fileID: 342826011}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Shooter01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

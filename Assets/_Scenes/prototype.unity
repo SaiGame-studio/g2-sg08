@@ -477,7 +477,7 @@ GameObject:
   m_Component:
   - component: {fileID: 306959737}
   - component: {fileID: 306959738}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: PlayerMovement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -514,9 +514,6 @@ MonoBehaviour:
   character: {fileID: 0}
   charCtrl: {fileID: 0}
   myGround: {fileID: 0}
-  layerHero: 3
-  layerGround: 6
-  layerCeiling: 7
   walkingSpeed: 7
   jumpSpeed: 9
   fallingSpeed: 25
@@ -886,7 +883,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 464796891}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.23, y: 11.52, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1869259300}
@@ -1752,9 +1749,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
-  layerHero: 3
-  layerGround: 6
-  layerCeiling: 7
+  layerHero: 8
+  layerGround: 9
+  layerCeiling: 10
+  layerEnemy: 11
 --- !u!4 &831044247
 Transform:
   m_ObjectHideFlags: 0
@@ -8385,7 +8383,7 @@ GameObject:
   - component: {fileID: 1585941738}
   - component: {fileID: 1585941740}
   - component: {fileID: 1585941741}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Scarecrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8412,7 +8410,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1585941737}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11, y: 15.610001, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1722010045}
@@ -8430,8 +8428,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.482542, z: 1}
+  m_Center: {x: 0, y: 0.24127102, z: 0}
 --- !u!114 &1585941741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9271,7 +9269,7 @@ GameObject:
   - component: {fileID: 1984699132}
   - component: {fileID: 1984699131}
   - component: {fileID: 1984699134}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: Ground1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -8,11 +8,6 @@ public class PlayerMovement : SaiBehaviour
     public CharacterController charCtrl;
     [SerializeField] protected Transform myGround;
 
-    [Header("Layers")]
-    [SerializeField] protected int layerHero;
-    [SerializeField] protected int layerGround;
-    [SerializeField] protected int layerCeiling;
-
     [Header("Movement")]
     [SerializeField] protected float walkingSpeed = 7;
     [SerializeField] protected float jumpSpeed = 9;
@@ -34,10 +29,10 @@ public class PlayerMovement : SaiBehaviour
     [SerializeField] protected Vector2 direction;
     [SerializeField] protected Vector3 mouseToChar = Vector3.zero;
 
-    private void Awake()
+    private void Start()
     {
         this.jumbCount = this.jumbMax;
-        Physics.IgnoreLayerCollision(this.layerHero, this.layerCeiling, true);
+        Physics.IgnoreLayerCollision(MyLayerManager.instance.layerHero, MyLayerManager.instance.layerCeiling, true);
     }
 
     public void Update()
@@ -49,27 +44,6 @@ public class PlayerMovement : SaiBehaviour
         this.CharacterStateUpdate();
         this.Turning();
         this.Move();
-    }
-
-    protected override void LoadComponents()
-    {
-        base.LoadComponents();
-        this.GetPlayers();
-    }
-
-    protected virtual void GetPlayers()
-    {
-        if (this.layerHero > 0 && this.layerGround > 0 && this.layerCeiling > 0) return;
-
-        this.layerHero = LayerMask.NameToLayer("Hero");
-        this.layerGround = LayerMask.NameToLayer("Ground");
-        this.layerCeiling = LayerMask.NameToLayer("Ceiling");
-
-        if (this.layerHero < 0) Debug.LogError("Layer Hero is mising");
-        if (this.layerGround < 0) Debug.LogError("Layer Ground is mising");
-        if (this.layerCeiling < 0) Debug.LogError("Layer Ceiling is mising");
-
-        Debug.Log(transform.name + ": GetPlayers");
     }
 
     protected virtual void GroundFinding()
@@ -84,7 +58,7 @@ public class PlayerMovement : SaiBehaviour
         if (ground == null) return;
         if (this.myGround == hit.transform) return;
 
-        ground.ChangeLayer(this.layerGround);
+        ground.ChangeLayer(MyLayerManager.instance.layerGround);
         this.myGround = hit.transform;
     }
 
@@ -132,7 +106,7 @@ public class PlayerMovement : SaiBehaviour
     public virtual void ResetMyGround()
     {
         if (this.myGround == null) return;
-        this.myGround.GetComponent<Ground>().ChangeLayer(this.layerCeiling);
+        this.myGround.GetComponent<Ground>().ChangeLayer(MyLayerManager.instance.layerCeiling);
         this.myGround = null;
     }
 
