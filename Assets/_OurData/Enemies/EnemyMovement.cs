@@ -18,6 +18,18 @@ public class EnemyMovement : SaiBehaviour
         this.Turning();
     }
 
+    private void OnEnable()
+    {
+        Debug.Log(transform.name + ": OnEnable");
+        this.Renew();
+    }
+
+    protected virtual void Renew()
+    {
+        this.enemyCtrl._rigidbody.velocity = Vector3.zero;
+        this.enemyCtrl._rigidbody.angularVelocity = Vector3.zero;
+    }
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
