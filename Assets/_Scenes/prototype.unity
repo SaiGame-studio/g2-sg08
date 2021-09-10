@@ -385,7 +385,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 292367542}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.78, y: 4.7, z: 0}
+  m_LocalPosition: {x: -11.31, y: 4.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 754851924}
@@ -574,7 +574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 0
   enemyCtrl: {fileID: 1247887852}
-  target: {fileID: 0}
+  target: {fileID: 851630301}
   speed: 2
   direction: {x: 0, y: 0, z: 0}
 --- !u!1 &327829792
@@ -2132,7 +2132,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851630297}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.07, y: 4.69, z: 0}
+  m_LocalPosition: {x: 11.31, y: 4.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 754851924}
@@ -5457,6 +5457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 0
   _rigidbody: {fileID: 1247887856}
+  enemy: {fileID: 817246507}
 --- !u!4 &1247887853
 Transform:
   m_ObjectHideFlags: 0
@@ -8706,6 +8707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 0
   _rigidbody: {fileID: 0}
+  enemy: {fileID: 1722010045}
 --- !u!4 &1585941739
 Transform:
   m_ObjectHideFlags: 0

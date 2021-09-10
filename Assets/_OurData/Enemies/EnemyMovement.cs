@@ -13,6 +13,11 @@ public class EnemyMovement : SaiBehaviour
         this.Moving();
     }
 
+    private void FixedUpdate()
+    {
+        this.Turning();
+    }
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -48,5 +53,13 @@ public class EnemyMovement : SaiBehaviour
         if (this.target == null) return false;
 
         return true;
+    }
+
+    protected virtual void Turning()
+    {
+        Vector3 newScale = this.enemyCtrl.enemy.transform.localScale;
+        newScale.x = Mathf.Abs(newScale.x);
+        newScale.x *= this.direction.x * -1;
+        this.enemyCtrl.enemy.transform.localScale = newScale;
     }
 }
