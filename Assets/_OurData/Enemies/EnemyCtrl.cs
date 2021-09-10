@@ -18,7 +18,6 @@ public class EnemyCtrl : SaiBehaviour
     {
         if (this._rigidbody != null) return;
         this._rigidbody = GetComponent<Rigidbody>();
-
         Debug.Log(transform.name + ": LoadRigibody");
     }
 }
