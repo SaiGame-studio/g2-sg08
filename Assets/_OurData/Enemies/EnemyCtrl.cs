@@ -2,17 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyCtrl : MonoBehaviour
+public class EnemyCtrl : SaiBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("Enemy")]
+    public Rigidbody _rigidbody;
+
+
+    protected override void LoadComponents()
     {
-        
+        base.LoadComponents();
+        this.LoadRigibody();
     }
 
-    // Update is called once per frame
-    void Update()
+    protected virtual void LoadRigibody()
     {
-        
+        if (this._rigidbody != null) return;
+        this._rigidbody = GetComponent<Rigidbody>();
+
+        Debug.Log(transform.name + ": LoadRigibody");
     }
 }
