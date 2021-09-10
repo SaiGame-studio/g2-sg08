@@ -6,7 +6,6 @@ public class EnemyCtrl : SaiBehaviour
     public Rigidbody _rigidbody;
     public Transform enemy;
 
-
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -18,6 +17,11 @@ public class EnemyCtrl : SaiBehaviour
     {
         if (this._rigidbody != null) return;
         this._rigidbody = GetComponent<Rigidbody>();
+
+        this._rigidbody.constraints = RigidbodyConstraints.FreezePositionZ
+            | RigidbodyConstraints.FreezeRotationY
+            | RigidbodyConstraints.FreezeRotationZ;
+
         Debug.Log(transform.name + ": LoadRigibody");
     }
 

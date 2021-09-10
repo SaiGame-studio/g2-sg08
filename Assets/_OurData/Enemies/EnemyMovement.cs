@@ -59,7 +59,8 @@ public class EnemyMovement : SaiBehaviour
     {
         Vector3 newScale = this.enemyCtrl.enemy.transform.localScale;
         newScale.x = Mathf.Abs(newScale.x);
-        newScale.x *= this.direction.x * -1;
+        newScale.x *= this.direction.x * -1;//TODO: need optimize
+
         this.enemyCtrl.enemy.transform.localScale = newScale;
     }
 }

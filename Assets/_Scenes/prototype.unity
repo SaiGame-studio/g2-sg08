@@ -576,7 +576,7 @@ MonoBehaviour:
   enemyCtrl: {fileID: 1247887852}
   target: {fileID: 851630301}
   speed: 2
-  direction: {x: 0, y: 0, z: 0}
+  direction: {x: 1, y: 0, z: 0}
 --- !u!1 &327829792
 GameObject:
   m_ObjectHideFlags: 0
@@ -1540,6 +1540,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1974649835967953598, guid: 917c62cb18828b74f9d5b1adba8a411c,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974649835967953598, guid: 917c62cb18828b74f9d5b1adba8a411c,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1592,6 +1597,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771025906570419322, guid: 917c62cb18828b74f9d5b1adba8a411c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 917c62cb18828b74f9d5b1adba8a411c, type: 3}
@@ -5517,7 +5527,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 104
   m_CollisionDetection: 0
 --- !u!1 &1260725831
 GameObject:
@@ -8686,6 +8696,7 @@ GameObject:
   - component: {fileID: 1585941738}
   - component: {fileID: 1585941740}
   - component: {fileID: 1585941741}
+  - component: {fileID: 1585941742}
   m_Layer: 11
   m_Name: Scarecrow
   m_TagString: Untagged
@@ -8706,7 +8717,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 1585941742}
   enemy: {fileID: 1722010045}
 --- !u!4 &1585941739
 Transform:
@@ -8734,8 +8745,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.482542, z: 1}
-  m_Center: {x: 0, y: 0.24127102, z: 0}
+  m_Size: {x: 1, y: 1.8883, z: 1}
+  m_Center: {x: 0, y: 0.038392067, z: 0}
 --- !u!114 &1585941741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8752,6 +8763,22 @@ MonoBehaviour:
   hpMax: 2
   hp: 0
   deadEffect: EnemyDeath1
+--- !u!54 &1585941742
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585941737}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 104
+  m_CollisionDetection: 0
 --- !u!1 &1608324484
 GameObject:
   m_ObjectHideFlags: 0
@@ -9279,7 +9306,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1869259298}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11, y: -11, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8542114915830147174}
