@@ -51,5 +51,7 @@ public class DamageReceiver : SaiBehaviour
     protected virtual void Despawn()
     {
         ObjPoolManager.instance.Despawn(transform);
+        ScoreManager.instance.Kill();
+        ScoreManager.instance.GoldAdd(1);
     }
 }

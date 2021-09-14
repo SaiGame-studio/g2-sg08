@@ -4,9 +4,9 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
 
-    [Header("Layers")]
+    [Header("Score")]
     [SerializeField] protected int gold = 0;
-    [SerializeField] protected int killCount = 0;
+    [SerializeField] protected int kill = 0;
 
     private void Awake()
     {
@@ -14,9 +14,9 @@ public class ScoreManager : MonoBehaviour
         ScoreManager.instance = this;
     }
 
-    public virtual void KillCount()
+    public virtual void Kill()
     {
-        this.killCount++;
+        this.kill++;
     }
 
     public virtual void GoldAdd(int count)
@@ -24,4 +24,8 @@ public class ScoreManager : MonoBehaviour
         this.gold += count;
     }
 
+    public virtual void GoldDeduct(int count)
+    {
+        this.gold += count;
+    }
 }
