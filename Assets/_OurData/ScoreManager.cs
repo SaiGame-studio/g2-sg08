@@ -26,6 +26,6 @@ public class ScoreManager : MonoBehaviour
 
     public virtual void GoldDeduct(int count)
     {
-        this.gold += count;
+        this.gold -= count;
     }
 }
