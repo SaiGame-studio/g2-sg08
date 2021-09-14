@@ -5,6 +5,7 @@ public class EnemyCtrl : SaiBehaviour
     [Header("Enemy")]
     public Rigidbody _rigidbody;
     public Transform enemy;
+    public EnemyMovement enemyMovement;
 
     protected override void LoadComponents()
     {
@@ -29,6 +30,7 @@ public class EnemyCtrl : SaiBehaviour
     {
         if (this.enemy != null) return;
         this.enemy = transform.Find("Enemy");
+        this.enemyMovement = transform.Find("EnemyMovement").GetComponent<EnemyMovement>();
         Debug.Log(transform.name + ": LoadEnemy");
     }
 }

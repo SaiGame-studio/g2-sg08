@@ -6,6 +6,7 @@ public class EnemySpawner : Spawner
     [Header("Enemy")]
     [SerializeField] protected List<Transform> spawnPos;
     [SerializeField] protected List<string> nameEnemies;
+    [SerializeField] protected Transform target;
 
     protected override void ResetValue()
     {
@@ -41,6 +42,12 @@ public class EnemySpawner : Spawner
     protected override void BeforeSpawn()
     {
         this.enemyName = this.GetEnemyName();
+    }
+
+    protected override void AfterSpawn(Transform obj)
+    {
+        EnemyCtrl enemyCtrl = obj.GetComponent<EnemyCtrl>();
+        enemyCtrl.enemyMovement.SetTarget(this.target);
     }
 
     protected virtual string GetEnemyName()

@@ -69,10 +69,17 @@ public class EnemyMovement : SaiBehaviour
 
     protected virtual void Turning()
     {
+        if (this.direction.x == 0) return;
+
         Vector3 newScale = this.enemyCtrl.enemy.transform.localScale;
         newScale.x = Mathf.Abs(newScale.x);
         newScale.x *= this.direction.x * -1;//TODO: need optimize
 
         this.enemyCtrl.enemy.transform.localScale = newScale;
+    }
+
+    public virtual void SetTarget(Transform target)
+    {
+        this.target = target;
     }
 }

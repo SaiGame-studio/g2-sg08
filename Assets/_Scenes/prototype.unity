@@ -574,7 +574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 0
   enemyCtrl: {fileID: 1247887852}
-  target: {fileID: 851630301}
+  target: {fileID: 0}
   speed: 2
   direction: {x: 0, y: 0, z: 0}
 --- !u!1 &327829792
@@ -1482,7 +1482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &734732256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5293,6 +5293,7 @@ MonoBehaviour:
   - {fileID: 353273673}
   nameEnemies:
   - Larva
+  target: {fileID: 851630301}
 --- !u!4 &1074278872
 Transform:
   m_ObjectHideFlags: 0
@@ -5468,6 +5469,7 @@ MonoBehaviour:
   debug: 0
   _rigidbody: {fileID: 1247887856}
   enemy: {fileID: 817246507}
+  enemyMovement: {fileID: 324465120}
 --- !u!4 &1247887853
 Transform:
   m_ObjectHideFlags: 0
@@ -8719,6 +8721,7 @@ MonoBehaviour:
   debug: 0
   _rigidbody: {fileID: 1585941742}
   enemy: {fileID: 1722010045}
+  enemyMovement: {fileID: 0}
 --- !u!4 &1585941739
 Transform:
   m_ObjectHideFlags: 0
@@ -8796,7 +8799,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1608324485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9162,8 +9165,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heroManagers:
-  - {fileID: 734732256}
-  - {fileID: 1608324485}
   - {fileID: 2118954384}
 --- !u!1 &1816712790
 GameObject:
