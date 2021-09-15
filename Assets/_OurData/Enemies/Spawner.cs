@@ -56,11 +56,11 @@ public class Spawner : SaiBehaviour
     {
         int childCount = this.CountActiveObject();
 
-        if (childCount >= this.SpwamLimit()) return false;
+        if (childCount >= this.SpwamnLimit()) return false;
         return true;
     }
 
-    protected virtual int SpwamLimit()
+    protected virtual int SpwamnLimit()
     {
         this.finalSpawnLimit = this.spawnLimit;
         return this.finalSpawnLimit;

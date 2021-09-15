@@ -55,18 +55,18 @@ public class EnemySpawner : Spawner
         return this.nameEnemies[0];
     }
 
-    //protected override int SpwamLimit()
-    //{
-    //    int level = GameLevelManager.instance.Level();
-    //    this.finalSpawnLimit = this.spawnLimit * level;
-    //    return this.finalSpawnLimit;
-    //}
+    protected override int SpwamnLimit()
+    {
+        int level = GameLevelManager.instance.Level();
+        this.finalSpawnLimit = this.spawnLimit * level;
+        return this.finalSpawnLimit;
+    }
 
-    //protected override float SpawnDelay()
-    //{
-    //    int level = GameLevelManager.instance.Level();
-    //    this.finalSpawnDelay = this.spawnDelay - (level * 0.1f);
-    //    if (this.finalSpawnDelay < 0.2f) this.finalSpawnDelay = 0.2f;
-    //    return this.finalSpawnDelay;
-    //}
+    protected override float SpawnDelay()
+    {
+        int level = GameLevelManager.instance.Level();
+        this.finalSpawnDelay = this.spawnDelay - (level * 0.1f);
+        if (this.finalSpawnDelay < 0.2f) this.finalSpawnDelay = 0.2f;
+        return this.finalSpawnDelay;
+    }
 }
