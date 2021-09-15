@@ -1481,7 +1481,9 @@ MonoBehaviour:
   debug: 0
   enemyName: Cube
   spawnLimit: 2
+  finalSpawnLimit: 2
   spawnDelay: 2
+  finalSpawnDelay: 2
   spawnTimer: 0
 --- !u!4 &656806288
 Transform:
@@ -5319,7 +5321,9 @@ MonoBehaviour:
   debug: 0
   enemyName: Cube
   spawnLimit: 2
+  finalSpawnLimit: 2
   spawnDelay: 2
+  finalSpawnDelay: 2
   spawnTimer: 0
   spawnPos:
   - {fileID: 353273673}
@@ -8583,7 +8587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
-  secondPerLevel: 10
+  secondPerLevel: 5
   timer: 0
 --- !u!4 &1308040367
 Transform:
@@ -9473,7 +9477,9 @@ MonoBehaviour:
   debug: 0
   enemyName: Scarecrow
   spawnLimit: 1
+  finalSpawnLimit: 2
   spawnDelay: 2
+  finalSpawnDelay: 2
   spawnTimer: 0
   height: 4.3
 --- !u!4 &1896473219

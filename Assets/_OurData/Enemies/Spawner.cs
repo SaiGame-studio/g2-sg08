@@ -5,7 +5,9 @@ public class Spawner : SaiBehaviour
     [Header("Spawner")]
     [SerializeField] protected string enemyName = "Cube";
     [SerializeField] protected int spawnLimit = 2;
+    [SerializeField] protected int finalSpawnLimit = 2;
     [SerializeField] protected float spawnDelay = 2;
+    [SerializeField] protected float finalSpawnDelay = 2;
     [SerializeField] protected float spawnTimer = 0;
 
     private void FixedUpdate()
@@ -18,7 +20,7 @@ public class Spawner : SaiBehaviour
         if (!this.CanSpawn()) return;
 
         this.spawnTimer += Time.fixedDeltaTime;
-        if (this.spawnTimer < this.spawnDelay) return;
+        if (this.spawnTimer < this.SpawnDelay()) return;
         this.spawnTimer = 0;
 
         this.BeforeSpawn();
@@ -54,8 +56,20 @@ public class Spawner : SaiBehaviour
     {
         int childCount = this.CountActiveObject();
 
-        if (childCount >= this.spawnLimit) return false;
+        if (childCount >= this.SpwamLimit()) return false;
         return true;
+    }
+
+    protected virtual int SpwamLimit()
+    {
+        this.finalSpawnLimit = this.spawnLimit;
+        return this.finalSpawnLimit;
+    }
+
+    protected virtual float SpawnDelay()
+    {
+        this.finalSpawnDelay = this.spawnDelay;
+        return this.finalSpawnDelay;
     }
 
     protected virtual int CountActiveObject()

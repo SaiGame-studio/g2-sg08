@@ -26,4 +26,9 @@ public class GameLevelManager : MonoBehaviour
         this.level = (int) Mathf.Floor(this.timer / this.secondPerLevel);
         this.level += 1;
     }
+
+    public virtual int Level()
+    {
+        return this.level;
+    }
 }
