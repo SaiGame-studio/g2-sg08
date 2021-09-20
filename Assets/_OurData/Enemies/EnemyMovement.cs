@@ -20,7 +20,7 @@ public class EnemyMovement : SaiBehaviour
 
     private void OnEnable()
     {
-        Debug.Log(transform.name + ": OnEnable");
+        //Debug.Log(transform.name + ": OnEnable");
         this.Renew();
     }
 
