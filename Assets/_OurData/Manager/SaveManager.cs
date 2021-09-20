@@ -23,7 +23,8 @@ public class SaveManager : MonoBehaviour
 
     public virtual void LoadSaveGame()
     {
-        string stringSave = SaveSystem.GetString(this.GetSaveName());
+        //string stringSave = SaveSystem.GetString(this.GetSaveName());
+        string stringSave = PlayerPrefs.GetString(this.GetSaveName());
         Debug.Log("LoadSaveGame: " + stringSave);
     }
 
@@ -31,13 +32,14 @@ public class SaveManager : MonoBehaviour
     {
         Debug.Log("SaveGame");
         string stringSave = "abc stringSave ssss";
-        SaveSystem.SetString(this.GetSaveName(), stringSave);
+        //SaveSystem.SetString(this.GetSaveName(), stringSave);
+        PlayerPrefs.SetString(this.GetSaveName(), stringSave);
     }
 
     public virtual void Saving()
     {
         this.SaveGame();
-        Invoke("Saving", 2f);
+        //Invoke("Saving", 2f);
     }
 
     private void OnApplicationQuit()
