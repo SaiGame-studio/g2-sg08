@@ -18,7 +18,7 @@ public class SaveManager : MonoBehaviour
         this.LoadSaveGame();
     }
 
-    void OnApplicationQuit()
+    private void OnApplicationQuit()
     {
         this.SaveGame();
     }
@@ -28,18 +28,32 @@ public class SaveManager : MonoBehaviour
         return SaveManager.SAVE_1;
     }
 
+    protected virtual string GetSaveName(string dataName)
+    {
+        return SaveManager.SAVE_1 + "_" + dataName;
+    }
+
     public virtual void LoadSaveGame()
     {
-        //string stringSave = SaveSystem.GetString(this.GetSaveName());
-        string stringSave = PlayerPrefs.GetString(this.GetSaveName());
+        string stringSave = SaveSystem.GetString(this.GetSaveName());
+        //string stringSave = PlayerPrefs.GetString(this.GetSaveName());
         Debug.Log("LoadSaveGame: " + stringSave);
+
+        string jsonString = SaveSystem.GetString(this.GetSaveName("ScoreManager"));
+        Debug.Log("jsonString: " + jsonString);
+
+        ScoreManager.instance.FromJson(jsonString);
     }
 
     public virtual void SaveGame()
     {
         Debug.Log("SaveGame");
-        string stringSave = "aaaaaaaaaa";
-        //SaveSystem.SetString(this.GetSaveName(), stringSave);
-        PlayerPrefs.SetString(this.GetSaveName(), stringSave);
+        string stringSave = "bbbbbbbbbbbbbbb";
+        SaveSystem.SetString(this.GetSaveName(), stringSave);
+        //PlayerPrefs.SetString(this.GetSaveName(), stringSave);
+
+        string jsonString = JsonUtility.ToJson(ScoreManager.instance);
+        SaveSystem.SetString(this.GetSaveName("ScoreManager"), jsonString);
+        Debug.Log(jsonString);
     }
 }
