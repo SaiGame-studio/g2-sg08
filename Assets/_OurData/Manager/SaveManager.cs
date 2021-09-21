@@ -4,6 +4,8 @@ public class SaveManager : MonoBehaviour
 {
     public static SaveManager instance;
     private const string SAVE_1 = "save_1";
+    private const string SAVE_2 = "save_2";
+    private const string SAVE_3 = "save_3";
 
     private void Awake()
     {
@@ -14,6 +16,11 @@ public class SaveManager : MonoBehaviour
     private void Start()
     {
         this.LoadSaveGame();
+    }
+
+    void OnApplicationQuit()
+    {
+        this.SaveGame();
     }
 
     protected virtual string GetSaveName()
@@ -31,19 +38,8 @@ public class SaveManager : MonoBehaviour
     public virtual void SaveGame()
     {
         Debug.Log("SaveGame");
-        string stringSave = "abc stringSave ssss";
+        string stringSave = "aaaaaaaaaa";
         //SaveSystem.SetString(this.GetSaveName(), stringSave);
         PlayerPrefs.SetString(this.GetSaveName(), stringSave);
-    }
-
-    public virtual void Saving()
-    {
-        this.SaveGame();
-        //Invoke("Saving", 2f);
-    }
-
-    private void OnApplicationQuit()
-    {
-        this.Saving();
     }
 }
