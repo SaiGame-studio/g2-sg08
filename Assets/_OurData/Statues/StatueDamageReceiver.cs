@@ -1,4 +1,6 @@
-﻿public class StatueDamageReceiver : DamageReceiver
+﻿
+
+public class StatueDamageReceiver : DamageReceiver
 {
     protected override void ResetValue()
     {
