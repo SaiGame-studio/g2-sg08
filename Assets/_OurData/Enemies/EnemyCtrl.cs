@@ -6,12 +6,22 @@ public class EnemyCtrl : SaiBehaviour
     public Rigidbody _rigidbody;
     public Transform enemy;
     public EnemyMovement enemyMovement;
+    public DamageReceiver damageReceiver;
 
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadRigibody();
         this.LoadEnemy();
+        this.LoadEnemyReceiver();
+    }
+
+    protected virtual void LoadEnemyReceiver()
+    {
+        if (this.damageReceiver != null) return;
+        this.damageReceiver = GetComponent<DamageReceiver>();
+
+        Debug.Log(transform.name + ": LoadEnemyReceiver");
     }
 
     protected virtual void LoadRigibody()

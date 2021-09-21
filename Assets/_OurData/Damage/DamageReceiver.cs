@@ -17,6 +17,11 @@ public class DamageReceiver : SaiBehaviour
         this.Revival();
     }
 
+    public virtual int HP()
+    {
+        return this.hp;
+    }
+
     protected virtual void Revival()
     {
         this.hp = this.hpMax;
