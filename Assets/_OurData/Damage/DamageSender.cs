@@ -14,11 +14,26 @@ public class DamageSender : SaiBehaviour
         this.SendDamage(collision);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        //Debug.Log("this: " + transform.name);
+        //Debug.Log("Collider: " + other.gameObject.name);
+        this.SendDamage(other.gameObject);
+    }
+
     protected virtual void SendDamage(Collision collision)
     {
         DamageReceiver damageReveiver = collision.gameObject.GetComponent<DamageReceiver>();
         if (damageReveiver == null) return;
 
         damageReveiver.Receive(this.damage);
+    }
+
+    protected virtual void SendDamage(GameObject coliderObj)
+    {
+        DamageReceiver damageReveiver = coliderObj.GetComponent<DamageReceiver>();
+        if (damageReveiver == null) return;
+
+        damageReveiver.Receive(this.damage, this);
     }
 }

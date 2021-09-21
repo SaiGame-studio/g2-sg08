@@ -34,6 +34,11 @@ public class DamageReceiver : SaiBehaviour
         this.Dying();
     }
 
+    public virtual void Receive(int damage, DamageSender sender)
+    {
+        this.Receive(damage);
+    }
+
     protected virtual void Dying()
     {
         if (!this.IsDead()) return;

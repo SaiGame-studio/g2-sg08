@@ -49,4 +49,16 @@ public class MyLayerManager : SaiBehaviour
 
         Debug.Log(transform.name + ": GetPlayers");
     }
+
+    //void GetSpeedRandom()
+    //{
+    //    List<float> speedList = new List<float>();
+    //    speedList.Add(10);
+    //    speedList.Add(20);
+    //    speedList.Add(30);
+    //    speedList.Add(40);
+
+    //    int rand = Random.Range(0, speedList.Count - 1);
+    //    float finalSpeed = speedList[rand];
+    //}
 }
