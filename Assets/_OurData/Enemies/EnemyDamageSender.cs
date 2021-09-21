@@ -25,8 +25,8 @@ public class EnemyDamageSender : DamageSender
         DamageReceiver damageReveiver = coliderObj.GetComponent<DamageReceiver>();
         if (damageReveiver == null) return;
 
-        int damage = this.enemyCtrl.damageReceiver.HP();
-        damageReveiver.Receive(damage, this);
-        this.enemyCtrl.damageReceiver.Receive(damage);
+        int currentHP = this.enemyCtrl.damageReceiver.HP();
+        damageReveiver.Receive(currentHP);
+        this.enemyCtrl.damageReceiver.Receive(currentHP);
     }
 }
