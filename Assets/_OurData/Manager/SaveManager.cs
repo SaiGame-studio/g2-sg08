@@ -31,7 +31,7 @@ public class SaveManager : MonoBehaviour
     public virtual void LoadSaveGame()
     {
         string jsonString = SaveSystem.GetString(this.GetSaveName());
-        Debug.Log("jsonString: " + jsonString);
+        //Debug.Log("jsonString: " + jsonString);
         ScoreManager.instance.FromJson(jsonString);
     }
 
@@ -39,6 +39,6 @@ public class SaveManager : MonoBehaviour
     {
         string jsonString = JsonUtility.ToJson(ScoreManager.instance);
         SaveSystem.SetString(this.GetSaveName(), jsonString);
-        Debug.Log(jsonString);
+        //Debug.Log(jsonString);
     }
 }

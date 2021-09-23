@@ -13,6 +13,7 @@ public class EnemyCtrl : SaiBehaviour
         base.LoadComponents();
         this.LoadRigibody();
         this.LoadEnemy();
+        this.LoadEnemyMovement();
         this.LoadEnemyReceiver();
     }
 
@@ -20,7 +21,6 @@ public class EnemyCtrl : SaiBehaviour
     {
         if (this.damageReceiver != null) return;
         this.damageReceiver = GetComponent<DamageReceiver>();
-
         Debug.Log(transform.name + ": LoadEnemyReceiver");
     }
 
@@ -40,7 +40,14 @@ public class EnemyCtrl : SaiBehaviour
     {
         if (this.enemy != null) return;
         this.enemy = transform.Find("Enemy");
-        this.enemyMovement = transform.Find("EnemyMovement").GetComponent<EnemyMovement>();
+        Debug.Log(transform.name + ": LoadEnemy");
+    }
+
+    protected virtual void LoadEnemyMovement()
+    {
+        if (this.enemyMovement != null) return;
+        Transform moveTransform = transform.Find("EnemyMovement");
+        if (moveTransform) this.enemyMovement = moveTransform.GetComponent<EnemyMovement>();
         Debug.Log(transform.name + ": LoadEnemy");
     }
 }

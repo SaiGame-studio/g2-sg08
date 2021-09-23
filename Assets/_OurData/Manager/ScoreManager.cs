@@ -31,9 +31,11 @@ public class ScoreManager : MonoBehaviour
         this.gold += count;
     }
 
-    public virtual void GoldDeduct(int count)
+    public virtual bool GoldDeduct(int count)
     {
+        if (this.gold < count) return false;
         this.gold -= count;
+        return true;
     }
 
     public virtual int GetGold()
