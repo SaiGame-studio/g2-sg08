@@ -22,6 +22,7 @@ public class StatueInteractable : PlayerInteractable
 
     public override void Interact()
     {
-        this.statueCtrl.statueLevel.Up(1);
+        if (this.statueCtrl.statueDamageReceiver.IsHPFull()) this.statueCtrl.statueLevel.Up(1);
+        else this.statueCtrl.statueDamageReceiver.Heal();
     }
 }

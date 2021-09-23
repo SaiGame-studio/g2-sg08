@@ -640,6 +640,7 @@ MonoBehaviour:
   debug: 0
   statueLevel: {fileID: 317115999}
   statueInteractable: {fileID: 317116000}
+  statueDamageReceiver: {fileID: 317115997}
 --- !u!1 &324465118
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,7 +946,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 353273672}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.42, y: 2, z: 0}
+  m_LocalPosition: {x: -11.08, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1074278872}
@@ -9050,7 +9051,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1585941742}
   enemy: {fileID: 1722010045}
   enemyMovement: {fileID: 0}
-  damageReceiver: {fileID: 0}
+  damageReceiver: {fileID: 1585941741}
 --- !u!4 &1585941739
 Transform:
   m_ObjectHideFlags: 0

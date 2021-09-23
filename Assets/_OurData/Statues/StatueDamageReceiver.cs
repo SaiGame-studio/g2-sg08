@@ -19,4 +19,18 @@ public class StatueDamageReceiver : DamageReceiver
     {
         //is game over
     }
+
+    public virtual bool Heal()
+    {
+        int loseHp = this.hpMax - this.hp;
+        int currentGold = ScoreManager.instance.GetGold();
+
+        int cost = loseHp;
+        if (currentGold <= loseHp) loseHp = currentGold;
+        if (!ScoreManager.instance.GoldDeduct(loseHp)) return false;
+
+        this.hp += loseHp;
+
+        return true;
+    }
 }
