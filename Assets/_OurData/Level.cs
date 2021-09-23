@@ -16,7 +16,7 @@ public class Level : SaiBehaviour
         if (!this.canLevelUp) return this.level;
 
         this.level += up;
-        Debug.Log(transform.name + ": Up " + this.level);
+        //Debug.Log(transform.name + ": Up " + this.level);
         return this.level;
     }
 }

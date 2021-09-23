@@ -41,6 +41,6 @@ public class StatueLevel : Level
         if (status) playerManager.playerInput.interactable = this.statueCtrl.statueInteractable;
         else playerManager.playerInput.interactable = null;
 
-        //Debug.Log(transform.name + ": Level Up "+ status.ToString());
+        Debug.Log(transform.name + ": Level Up "+ status.ToString());
     }
 }
