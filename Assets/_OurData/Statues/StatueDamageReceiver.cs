@@ -26,10 +26,11 @@ public class StatueDamageReceiver : DamageReceiver
         int currentGold = ScoreManager.instance.GetGold();
 
         int cost = loseHp;
-        if (currentGold <= loseHp) loseHp = currentGold;
-        if (!ScoreManager.instance.GoldDeduct(loseHp)) return false;
+            
+        if (currentGold <= loseHp) cost = currentGold;
+        if (!ScoreManager.instance.GoldDeduct(cost)) return false;
 
-        this.hp += loseHp;
+        this.hp += cost;
 
         return true;
     }
