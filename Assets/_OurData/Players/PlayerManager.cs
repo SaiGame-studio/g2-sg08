@@ -6,6 +6,7 @@ public class PlayerManager : SaiBehaviour
     public static PlayerManager instance;
 
     public HeroCtrl currentHero;
+    public PlayerInput playerInput;
     public PlayerAttacking playerAttacking;
     public PlayerMovement playerMovement;
     public BowExample bowExample;
@@ -32,6 +33,7 @@ public class PlayerManager : SaiBehaviour
         this.playerAttacking = transform.GetComponentInChildren<PlayerAttacking>();
         this.playerMovement = transform.GetComponentInChildren<PlayerMovement>();
         this.bowExample = transform.GetComponentInChildren<BowExample>();
+        this.playerInput = transform.GetComponentInChildren<PlayerInput>();
 
         Debug.Log(transform.name + ": LoadPlayerComponents");
     }

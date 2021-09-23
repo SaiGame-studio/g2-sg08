@@ -9,9 +9,12 @@ public class DamageSender : SaiBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        //Debug.Log("this: " + transform.name);
-        //Debug.Log("collision: " + collision.gameObject.name);
         this.SendDamage(collision.gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        this.SendDamage(other.gameObject);
     }
 
     protected virtual void SendDamage(GameObject coliderObj)
