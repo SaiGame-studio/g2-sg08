@@ -19,9 +19,9 @@ public class PlayerMovement : SaiBehaviour
     [SerializeField] protected bool jumbed = false;
 
     [Header("Input")]
-    [SerializeField] protected float inputHorizontalRaw = 0f;
-    [SerializeField] protected float inputVerticalRaw = 0f;
-    [SerializeField] protected float inputJumbRaw = 0f;
+    public float inputHorizontalRaw = 0f;
+    public float inputVerticalRaw = 0f;
+    public float inputJumbRaw = 0f;
     [SerializeField] protected bool pressJumb = false;
 
     [Header("Vectors")]
@@ -66,9 +66,9 @@ public class PlayerMovement : SaiBehaviour
     {
         Vector2 direction = Vector2.zero;
 
-        this.inputHorizontalRaw = Input.GetAxisRaw("Horizontal");
-        this.inputVerticalRaw = Input.GetAxisRaw("Vertical");
-        this.inputJumbRaw = Input.GetAxisRaw("Jump");
+        //this.inputHorizontalRaw = Input.GetAxisRaw("Horizontal");
+        //this.inputVerticalRaw = Input.GetAxisRaw("Vertical");
+        //this.inputJumbRaw = Input.GetAxisRaw("Jump");
 
         direction.x = this.inputHorizontalRaw;
         direction.y = this.inputVerticalRaw;
@@ -76,6 +76,8 @@ public class PlayerMovement : SaiBehaviour
 
         if (direction.y > 0) this.pressJumb = true;
         else this.pressJumb = false;
+
+        if (direction.y < 0) this.speed.y = -16f;
 
         this.direction = direction;
         return direction;

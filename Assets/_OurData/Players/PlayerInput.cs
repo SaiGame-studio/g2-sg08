@@ -8,6 +8,7 @@ public class PlayerInput : SaiBehaviour
     private void Update()
     {
         this.Interacting();
+        this.Moving();
     }
 
     protected virtual void Interacting()
@@ -17,4 +18,11 @@ public class PlayerInput : SaiBehaviour
         if (Input.GetKeyDown("f")) this.interactable.Interact();
     }
 
+    protected virtual void Moving()
+    {
+        PlayerMovement playerMovement = PlayerManager.instance.playerMovement;
+        playerMovement.inputHorizontalRaw = Input.GetAxisRaw("Horizontal");
+        playerMovement.inputVerticalRaw = Input.GetAxisRaw("Vertical");
+        playerMovement.inputJumbRaw = Input.GetAxisRaw("Jump");
+    }
 }

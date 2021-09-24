@@ -69,4 +69,29 @@ public class DamageReceiver : SaiBehaviour
         ScoreManager.instance.Kill();
         ScoreManager.instance.GoldAdd(1);
     }
+
+    public virtual bool Heal()
+    {
+        int loseHp = this.hpMax - this.hp;
+        int currentGold = ScoreManager.instance.GetGold();
+
+        int cost = loseHp;
+
+        if (currentGold <= loseHp) cost = currentGold;
+        if (!ScoreManager.instance.GoldDeduct(cost)) return false;
+
+        this.hp += cost;
+
+        return true;
+    }
+
+    public virtual void SetHPMax(int newHPMax)
+    {
+        this.hpMax = newHPMax;
+    }
+
+    public virtual void SetHP(int newHP)
+    {
+        this.hp = newHP;
+    }
 }

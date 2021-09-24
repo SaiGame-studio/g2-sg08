@@ -43,4 +43,14 @@ public class StatueLevel : Level
 
         //Debug.Log(transform.name + ": Level Up "+ status.ToString());
     }
+
+    public override int Up(int up)
+    {
+        base.Up(up);
+        int newHpMax = this.level * this.levelCost;
+        this.statueCtrl.statueDamageReceiver.SetHPMax(newHpMax);
+        this.statueCtrl.statueDamageReceiver.SetHP(newHpMax);
+
+        return this.level;
+    }
 }
