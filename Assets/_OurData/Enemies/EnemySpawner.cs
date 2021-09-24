@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemySpawner : Spawner
 {
     [Header("Enemy")]
-    [SerializeField] protected List<Transform> spawnPos;
+    //[SerializeField] protected List<Transform> spawnPos;
     [SerializeField] protected List<string> nameEnemies;
     [SerializeField] protected Transform target;
 
@@ -17,24 +17,28 @@ public class EnemySpawner : Spawner
     protected override void LoadComponents()
     {
         base.LoadComponents();
-        this.LoadSpawnPos();
+        this.LoadTarget();
+        //this.LoadSpawnPos();
     }
 
-    protected virtual void LoadSpawnPos()
-    {
-        if (this.spawnPos.Count > 0) return;
-        foreach (Transform child in transform)
-        {
-            this.spawnPos.Add(child);
-            child.gameObject.SetActive(false);
-        }
-        Debug.Log(transform.name + ": LoadSpawnPos");
-    }
+    //protected virtual void LoadSpawnPos()
+    //{
+    //    if (this.spawnPos.Count > 0) return;
+    //    foreach (Transform child in transform)
+    //    {
+    //        this.spawnPos.Add(child);
+    //        //child.gameObject.SetActive(false);
+    //    }
+    //    Debug.Log(transform.name + ": LoadSpawnPos");
+    //}
+
 
     protected override Vector3 SpawnPos()
     {
-        int rand = Random.Range(0, this.spawnPos.Count);
-        Transform pos = this.spawnPos[rand];
+        //int rand = Random.Range(0, this.spawnPos.Count);
+        //Transform pos = this.spawnPos[rand];
+
+        Transform pos = SpawnPosManager.instance.GetPos(0);
 
         return pos.position;
     }
@@ -68,5 +72,13 @@ public class EnemySpawner : Spawner
         this.finalSpawnDelay = this.spawnDelay - (level * 0.1f);
         if (this.finalSpawnDelay < 0.2f) this.finalSpawnDelay = 0.2f;
         return this.finalSpawnDelay;
+    }
+
+    protected virtual void LoadTarget()
+    {
+        if (this.target != null) return;
+        this.target = GameObject.Find("EnemyGate1").transform;
+
+        Debug.Log(transform.name + ": LoadTarget");
     }
 }

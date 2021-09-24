@@ -6,20 +6,35 @@ public class StatueCtrl : SaiBehaviour
     public StatueLevel statueLevel;
     public StatueInteractable statueInteractable;
     public StatueDamageReceiver statueDamageReceiver;
+    public Collider _collider;
+    public Transform statue;
+    public Transform gravestone;
 
     protected override void LoadComponents()
     {
         this.LoadStatue();
         this.LoadStatueInteractable();
         this.LoadStatueDamageReceiver();
+        this.LoadColider();
     }
 
     protected virtual void LoadStatue()
     {
         if (this.statueLevel != null) return;
         this.statueLevel = GetComponent<StatueLevel>();
+        this.statue = transform.Find("Statue");
+        this.gravestone = transform.Find("Gravestone");
+        this.gravestone.gameObject.SetActive(false);
 
         Debug.Log(transform.name + ": LoadStatue");
+    }
+
+    protected virtual void LoadColider()
+    {
+        if (this._collider != null) return;
+        this._collider = GetComponent<Collider>();
+
+        Debug.Log(transform.name + ": LoadColider");
     }
 
     protected virtual void LoadStatueInteractable()

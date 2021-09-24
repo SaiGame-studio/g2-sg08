@@ -1,11 +1,21 @@
-﻿
+﻿using UnityEngine;
 
 public class StatueDamageReceiver : DamageReceiver
 {
-    protected override void ResetValue()
+    [Header("Statue")]
+    public StatueCtrl statueCtrl;
+
+    protected override void LoadComponents()
     {
-        //this.hpMax = 20;
-        //this.hp = 20;
+        this.LoadStatueCtrl();
+    }
+
+    protected virtual void LoadStatueCtrl()
+    {
+        if (this.statueCtrl != null) return;
+        this.statueCtrl = GetComponent<StatueCtrl>();
+
+        Debug.Log(transform.name + ": LoadStatueCtrl");
     }
 
     public override void Receive(int damage, DamageSender sender)
@@ -17,6 +27,8 @@ public class StatueDamageReceiver : DamageReceiver
 
     protected override void Despawn()
     {
-        //is game over
+        this.statueCtrl.statue.gameObject.SetActive(false);
+        this.statueCtrl.gravestone.gameObject.SetActive(true);
+        this.statueCtrl._collider.enabled = false;
     }
 }
