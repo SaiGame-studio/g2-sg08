@@ -4203,7 +4203,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 353273672}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.89, y: 1.5, z: 0}
+  m_LocalPosition: {x: -15, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1438448060}
@@ -8409,6 +8409,7 @@ GameObject:
   m_Component:
   - component: {fileID: 686080499}
   - component: {fileID: 686080498}
+  - component: {fileID: 686080500}
   m_Layer: 0
   m_Name: EnemyGate1
   m_TagString: Untagged
@@ -8443,6 +8444,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &686080500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686080497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdc0d7eb481945b4a9ef6f1703a44146, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  _collider: {fileID: 686080498}
+  gateId: 1
+  nextGate: {fileID: 1277957650}
+  spawnPos: {fileID: 636901062}
 --- !u!1 &734732255
 GameObject:
   m_ObjectHideFlags: 0
@@ -15877,6 +15895,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1277957652}
   - component: {fileID: 1277957651}
+  - component: {fileID: 1277957653}
   m_Layer: 0
   m_Name: EnemyGate2
   m_TagString: Untagged
@@ -15911,6 +15930,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1277957653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277957650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdc0d7eb481945b4a9ef6f1703a44146, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  _collider: {fileID: 1277957651}
+  gateId: 2
+  nextGate: {fileID: 1835046556}
+  spawnPos: {fileID: 184292402}
 --- !u!1 &1308040365
 GameObject:
   m_ObjectHideFlags: 0
@@ -17035,6 +17071,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1835046558}
   - component: {fileID: 1835046557}
+  - component: {fileID: 1835046559}
   m_Layer: 0
   m_Name: EnemyGate3
   m_TagString: Untagged
@@ -17069,6 +17106,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1835046559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835046556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdc0d7eb481945b4a9ef6f1703a44146, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  _collider: {fileID: 1835046557}
+  gateId: 3
+  nextGate: {fileID: 0}
+  spawnPos: {fileID: 1629777928}
 --- !u!1 &1869259298
 GameObject:
   m_ObjectHideFlags: 0

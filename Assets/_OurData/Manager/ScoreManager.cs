@@ -46,6 +46,7 @@ public class ScoreManager : MonoBehaviour
     public virtual void FromJson(string jsonString)
     {
         ScoreData obj = JsonUtility.FromJson<ScoreData>(jsonString);
+        if (obj == null) return;
         this.kill = obj.kill;
         this.gold = obj.gold;
     }

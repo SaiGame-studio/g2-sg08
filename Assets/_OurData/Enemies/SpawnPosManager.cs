@@ -35,5 +35,4 @@ public class SpawnPosManager : SaiBehaviour
     {
         return this.spawnPos[index];
     }
-
 }
