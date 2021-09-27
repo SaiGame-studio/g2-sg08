@@ -29,6 +29,20 @@ public class StatueDamageReceiver : DamageReceiver
     {
         this.statueCtrl.statue.gameObject.SetActive(false);
         this.statueCtrl.gravestone.gameObject.SetActive(true);
-        this.statueCtrl._collider.enabled = false;
+        //this.statueCtrl._collider.enabled = false;
+        gameObject.layer = MyLayerManager.instance.layerStatueBroken;
+    }
+
+    public override bool Heal()
+    {
+        bool healed = base.Heal();
+        if (!healed) return false;
+
+        this.statueCtrl.statue.gameObject.SetActive(true);
+        this.statueCtrl.gravestone.gameObject.SetActive(false);
+        //this.statueCtrl._collider.enabled = true;
+        gameObject.layer = MyLayerManager.instance.layerStatue;
+
+        return true;
     }
 }

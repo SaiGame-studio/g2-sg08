@@ -47,7 +47,7 @@ public class EnemyGate : SaiBehaviour
 
     protected virtual void MoveEnemy(GameObject enemy)
     {
-        Debug.Log("MoveEnemy: " + enemy.name);
+        //Debug.Log("MoveEnemy: " + enemy.name);
         int layer = enemy.layer;
         if (layer != MyLayerManager.instance.layerEnemy) return;
         enemy.transform.position = this.spawnPos.transform.position;

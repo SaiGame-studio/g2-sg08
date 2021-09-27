@@ -81,6 +81,8 @@ public class ObjPoolManager : SaiBehaviour
 
     public virtual void Despawn(Transform instance)
     {
+        Transform obj = this.Pool().GetPrefab(instance);
+        if (obj) return;//Already despawn, waiting for bug happen again;
         this.Pool().Despawn(instance);
     }
 }
