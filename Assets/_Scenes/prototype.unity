@@ -8408,8 +8408,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 686080499}
-  - component: {fileID: 686080498}
   - component: {fileID: 686080500}
+  - component: {fileID: 686080498}
   m_Layer: 0
   m_Name: EnemyGate1
   m_TagString: Untagged
@@ -9434,7 +9434,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 954281704}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.88, y: 0, z: 0}
+  m_LocalPosition: {x: 14.78, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 686080499}
@@ -16131,7 +16131,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1438448059}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15, y: 0, z: 0}
+  m_LocalPosition: {x: 3.83, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 353273673}
