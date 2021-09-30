@@ -5,7 +5,6 @@ public class HeroLevel : Level
     [Header("Hero")]
     public HeroCtrl heroCtrl;
 
-
     protected override void LoadComponents()
     {
         base.LoadComponents();
