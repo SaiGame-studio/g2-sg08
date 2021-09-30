@@ -12901,6 +12901,7 @@ MonoBehaviour:
   enemy: {fileID: 817246507}
   enemyMovement: {fileID: 324465120}
   damageReceiver: {fileID: 1247887855}
+  enemyLevel: {fileID: 1247887858}
 --- !u!4 &1247887853
 Transform:
   m_ObjectHideFlags: 0
@@ -16349,6 +16350,7 @@ MonoBehaviour:
   enemy: {fileID: 1722010045}
   enemyMovement: {fileID: 0}
   damageReceiver: {fileID: 1585941741}
+  enemyLevel: {fileID: 0}
 --- !u!4 &1585941739
 Transform:
   m_ObjectHideFlags: 0

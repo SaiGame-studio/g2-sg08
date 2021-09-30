@@ -18,4 +18,15 @@ public class EnemyLevel : Level
 
         Debug.Log(transform.name + ": LoadEnemyCtrl");
     }
+
+    public override int Set(int newLevel)
+    {
+        base.Set(newLevel);
+
+        int newMaxHp = this.level + 2;
+        this.enemyCtrl.damageReceiver.SetHPMax(newMaxHp);
+        this.enemyCtrl.damageReceiver.SetHP(newMaxHp);
+
+        return this.level;
+    }
 }

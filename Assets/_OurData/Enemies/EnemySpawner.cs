@@ -4,7 +4,6 @@ using UnityEngine;
 public class EnemySpawner : Spawner
 {
     [Header("Enemy")]
-    //[SerializeField] protected List<Transform> spawnPos;
     [SerializeField] protected List<string> nameEnemies;
     [SerializeField] protected Transform target;
 
@@ -38,7 +37,7 @@ public class EnemySpawner : Spawner
         enemyCtrl.enemyMovement.SetTarget(this.target);
 
         int gameLevel = GameLevelManager.instance.Level();
-
+        enemyCtrl.enemyLevel.Set(gameLevel);
     }
 
     protected virtual string GetEnemyName()

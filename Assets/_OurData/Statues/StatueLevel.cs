@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class StatueLevel : Level
+public class StatueLevel : MyLevel
 {
     [Header("Statue")]
     public StatueCtrl statueCtrl;

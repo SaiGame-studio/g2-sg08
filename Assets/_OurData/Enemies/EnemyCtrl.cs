@@ -8,6 +8,7 @@ public class EnemyCtrl : SaiBehaviour
     public Transform enemy;
     public EnemyMovement enemyMovement;
     public DamageReceiver damageReceiver;
+    public EnemyLevel enemyLevel;
 
     protected override void LoadComponents()
     {
@@ -17,6 +18,7 @@ public class EnemyCtrl : SaiBehaviour
         this.LoadEnemy();
         this.LoadEnemyMovement();
         this.LoadEnemyReceiver();
+        this.LoadEnemyLevel();
     }
 
     protected virtual void LoadCollider()
@@ -31,6 +33,13 @@ public class EnemyCtrl : SaiBehaviour
         if (this.damageReceiver != null) return;
         this.damageReceiver = GetComponent<DamageReceiver>();
         Debug.Log(transform.name + ": LoadEnemyReceiver");
+    }
+
+    protected virtual void LoadEnemyLevel()
+    {
+        if (this.enemyLevel != null) return;
+        this.enemyLevel = GetComponent<EnemyLevel>();
+        Debug.Log(transform.name + ": LoadEnemyLevel");
     }
 
     protected virtual void LoadRigibody()
