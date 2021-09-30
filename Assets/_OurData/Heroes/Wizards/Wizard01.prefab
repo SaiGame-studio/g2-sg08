@@ -5450,6 +5450,7 @@ MonoBehaviour:
   armL: {fileID: 4314069016542968}
   armR: {fileID: 4957315015863976}
   heroProfile: {fileID: 3706504746987738117}
+  heroLevel: {fileID: 0}
 --- !u!143 &8715101830275086754
 CharacterController:
   m_ObjectHideFlags: 0

@@ -12,14 +12,28 @@ public class HeroCtrl : SaiBehaviour
     public Transform armL;
     public Transform armR;
     public HeroProfile heroProfile;
+    public HeroLevel heroLevel;
+
+    private void OnEnable()
+    {
+        this.FixCharacter();
+    }
 
     protected override void LoadComponents()
-    {        
+    {
         this.LoadCharacter();
         this.LoadCharCtrl();
         this.LoadCharBodyParts();
         this.LoadHeroProfile();
         this.SetLayer();
+        this.LoadHeroLevel();
+    }
+
+    protected virtual void LoadHeroLevel()
+    {
+        if (this.heroLevel != null) return;
+        this.heroLevel = GetComponent<HeroLevel>();
+        Debug.Log(transform.name + ": LoadHeroLevel");
     }
 
     protected virtual void SetLayer()
@@ -27,7 +41,7 @@ public class HeroCtrl : SaiBehaviour
         if (MyLayerManager.instance == null) return;
         if (gameObject.layer != 0) return;
         gameObject.layer = MyLayerManager.instance.layerHero;
-        Debug.LogWarning(transform.name+ ": Setlayer");
+        Debug.LogWarning(transform.name + ": Setlayer");
     }
 
     protected virtual void LoadHeroProfile()
@@ -55,7 +69,7 @@ public class HeroCtrl : SaiBehaviour
     protected virtual void LoadCharacter()
     {
         if (this.character != null) return;
-        this.character = GetComponent<Character>();
+        this.character = GetComponentInChildren<Character>();
 
         Debug.Log(transform.name + ": LoadCharacter");
     }
@@ -64,7 +78,7 @@ public class HeroCtrl : SaiBehaviour
     {
         if (this.firearm != null) return;
 
-        Transform animation = transform.Find("Animation");
+        Transform animation = this.character.transform.Find("Animation");
         Transform body = animation.Find("Body");
         Transform upper = body.Find("Upper");
         Transform armR1 = upper.Find("ArmR[1]");
@@ -79,5 +93,10 @@ public class HeroCtrl : SaiBehaviour
         this.firearmFire.CreateBullets = true;
 
         Debug.Log(transform.name + ": LoadCharBodyParts");
+    }
+
+    protected virtual void FixCharacter()
+    {
+        this.firearmFire.CreateBullets = true;
     }
 }

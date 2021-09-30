@@ -24,4 +24,10 @@ public class DamageSender : SaiBehaviour
 
         damageReveiver.Receive(this.damage, this);
     }
+
+    public virtual int SetDamage(int newDamage)
+    {
+        this.damage = newDamage;
+        return this.damage;
+    }
 }
