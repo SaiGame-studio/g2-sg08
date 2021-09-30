@@ -23,9 +23,11 @@ public class HeroLevel : Level
     protected virtual void LoadGetLevel()
     {
         if (this.level != 0) return;
-        string name = gameObject.name;
-        string className = this.heroCtrl.heroProfile.HeroClass();
-        name = name.Replace(className, "");
+        string name = gameObject.name; //Shooter1
+        string className = this.heroCtrl.heroProfile.HeroClass(); //Shooter
+        //Shooter1 [Replace] Shooter = 1
+
+        name = name.Replace(className, "");//1
         int level = int.Parse(name);
         this.Set(level);
 
