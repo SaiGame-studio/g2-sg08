@@ -4,6 +4,7 @@ public class EnemyCtrl : SaiBehaviour
 {
     [Header("Enemy")]
     public Rigidbody _rigidbody;
+    public Collider _collider;
     public Transform enemy;
     public EnemyMovement enemyMovement;
     public DamageReceiver damageReceiver;
@@ -11,10 +12,18 @@ public class EnemyCtrl : SaiBehaviour
     protected override void LoadComponents()
     {
         base.LoadComponents();
+        this.LoadCollider();
         this.LoadRigibody();
         this.LoadEnemy();
         this.LoadEnemyMovement();
         this.LoadEnemyReceiver();
+    }
+
+    protected virtual void LoadCollider()
+    {
+        if (this._collider != null) return;
+        this._collider = GetComponent<Collider>();
+        Debug.Log(transform.name + ": LoadCollider");
     }
 
     protected virtual void LoadEnemyReceiver()

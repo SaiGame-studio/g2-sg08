@@ -50,6 +50,7 @@ public class EnemyGate : SaiBehaviour
         //Debug.Log("MoveEnemy: " + enemy.name);
         int layer = enemy.layer;
         if (layer != MyLayerManager.instance.layerEnemy) return;
+
         enemy.transform.position = this.spawnPos.transform.position;
         EnemyCtrl enemyCtrl = enemy.GetComponent<EnemyCtrl>();
 

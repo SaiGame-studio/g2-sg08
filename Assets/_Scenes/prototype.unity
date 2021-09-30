@@ -12872,9 +12872,10 @@ GameObject:
   - component: {fileID: 1247887853}
   - component: {fileID: 1247887852}
   - component: {fileID: 1247887854}
-  - component: {fileID: 1247887855}
   - component: {fileID: 1247887856}
   - component: {fileID: 1247887857}
+  - component: {fileID: 1247887855}
+  - component: {fileID: 1247887858}
   m_Layer: 11
   m_Name: Larva
   m_TagString: Enemy
@@ -12896,6 +12897,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 0
   _rigidbody: {fileID: 1247887856}
+  _collider: {fileID: 1247887854}
   enemy: {fileID: 817246507}
   enemyMovement: {fileID: 324465120}
   damageReceiver: {fileID: 1247887855}
@@ -12937,13 +12939,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1247887851}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3094585aec232f44cb94f608ae09267b, type: 3}
+  m_Script: {fileID: 11500000, guid: 9cb239463e91e014ea9535d5add9ac0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
   hpMax: 2
   hp: 0
   deadEffect: EnemyDeath1
+  enemyCtrl: {fileID: 1247887852}
 --- !u!54 &1247887856
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12974,6 +12977,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 0
   damage: 1
+  enemyCtrl: {fileID: 1247887852}
+--- !u!114 &1247887858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247887851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33c359a7854cc5b4398ece90c84252d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  canLevelUp: 0
+  level: 0
+  levelCost: 10
   enemyCtrl: {fileID: 1247887852}
 --- !u!1 &1260725831
 GameObject:
@@ -16012,7 +16032,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
-  secondPerLevel: 30
+  secondPerLevel: 5
   timer: 0
 --- !u!4 &1308040367
 Transform:
@@ -16131,7 +16151,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1438448059}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.83, y: 0, z: 0}
+  m_LocalPosition: {x: -15, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 353273673}
@@ -16325,6 +16345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 0
   _rigidbody: {fileID: 1585941742}
+  _collider: {fileID: 1585941740}
   enemy: {fileID: 1722010045}
   enemyMovement: {fileID: 0}
   damageReceiver: {fileID: 1585941741}
@@ -17196,6 +17217,7 @@ MonoBehaviour:
   - {fileID: 464796895}
   - {fileID: 1585941739}
   - {fileID: 1247887853}
+  prefabPools: []
 --- !u!4 &1869259300
 Transform:
   m_ObjectHideFlags: 0

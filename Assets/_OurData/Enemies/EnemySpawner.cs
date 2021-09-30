@@ -18,26 +18,10 @@ public class EnemySpawner : Spawner
     {
         base.LoadComponents();
         this.LoadTarget();
-        //this.LoadSpawnPos();
     }
-
-    //protected virtual void LoadSpawnPos()
-    //{
-    //    if (this.spawnPos.Count > 0) return;
-    //    foreach (Transform child in transform)
-    //    {
-    //        this.spawnPos.Add(child);
-    //        //child.gameObject.SetActive(false);
-    //    }
-    //    Debug.Log(transform.name + ": LoadSpawnPos");
-    //}
-
 
     protected override Vector3 SpawnPos()
     {
-        //int rand = Random.Range(0, this.spawnPos.Count);
-        //Transform pos = this.spawnPos[rand];
-
         Transform pos = SpawnPosManager.instance.GetPos(0);
 
         return pos.position;
@@ -52,6 +36,9 @@ public class EnemySpawner : Spawner
     {
         EnemyCtrl enemyCtrl = obj.GetComponent<EnemyCtrl>();
         enemyCtrl.enemyMovement.SetTarget(this.target);
+
+        int gameLevel = GameLevelManager.instance.Level();
+
     }
 
     protected virtual string GetEnemyName()

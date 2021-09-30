@@ -8,6 +8,7 @@ public class ObjPoolManager : SaiBehaviour
     [SerializeField] protected string poolName = "ObjPool";
     [SerializeField] protected SpawnPool pool;
     [SerializeField] protected List<Transform> objs;
+    [SerializeField] protected List<PrefabPool> prefabPools;
 
     private void Awake()
     {
@@ -54,7 +55,11 @@ public class ObjPoolManager : SaiBehaviour
             };
 
             bool isAlreadyPool = this.pool.GetPrefabPool(prefabPool.prefab) == null ? false : true;
-            if (!isAlreadyPool) this.pool.CreatePrefabPool(prefabPool);
+            if (!isAlreadyPool)
+            {
+                this.pool.CreatePrefabPool(prefabPool);
+                this.prefabPools.Add(prefabPool);
+            }
         }
     }
 
@@ -81,8 +86,17 @@ public class ObjPoolManager : SaiBehaviour
 
     public virtual void Despawn(Transform instance)
     {
-        //Transform obj = this.Pool().GetPrefab(instance);
-        //if (obj) return;//Already despawn, waiting for bug happen again;
+        for (int i = 0; i < this.prefabPools.Count; i++)
+        {
+            PrefabPool prefabPool = this.prefabPools[i];
+            if (prefabPool.despawned.Contains(instance))
+            {
+                Debug.LogWarning("despawned.Contains: "+ instance.name);
+                return;
+            }
+        }
+
         this.Pool().Despawn(instance);
     }
+
 }

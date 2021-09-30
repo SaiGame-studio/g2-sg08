@@ -25,8 +25,8 @@ public class Spawner : SaiBehaviour
 
         this.BeforeSpawn();
         Transform obj = ObjPoolManager.instance.Spawn(this.EnemyName(), this.SpawnPos(), transform.rotation, transform);
-        obj.gameObject.SetActive(true);
         this.AfterSpawn(obj);
+        obj.gameObject.SetActive(true);
     }
 
     protected virtual string EnemyName()
