@@ -44,6 +44,7 @@ public class PlayerLevelUp : PlayerInteractable
     {
         bool chestOpened = this.chestOpened.gameObject.activeSelf;
         if (chestOpened == this.opened) return;
+
         this.chestOpened.gameObject.SetActive(this.opened);
 
         chestOpened = this.chestOpened.gameObject.activeSelf;
