@@ -5,6 +5,7 @@ using UnityEngine;
 public class HeroCtrl : SaiBehaviour
 {
     [Header("Hero")]
+    public HeroesManager heroManagers;
     public Character character;
     public CharacterController characterCtrl;
     public Firearm firearm;

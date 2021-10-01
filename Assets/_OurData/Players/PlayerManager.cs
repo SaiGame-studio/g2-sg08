@@ -40,26 +40,25 @@ public class PlayerManager : SaiBehaviour
 
     protected virtual void LoadPlayers()
     {
-        GameObject hero;
+        HeroCtrl heroCtrl;
         Vector3 vector3 = transform.position;
         vector3.x -= 7;
         foreach (HeroesManager heroesManager in HeroManagers.instance.heroManagers)
         {
             vector3.x += 3;
-            hero = heroesManager.GetHero();
-            hero.transform.position = vector3;
-            hero.transform.parent = PlayersHolder.instance.transform;
+            heroCtrl = heroesManager.GetHero();
+            heroCtrl.transform.position = vector3;
+            heroCtrl.transform.parent = PlayersHolder.instance.transform;
 
-            HeroCtrl heroCtrl = hero.GetComponent<HeroCtrl>();
             PlayersHolder.instance.heroCtrls.Add(heroCtrl);
 
-            this.SetPlayerCtrl(hero);
+            this.SetPlayerCtrl(heroCtrl);
         }
     }
 
-    public virtual void SetPlayerCtrl(GameObject obj)
+    public virtual void SetPlayerCtrl(HeroCtrl heroCtrl)
     {
-        this.currentHero = obj.GetComponent<HeroCtrl>();
+        this.currentHero = heroCtrl;
 
         this.playerAttacking.character = this.currentHero.character;
         this.playerAttacking.firearm = this.currentHero.firearm;
@@ -81,7 +80,7 @@ public class PlayerManager : SaiBehaviour
             profileClass = heroCtrl.heroProfile.HeroClass();
             if (profileClass == chooseClass)
             {
-                this.SetPlayerCtrl(heroCtrl.gameObject);
+                this.SetPlayerCtrl(heroCtrl);
                 return true;
             }
         }

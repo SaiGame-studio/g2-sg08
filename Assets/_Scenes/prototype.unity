@@ -14543,6 +14543,9 @@ MonoBehaviour:
   debug: 0
   distance: Infinity
   distanceLimit: 1.5
+  opened: 0
+  chestOpened: {fileID: 2144127975469609159}
+  cost: 100
 --- !u!1001 &885178476
 PrefabInstance:
   m_ObjectHideFlags: 0

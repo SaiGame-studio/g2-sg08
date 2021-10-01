@@ -36,10 +36,30 @@ public class HeroesManager : MonoBehaviour
         Debug.Log(transform.name + ": LoadHeroProfile");
     }
 
-    public virtual GameObject GetHero()
+    public virtual HeroCtrl GetHero()
     {
-        GameObject heroObj = this.heroes[0].gameObject;
+        return this.GetHero(0);
+    }
+
+    public virtual HeroCtrl GetHero(int index)
+    {
+        if (index >= this.heroes.Count) return null;
+
+        GameObject heroObj = this.heroes[index].gameObject;
         GameObject hero = Instantiate(heroObj, new Vector3(0, 0, 0), transform.rotation);
-        return hero;
+        HeroCtrl heroCtrl = hero.GetComponent<HeroCtrl>();
+        heroCtrl.heroManagers = this;
+        return heroCtrl;
+    }
+
+    public virtual HeroCtrl GetNextHero(int currentLevel)
+    {
+        return this.GetHero(currentLevel);
+    }
+
+    public virtual bool TryGetNextHero(int index)
+    {
+        if (index >= this.heroes.Count) return false;
+        return true;
     }
 }
