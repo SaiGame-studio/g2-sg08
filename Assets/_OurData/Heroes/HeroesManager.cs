@@ -46,9 +46,9 @@ public class HeroesManager : MonoBehaviour
         if (index >= this.heroes.Count) return null;
 
         GameObject heroObj = this.heroes[index].gameObject;
-        GameObject hero = Instantiate(heroObj, new Vector3(0, 0, 0), transform.rotation);
+        GameObject hero = Instantiate(heroObj);
         HeroCtrl heroCtrl = hero.GetComponent<HeroCtrl>();
-        heroCtrl.heroManagers = this;
+        heroCtrl.heroesManager = this;
         return heroCtrl;
     }
 

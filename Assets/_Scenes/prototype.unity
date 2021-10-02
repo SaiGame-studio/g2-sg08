@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
-  heroManagers: {fileID: 0}
+  heroesManager: {fileID: 2118954384}
   character: {fileID: 1483843750}
   characterCtrl: {fileID: 59123237}
   firearm: {fileID: 214651557}
@@ -3719,7 +3719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
-  heroManagers: {fileID: 0}
+  heroesManager: {fileID: 2118954384}
   character: {fileID: 2065641114}
   characterCtrl: {fileID: 235663416}
   firearm: {fileID: 2065641116}
@@ -13629,7 +13629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
-  heroManagers: {fileID: 0}
+  heroesManager: {fileID: 2118954384}
   character: {fileID: 603867573}
   characterCtrl: {fileID: 674327123}
   firearm: {fileID: 686966511}
@@ -14549,6 +14549,7 @@ MonoBehaviour:
   opened: 0
   chestOpened: {fileID: 2144127975469609159}
   cost: 100
+  spawnPos: {x: 0, y: 0, z: 0}
 --- !u!1001 &885178476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32672,7 +32673,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1168890840688405, guid: 65733853547d6de4bb63f671de53b0c9, type: 3}
       propertyPath: m_Name
-      value: Shooter3
+      value: Character
       objectReference: {fileID: 0}
     - target: {fileID: 4092847222685647, guid: 65733853547d6de4bb63f671de53b0c9, type: 3}
       propertyPath: m_RootOrder

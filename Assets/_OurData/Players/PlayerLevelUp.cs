@@ -8,6 +8,7 @@ public class PlayerLevelUp : PlayerInteractable
     [SerializeField] protected bool opened = false;
     [SerializeField] protected Transform chestOpened;
     [SerializeField] protected int cost = 100;
+    [SerializeField] protected Vector3 spawnPos;
 
     protected override void LoadComponents()
     {
@@ -54,23 +55,32 @@ public class PlayerLevelUp : PlayerInteractable
     public override void Interact()
     {
         HeroCtrl currentHero = PlayerManager.instance.currentHero;
-        HeroesManager heroesManager = currentHero.heroManagers;
+        HeroesManager heroesManager = currentHero.heroesManager;
 
         int currentLevel = currentHero.heroLevel.Get();
         if (!heroesManager.TryGetNextHero(currentLevel))
         {
+            currentLevel = 0;
             Debug.LogWarning("Cant level up Hero");
-            return;
+            //return;
         }
 
         int levelCost = this.cost * currentLevel;
         if (!ScoreManager.instance.GoldDeduct(levelCost)) return;
 
-        HeroCtrl heroObj = heroesManager.GetNextHero(currentLevel);
+        HeroCtrl heroCtrl = heroesManager.GetNextHero(currentLevel);
 
-        heroObj.transform.parent = PlayersHolder.instance.transform;
-        heroObj.transform.position = currentHero.transform.position;
+        heroCtrl.transform.parent = PlayersHolder.instance.transform;
+        currentHero.gameObject.SetActive(false);//TOO: tam
 
-        PlayerManager.instance.SetPlayerCtrl(heroObj);
+        PlayerManager.instance.playerMovement.inputHorizontalRaw = 1;
+        this.spawnPos = currentHero.transform.position;
+        spawnPos.y += 0.5f;
+
+        heroCtrl.characterCtrl.enabled = false;
+        heroCtrl.transform.position = spawnPos;
+        heroCtrl.characterCtrl.enabled = true;
+
+        PlayerManager.instance.SetPlayerCtrl(heroCtrl);
     }
 }

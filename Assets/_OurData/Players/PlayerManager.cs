@@ -67,6 +67,7 @@ public class PlayerManager : SaiBehaviour
 
         this.playerMovement.character = this.currentHero.character;
         this.playerMovement.charCtrl = this.currentHero.characterCtrl;
+
         this.playerMovement.ResetMyGround();
     }
 

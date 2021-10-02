@@ -39,7 +39,7 @@ public class PlayerMovement : SaiBehaviour
     {
         this.GroundFinding();
         this.InputToDirection();
-        //this.IsGrounded();
+        this.IsGrounded();
         this.IsGoingDown();
         this.CharacterStateUpdate();
         this.Turning();
@@ -65,10 +65,6 @@ public class PlayerMovement : SaiBehaviour
     protected virtual Vector2 InputToDirection()
     {
         Vector2 direction = Vector2.zero;
-
-        //this.inputHorizontalRaw = Input.GetAxisRaw("Horizontal");
-        //this.inputVerticalRaw = Input.GetAxisRaw("Vertical");
-        //this.inputJumbRaw = Input.GetAxisRaw("Jump");
 
         direction.x = this.inputHorizontalRaw;
         direction.y = this.inputVerticalRaw;
@@ -133,7 +129,8 @@ public class PlayerMovement : SaiBehaviour
         this.Walking();
         this.Jumbing();
         this.speed.y -= this.fallingSpeed * Time.deltaTime;
-        this.charCtrl.Move(this.speed * Time.deltaTime);
+        Vector3 movement = this.speed * Time.deltaTime;
+        this.charCtrl.Move(movement);
     }
 
     protected virtual void Walking()
