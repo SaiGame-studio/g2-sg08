@@ -14,10 +14,17 @@ public class HeroCtrl : SaiBehaviour
     public Transform armR;
     public HeroProfile heroProfile;
     public HeroLevel heroLevel;
+    public int ammoShooted;
+    public int magazineCapacity;
 
     private void OnEnable()
     {
         this.FixCharacter();
+    }
+
+    private void FixedUpdate()
+    {
+        this.UpdateAmmo();
     }
 
     protected override void LoadComponents()
@@ -28,6 +35,8 @@ public class HeroCtrl : SaiBehaviour
         this.LoadHeroProfile();
         this.SetLayer();
         this.LoadHeroLevel();
+
+        this.magazineCapacity = this.firearm.Params.MagazineCapacity;
     }
 
     protected virtual void LoadHeroLevel()
@@ -99,5 +108,11 @@ public class HeroCtrl : SaiBehaviour
     protected virtual void FixCharacter()
     {
         this.firearmFire.CreateBullets = true;
+    }
+
+    protected virtual void UpdateAmmo()
+    {
+        this.ammoShooted = this.firearm.AmmoShooted;
+        this.magazineCapacity = this.firearm.Params.MagazineCapacity;
     }
 }

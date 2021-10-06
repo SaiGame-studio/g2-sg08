@@ -5483,6 +5483,8 @@ MonoBehaviour:
   armR: {fileID: 4957315015863976}
   heroProfile: {fileID: 1961021135}
   heroLevel: {fileID: 0}
+  ammoShooted: 0
+  magazineCapacity: 0
 --- !u!1 &1148429847025930
 GameObject:
   m_ObjectHideFlags: 0

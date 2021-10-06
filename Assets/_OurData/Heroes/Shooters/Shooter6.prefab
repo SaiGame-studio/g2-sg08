@@ -4750,7 +4750,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 9db51d32a74d40a7b50e0aa79daf4c9d, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4818,7 +4817,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1009463060027015}
   m_LocalRotation: {x: -0, y: -0, z: 0.00000020861616, w: 1}
-  m_LocalPosition: {x: 0.16, y: -0.02, z: 0}
+  m_LocalPosition: {x: 0.16, y: -0.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4751783152597149}
@@ -9683,7 +9682,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 15bd635ad059449e802db1441fe64d68, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10332,7 +10330,7 @@ GameObject:
   - component: {fileID: 114776505362207523}
   - component: {fileID: 7837457147840869695}
   m_Layer: 0
-  m_Name: Shooter3
+  m_Name: Shooter6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10426,13 +10424,13 @@ MonoBehaviour:
   Shield: {fileID: 0}
   Bow: []
   Firearms:
-  - {fileID: 21300004, guid: 0426d48212804e209b602bc5e9f020fe, type: 3}
-  - {fileID: 21300012, guid: 0426d48212804e209b602bc5e9f020fe, type: 3}
-  - {fileID: 21300008, guid: 0426d48212804e209b602bc5e9f020fe, type: 3}
-  - {fileID: 21300002, guid: 0426d48212804e209b602bc5e9f020fe, type: 3}
-  - {fileID: 21300000, guid: 0426d48212804e209b602bc5e9f020fe, type: 3}
-  - {fileID: 21300014, guid: 0426d48212804e209b602bc5e9f020fe, type: 3}
-  - {fileID: 21300006, guid: 0426d48212804e209b602bc5e9f020fe, type: 3}
+  - {fileID: 21300004, guid: 6b4057cb012d47b98201d345a870b631, type: 3}
+  - {fileID: 21300014, guid: 6b4057cb012d47b98201d345a870b631, type: 3}
+  - {fileID: 21300008, guid: 6b4057cb012d47b98201d345a870b631, type: 3}
+  - {fileID: 21300002, guid: 6b4057cb012d47b98201d345a870b631, type: 3}
+  - {fileID: 21300000, guid: 6b4057cb012d47b98201d345a870b631, type: 3}
+  - {fileID: 21300020, guid: 6b4057cb012d47b98201d345a870b631, type: 3}
+  - {fileID: 21300018, guid: 6b4057cb012d47b98201d345a870b631, type: 3}
   HeadRenderer: {fileID: 212459602398571581}
   EarsRenderer: {fileID: 212581288418401045}
   HairRenderer: {fileID: 212659517624561607}
@@ -11407,7 +11405,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 335
-  m_Sprite: {fileID: 21300008, guid: 0426d48212804e209b602bc5e9f020fe, type: 3}
+  m_Sprite: {fileID: 21300008, guid: 6b4057cb012d47b98201d345a870b631, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -11523,7 +11521,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1276846819698769}
-  m_LocalRotation: {x: 0, y: 0, z: -0.0045455634, w: 0.99998975}
+  m_LocalRotation: {x: 0, y: 0, z: -0.017435787, w: 0.99984807}
   m_LocalPosition: {x: -0.002, y: 0.485, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -11839,7 +11837,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 405
-  m_Sprite: {fileID: 21300014, guid: 0426d48212804e209b602bc5e9f020fe, type: 3}
+  m_Sprite: {fileID: 21300020, guid: 6b4057cb012d47b98201d345a870b631, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -11874,7 +11872,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1340719222951905}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.32, y: 0.24, z: 0}
+  m_LocalPosition: {x: 0.02, y: 0.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4832874709726877}
@@ -12118,7 +12116,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 325
-  m_Sprite: {fileID: 21300000, guid: 0426d48212804e209b602bc5e9f020fe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6b4057cb012d47b98201d345a870b631, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -12444,7 +12442,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1526031400353219}
-  m_LocalRotation: {x: 0, y: 0, z: 0.05496948, w: 0.99848807}
+  m_LocalRotation: {x: 0, y: 0, z: 0.08711456, w: 0.99619836}
   m_LocalPosition: {x: 0.25, y: -0.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -12560,29 +12558,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationEvents: {fileID: 114038265845442265}
   Params:
-    Name: SandFalcon
+    Name: UZI
     FirearmTexture: {fileID: 0}
-    Type: 2
+    Type: 3
     HoldType: 0
     MagazineType: 0
     LoadType: 0
-    AutomaticFire: 0
+    AutomaticFire: 1
     AutomaticLoad: 1
-    FireRateInMinute: 260
-    MagazineCapacity: 9
-    Recoil: 0.05
+    FireRateInMinute: 800
+    MagazineCapacity: 30
+    Recoil: 0.025
     Accuracy: 0.95
     MuzzleVelocity: 18.75
-    SlidePosition: {x: 0.32, y: 0.24}
-    MagazinePosition: {x: 0.16, y: -0.02}
-    FireMuzzlePosition: {x: 0.84, y: 0.32}
+    SlidePosition: {x: 0.02, y: 0.36}
+    MagazinePosition: {x: 0.16, y: -0.18}
+    FireMuzzlePosition: {x: 0.64, y: 0.32}
     FireMuzzlePrefab: {fileID: 198416100499550440, guid: fd1bdd4a403b4144bc859ac47e5704e5,
       type: 3}
     ProjectilePrefab: {fileID: 114844765844241412, guid: 47db3369e1e440efa3dd0ecf896929c3,
       type: 3}
-    SoundFire: {fileID: 8300000, guid: 95bcf34e9e1b4ff189f6ad7434ab309d, type: 3}
-    SoundClipIn: {fileID: 8300000, guid: f6e7c3e9d9304bafa332be0428b614d2, type: 3}
-    SoundClipOut: {fileID: 8300000, guid: 758933c0049b42cf83d0065cd34ec989, type: 3}
+    SoundFire: {fileID: 8300000, guid: 9072e52e207e4bc1947e905b59e2f1a4, type: 3}
+    SoundClipIn: {fileID: 8300000, guid: 500bb79a663d476d8f8e32917ce6dcf9, type: 3}
+    SoundClipOut: {fileID: 8300000, guid: ce16cd4de89c4905a35b2b84d55fe5a5, type: 3}
     SoundLoad: {fileID: 0}
     SoundPump: {fileID: 0}
     HoldAnimation: {fileID: 7400000, guid: 1e1cb6f5c8394ba3b753b5a18525aa63, type: 2}
@@ -13032,7 +13030,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1598446591749641}
-  m_LocalRotation: {x: 0, y: 0, z: 0.40191227, w: 0.9156782}
+  m_LocalRotation: {x: 0, y: 0, z: 0.34209788, w: 0.9396643}
   m_LocalPosition: {x: 0.128, y: -0.175, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -13196,7 +13194,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1655023879911191}
-  m_LocalRotation: {x: 0, y: 0, z: -0.24782585, w: 0.9688046}
+  m_LocalRotation: {x: 0, y: 0, z: -0.21647993, w: 0.9762871}
   m_LocalPosition: {x: 0.183, y: 0.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -13407,7 +13405,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 305
-  m_Sprite: {fileID: 21300012, guid: 0426d48212804e209b602bc5e9f020fe, type: 3}
+  m_Sprite: {fileID: 21300014, guid: 6b4057cb012d47b98201d345a870b631, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -18789,7 +18787,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 9db51d32a74d40a7b50e0aa79daf4c9d, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18986,7 +18983,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 310
-  m_Sprite: {fileID: 21300002, guid: 0426d48212804e209b602bc5e9f020fe, type: 3}
+  m_Sprite: {fileID: 21300002, guid: 6b4057cb012d47b98201d345a870b631, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -19199,7 +19196,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1927982517262135}
   m_LocalRotation: {x: -0, y: -0, z: 0.000000059604616, w: 1}
-  m_LocalPosition: {x: -0.02, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4195505616912595}
@@ -19244,7 +19241,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 350
-  m_Sprite: {fileID: 21300006, guid: 0426d48212804e209b602bc5e9f020fe, type: 3}
+  m_Sprite: {fileID: 21300018, guid: 6b4057cb012d47b98201d345a870b631, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -24108,7 +24105,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 15bd635ad059449e802db1441fe64d68, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -25394,7 +25390,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6813357553669071788}
   m_LocalRotation: {x: -0, y: -0, z: 0.00000020861616, w: 1}
-  m_LocalPosition: {x: 0.84, y: 0.32, z: 0}
+  m_LocalPosition: {x: 0.64, y: 0.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4827419258329471}
