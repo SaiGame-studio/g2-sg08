@@ -80,6 +80,7 @@ public class HeroCtrl : SaiBehaviour
     {
         if (this.character != null) return;
         this.character = GetComponentInChildren<Character>();
+        this.character.transform.localPosition = Vector3.zero;
 
         Debug.Log(transform.name + ": LoadCharacter");
     }

@@ -20,7 +20,7 @@ public class HeroLevel : Level
         Debug.Log(transform.name + ": LoadHeroCtrl");
     }
 
-    protected virtual void LoadGetLevel()
+    public virtual void LoadGetLevel()
     {
         if (this.level != 0) return;
         string name = gameObject.name; //Shooter1

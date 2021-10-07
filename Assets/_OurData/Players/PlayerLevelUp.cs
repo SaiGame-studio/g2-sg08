@@ -72,6 +72,7 @@ public class PlayerLevelUp : PlayerInteractable
 
         heroCtrl.transform.parent = PlayersHolder.instance.transform;
         currentHero.gameObject.SetActive(false);//TOO: tam
+        //ObjPoolManager.instance.Despawn(currentHero.transform);
 
         PlayerManager.instance.playerMovement.inputHorizontalRaw = 1;
         this.spawnPos = currentHero.transform.position;
@@ -82,5 +83,7 @@ public class PlayerLevelUp : PlayerInteractable
         heroCtrl.characterCtrl.enabled = true;
 
         PlayerManager.instance.SetPlayerCtrl(heroCtrl);
+
+        //Destroy(currentHero.gameObject);
     }
 }

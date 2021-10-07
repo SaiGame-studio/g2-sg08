@@ -69,6 +69,11 @@ public class ObjPoolManager : SaiBehaviour
         return this.pool;
     }
 
+    public virtual Transform Spawn(string objName)
+    {
+        return this.Pool().Spawn(objName);
+    }
+
     public virtual Transform Spawn(string objName, Transform parent)
     {
         return this.Pool().Spawn(objName, parent);
