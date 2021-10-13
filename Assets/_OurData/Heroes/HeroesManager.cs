@@ -30,6 +30,7 @@ public class HeroesManager : SaiBehaviour
         foreach (HeroCtrl heroCtrl in transform.GetComponentsInChildren<HeroCtrl>())
         {
             this.heroes.Add(heroCtrl);
+            heroCtrl.gameObject.SetActive(false);
         }
 
         Debug.Log(transform.name + ": LoadHeros");

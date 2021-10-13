@@ -62,7 +62,7 @@ public class PlayerLevelUp : PlayerInteractable
         {
             currentLevel = 0;
             Debug.LogWarning("Cant level up Hero");
-            //return;
+            return;
         }
 
         int levelCost = this.cost * currentLevel;

@@ -10,6 +10,7 @@ public class PlayerManager : SaiBehaviour
     public PlayerAttacking playerAttacking;
     public PlayerMovement playerMovement;
     public BowExample bowExample;
+    [SerializeField] protected string firstClass = "Shooter";
 
     private void Awake()
     {
@@ -19,7 +20,8 @@ public class PlayerManager : SaiBehaviour
 
     private void Start()
     {
-        this.LoadPlayers();
+        //this.LoadPlayers();
+        this.LoadFirstPlayer();
     }
 
     protected override void LoadComponents()
@@ -36,6 +38,25 @@ public class PlayerManager : SaiBehaviour
         this.playerInput = transform.GetComponentInChildren<PlayerInput>();
 
         Debug.Log(transform.name + ": LoadPlayerComponents");
+    }
+
+    protected virtual void LoadFirstPlayer()
+    {
+        HeroCtrl heroCtrl;
+        Vector3 vector3 = transform.position;
+        foreach (HeroesManager heroesManager in HeroManagers.instance.heroManagers)
+        {
+            string className = heroesManager.heroProfile.HeroClass();
+            if (className != this.firstClass) continue;
+
+            heroCtrl = heroesManager.GetHero();
+            heroCtrl.transform.position = vector3;
+            heroCtrl.transform.parent = PlayersHolder.instance.transform;
+
+            PlayersHolder.instance.heroCtrls.Add(heroCtrl);
+
+            this.SetPlayerCtrl(heroCtrl);
+        }
     }
 
     protected virtual void LoadPlayers()

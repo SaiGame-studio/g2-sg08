@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &59123236
 Transform:
   m_ObjectHideFlags: 0
@@ -246,7 +246,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &82765193
 Transform:
   m_ObjectHideFlags: 0
@@ -3739,7 +3739,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &204593146
 Transform:
   m_ObjectHideFlags: 0
@@ -3926,7 +3926,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &229053636
 Transform:
   m_ObjectHideFlags: 0
@@ -4032,7 +4032,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &235663413
 Transform:
   m_ObjectHideFlags: 0
@@ -4511,7 +4511,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &310548764
 Transform:
   m_ObjectHideFlags: 0
@@ -10270,7 +10270,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &433434356
 Transform:
   m_ObjectHideFlags: 0
@@ -10400,7 +10400,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &445000802
 Transform:
   m_ObjectHideFlags: 0
@@ -14264,6 +14264,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wizard01
       objectReference: {fileID: 0}
+    - target: {fileID: 1109987028385428, guid: 54186c893da3d83459e9e16093541761, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4305107873441922, guid: 54186c893da3d83459e9e16093541761, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -14900,7 +14904,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &674327122
 Transform:
   m_ObjectHideFlags: 0
@@ -15068,7 +15072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &704605201
 Transform:
   m_ObjectHideFlags: 0
@@ -15301,7 +15305,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &734732256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15319,7 +15323,7 @@ MonoBehaviour:
   heroes:
   - {fileID: 1961021137}
   poolName: ObjPool
-  pool: {fileID: 0}
+  pool: {fileID: 546164485}
   prefabPools: []
 --- !u!4 &734732257
 Transform:
@@ -15334,7 +15338,7 @@ Transform:
   m_Children:
   - {fileID: 1958652533}
   m_Father: {fileID: 1809952168}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &734732258
 MonoBehaviour:
@@ -16872,7 +16876,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &936362537
 Transform:
   m_ObjectHideFlags: 0
@@ -19962,7 +19966,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &990358286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20068,7 +20072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &992699465
 Transform:
   m_ObjectHideFlags: 0
@@ -25873,7 +25877,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1248878663
 Transform:
   m_ObjectHideFlags: 0
@@ -25979,7 +25983,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1250436316
 Transform:
   m_ObjectHideFlags: 0
@@ -29030,7 +29034,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1266926455
 Transform:
   m_ObjectHideFlags: 0
@@ -29662,7 +29666,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1399186490
 Transform:
   m_ObjectHideFlags: 0
@@ -29870,7 +29874,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1445847022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30101,7 +30105,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1550788086
 Transform:
   m_ObjectHideFlags: 0
@@ -35438,7 +35442,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1608324485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35456,7 +35460,7 @@ MonoBehaviour:
   heroes:
   - {fileID: 605195032}
   poolName: ObjPool
-  pool: {fileID: 0}
+  pool: {fileID: 546164485}
   prefabPools: []
 --- !u!4 &1608324486
 Transform:
@@ -35471,7 +35475,7 @@ Transform:
   m_Children:
   - {fileID: 605195031}
   m_Father: {fileID: 1809952168}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1608324487
 MonoBehaviour:
@@ -35522,7 +35526,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 212.6, y: 26.199997}
+  m_AnchoredPosition: {x: 212.6, y: 26.200012}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1627942789
@@ -35870,7 +35874,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1713996406
 Transform:
   m_ObjectHideFlags: 0
@@ -36242,7 +36246,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1778069356
 Transform:
   m_ObjectHideFlags: 0
@@ -36348,7 +36352,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1786270474
 Transform:
   m_ObjectHideFlags: 0
@@ -36553,7 +36557,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1794123941
 Transform:
   m_ObjectHideFlags: 0
@@ -36668,9 +36672,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 2118954385}
   - {fileID: 734732257}
   - {fileID: 1608324486}
-  - {fileID: 2118954385}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -36688,6 +36692,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroManagers:
   - {fileID: 2118954384}
+  - {fileID: 734732256}
+  - {fileID: 1608324485}
 --- !u!1 &1816712790
 GameObject:
   m_ObjectHideFlags: 0
@@ -37217,6 +37223,7 @@ MonoBehaviour:
   playerAttacking: {fileID: 1816712791}
   playerMovement: {fileID: 306959738}
   bowExample: {fileID: 885178477}
+  firstClass: Shooter
 --- !u!1 &1932765370
 GameObject:
   m_ObjectHideFlags: 0
@@ -37236,7 +37243,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1932765371
 Transform:
   m_ObjectHideFlags: 0
@@ -37333,6 +37340,10 @@ PrefabInstance:
     - target: {fileID: 1109987028385428, guid: 06ddc69de0551d04e9993fded4fb9365, type: 3}
       propertyPath: m_Name
       value: Warrior01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109987028385428, guid: 06ddc69de0551d04e9993fded4fb9365, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4305107873441922, guid: 06ddc69de0551d04e9993fded4fb9365, type: 3}
       propertyPath: m_RootOrder
@@ -37692,7 +37703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2045031175
 Transform:
   m_ObjectHideFlags: 0
@@ -38217,7 +38228,7 @@ Transform:
   - {fileID: 445000802}
   - {fileID: 1266926455}
   m_Father: {fileID: 1809952168}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2118954386
 MonoBehaviour:
