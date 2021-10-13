@@ -7,7 +7,7 @@ public class PlayerLevelUp : PlayerInteractable
     [SerializeField] protected float distanceLimit = 1.5f;
     [SerializeField] protected bool opened = false;
     [SerializeField] protected Transform chestOpened;
-    [SerializeField] protected int cost = 100;
+    [SerializeField] protected int cost = 50;
     [SerializeField] protected Vector3 spawnPos;
 
     protected override void LoadComponents()
@@ -71,7 +71,6 @@ public class PlayerLevelUp : PlayerInteractable
         HeroCtrl heroCtrl = heroesManager.GetNextHero(currentLevel);
 
         heroCtrl.transform.parent = PlayersHolder.instance.transform;
-        //currentHero.gameObject.SetActive(false);//TOO: tam
         ObjPoolManager.instance.Despawn(currentHero.transform);
 
         PlayerManager.instance.playerMovement.inputHorizontalRaw = 1;
@@ -83,7 +82,5 @@ public class PlayerLevelUp : PlayerInteractable
         heroCtrl.characterCtrl.enabled = true;
 
         PlayerManager.instance.SetPlayerCtrl(heroCtrl);
-
-        //Destroy(currentHero.gameObject);
     }
 }

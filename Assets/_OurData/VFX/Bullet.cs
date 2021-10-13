@@ -4,6 +4,7 @@ using UnityEngine;
 public class Bullet : SaiBehaviour
 {
     public List<Renderer> Renderers;
+    public MyLayerManager myLayerManager;
     [SerializeField] protected GameObject trail;
     [SerializeField] protected GameObject impact;
     [SerializeField] protected Rigidbody _rigidbody;
@@ -134,6 +135,16 @@ public class Bullet : SaiBehaviour
         this.LoadRender();
         this.LoadRigibody();
         this.LoadCollider();
+        this.LoadLayerManager();
+    }
+
+    protected virtual void LoadLayerManager()
+    {
+        if (this.myLayerManager != null) return;
+        this.myLayerManager = GameObject.Find("MyLayerManager").GetComponent<MyLayerManager>();
+        gameObject.layer = this.myLayerManager.layerBullet;
+
+        Debug.Log(transform.name + ": LoadLayermanager");
     }
 
     protected virtual void LoadChildren()

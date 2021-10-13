@@ -5,7 +5,7 @@ public class EnemyMovement : SaiBehaviour
     [Header("Enemy")]
     [SerializeField] protected EnemyCtrl enemyCtrl;
     [SerializeField] protected Transform target;
-    [SerializeField] protected float speed = 2f;
+    [SerializeField] protected float speed = 1f;
     [SerializeField] protected Vector3 direction = new Vector3(0, 0, 0);
 
     private void Update()
