@@ -157,4 +157,9 @@ public class PlayerMovement : SaiBehaviour
 
         this.speed.y = this.jumpSpeed * this.direction.y;
     }
+
+    public virtual Vector3 MouseToChar()
+    {
+        return this.mouseToChar;
+    }
 }

@@ -1,11 +1,11 @@
 using Assets.HeroEditor.Common.CharacterScripts;
-using Assets.HeroEditor.Common.CharacterScripts.Firearms;
 using UnityEngine;
 
 public class WarriorCtrl : HeroCtrl
 {
     [Header("Warrior")]
     public WarriorAttack warriorAttack;
+    public Transform strikePoint;
 
     private void OnEnable()
     {
@@ -17,6 +17,14 @@ public class WarriorCtrl : HeroCtrl
     {
         base.LoadComponents();
         this.LoadWarriorAttack();
+        this.LoadStrikePoint();
+    }
+
+    protected virtual void LoadStrikePoint()
+    {
+        if (this.strikePoint != null) return;
+        this.strikePoint = transform.Find("StrikePoint");
+        Debug.Log(transform.name + ": LoadStrikePoint");
     }
 
     protected virtual void LoadWarriorAttack()
@@ -38,7 +46,13 @@ public class WarriorCtrl : HeroCtrl
 
     protected void OnAnimationEvent(string eventName)
     {
-        Debug.Log(transform.name + " OnAnimationEvent " + eventName);
-        if(eventName == "Hit") this.warriorAttack.Attack();
+        if (eventName == "Hit") this.warriorAttack.Attack();
+        else Debug.Log(transform.name + " eventName " + eventName);
+    }
+
+    protected override void FixCharacter()
+    {
+        base.FixCharacter();
+        this.strikePoint.parent = this.character.transform;
     }
 }
