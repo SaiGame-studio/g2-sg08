@@ -28,17 +28,17 @@ public class WarriorCtrl : HeroCtrl
 
     protected virtual void EventRegistry()
     {
-        this.character.Animator.GetComponent<AnimationEvents>().OnCustomEvent += OnAnimationEvent;
+        this.character.Animator.GetComponent<AnimationEvents>().OnCustomEvent += this.OnAnimationEvent;
     }
 
     protected virtual void EventUnRegistry()
     {
-        this.character.Animator.GetComponent<AnimationEvents>().OnCustomEvent -= OnAnimationEvent;
+        this.character.Animator.GetComponent<AnimationEvents>().OnCustomEvent -= this.OnAnimationEvent;
     }
 
     protected void OnAnimationEvent(string eventName)
     {
         Debug.Log(transform.name + " OnAnimationEvent " + eventName);
-        this.warriorAttack.Attack();
+        if(eventName == "Hit") this.warriorAttack.Attack();
     }
 }

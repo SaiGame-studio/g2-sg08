@@ -16,7 +16,6 @@ public class HeroLevel : Level
     {
         if (this.heroCtrl != null) return;
         this.heroCtrl = GetComponent<HeroCtrl>();
-
         Debug.Log(transform.name + ": LoadHeroCtrl");
     }
 
@@ -33,5 +32,4 @@ public class HeroLevel : Level
 
         Debug.Log(transform.name + ": LoadGetLevel");
     }
-
 }
