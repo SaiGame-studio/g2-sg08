@@ -63,8 +63,10 @@ public class EnemyCtrl : SaiBehaviour
 
     protected virtual void LoadEnemyMovement()
     {
-        if (this.enemyMovement != null) return;
         Transform moveTransform = transform.Find("EnemyMovement");
+        if (moveTransform == null) return;
+
+        if (this.enemyMovement != null) return;
         if (moveTransform) this.enemyMovement = moveTransform.GetComponent<EnemyMovement>();
         Debug.Log(transform.name + ": LoadEnemy");
     }

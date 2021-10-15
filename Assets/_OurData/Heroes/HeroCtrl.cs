@@ -116,4 +116,5 @@ public class HeroCtrl : SaiBehaviour
         this.ammoShooted = this.firearm.AmmoShooted;
         this.magazineCapacity = this.firearm.Params.MagazineCapacity;
     }
+
 }

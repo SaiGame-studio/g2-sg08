@@ -1,11 +1,8 @@
 using Assets.HeroEditor.Common.CharacterScripts;
 using Assets.HeroEditor.Common.CharacterScripts.Firearms;
-using Assets.HeroEditor.Common.CharacterScripts.Firearms.Enums;
 using Assets.HeroEditor.Common.ExampleScripts;
 using HeroEditor.Common.Enums;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAttacking : MonoBehaviour
@@ -19,14 +16,6 @@ public class PlayerAttacking : MonoBehaviour
     public KeyCode ReloadButton = KeyCode.R;
     public bool FixedArm;
 
-    public void Start()
-    {
-        //if ((character.WeaponType == WeaponType.Firearms1H || character.WeaponType == WeaponType.Firearms2H) && firearm.Params.Type == FirearmType.Unknown)
-        //{
-        //    throw new Exception("Firearm params not set.");
-        //}
-    }
-
     public void Update()
     {
         if (character.Animator.GetInteger("State") >= (int)CharacterState.DeathB) return;
@@ -36,10 +25,7 @@ public class PlayerAttacking : MonoBehaviour
             case WeaponType.Melee1H:
             case WeaponType.Melee2H:
             case WeaponType.MeleePaired:
-                if (Input.GetKeyDown(FireButton))
-                {
-                    character.Slash();
-                }
+                if (Input.GetKeyDown(FireButton)) this.character.Slash();
                 break;
             case WeaponType.Bow:
                 BowExample.ChargeButtonDown = Input.GetKeyDown(FireButton);
@@ -53,17 +39,11 @@ public class PlayerAttacking : MonoBehaviour
                 firearm.Reload.ReloadButtonDown = Input.GetKeyDown(ReloadButton);
                 break;
             case WeaponType.Supplies:
-                if (Input.GetKeyDown(FireButton))
-                {
-                    character.Animator.Play(Time.frameCount % 2 == 0 ? "UseSupply" : "ThrowSupply", 0); // Play animation randomly.
-                }
+                if (Input.GetKeyDown(FireButton)) character.Animator.Play(Time.frameCount % 2 == 0 ? "UseSupply" : "ThrowSupply", 0); // Play animation randomly.
                 break;
         }
 
-        if (Input.GetKeyDown(FireButton))
-        {
-            character.GetReady();
-        }
+        if (Input.GetKeyDown(FireButton)) character.GetReady();
     }
 
     /// <summary>

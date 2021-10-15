@@ -1,6 +1,6 @@
+using PathologicalGames;
 using System.Collections.Generic;
 using UnityEngine;
-using PathologicalGames;
 
 public class HeroesManager : SaiBehaviour
 {
@@ -27,8 +27,10 @@ public class HeroesManager : SaiBehaviour
     protected virtual void LoadHeros()
     {
         if (this.heroes.Count > 0) return;
-        foreach (HeroCtrl heroCtrl in transform.GetComponentsInChildren<HeroCtrl>())
+
+        foreach (Transform child in transform)
         {
+            HeroCtrl heroCtrl = child.GetComponent<HeroCtrl>();
             this.heroes.Add(heroCtrl);
             heroCtrl.gameObject.SetActive(false);
         }

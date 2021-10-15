@@ -92,6 +92,7 @@ public class PlayerManager : SaiBehaviour
         this.playerMovement.ResetMyGround();
     }
 
+
     public virtual bool ChoosePlayer(string chooseClass)
     {
         Debug.Log("Choose:" + chooseClass);

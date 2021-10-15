@@ -10,7 +10,7 @@ public class PlayerMovement : SaiBehaviour
 
     [Header("Movement")]
     [SerializeField] protected float walkingSpeed = 7;
-    [SerializeField] protected float jumpSpeed = 9;
+    [SerializeField] protected float jumpSpeed = 10;
     [SerializeField] protected float fallingSpeed = 25;
     [SerializeField] protected int jumbMax = 2;
     [SerializeField] protected int jumbCount = 0;
