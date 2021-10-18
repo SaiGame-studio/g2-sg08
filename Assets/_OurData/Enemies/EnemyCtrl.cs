@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.HeroEditor.FantasyHeroes.TestRoom.Scripts.Tweens;
+using UnityEngine;
 
 public class EnemyCtrl : SaiBehaviour
 {
@@ -9,6 +10,7 @@ public class EnemyCtrl : SaiBehaviour
     public EnemyMovement enemyMovement;
     public DamageReceiver damageReceiver;
     public EnemyLevel enemyLevel;
+    public ScaleSpring scaleSpring;
 
     protected override void LoadComponents()
     {
@@ -19,6 +21,15 @@ public class EnemyCtrl : SaiBehaviour
         this.LoadEnemyMovement();
         this.LoadEnemyReceiver();
         this.LoadEnemyLevel();
+        this.LoadScaleSpring();
+    }
+
+    protected virtual void LoadScaleSpring()
+    {
+        if (this.scaleSpring != null) return;
+        this.scaleSpring = GetComponent<ScaleSpring>();
+        this.scaleSpring.enabled = false;
+        Debug.Log(transform.name + ": LoadScaleSpring");
     }
 
     protected virtual void LoadCollider()

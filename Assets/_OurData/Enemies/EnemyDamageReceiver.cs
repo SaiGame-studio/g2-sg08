@@ -16,6 +16,12 @@ public class EnemyDamageReceiver : DamageReceiver
         this.LoadEnemyCtrl();
     }
 
+    public override void Receive(int damage)
+    {
+        this.enemyCtrl.scaleSpring.enabled = true;
+        base.Receive(damage);
+    }
+
     protected virtual void LoadEnemyCtrl()
     {
         if (this.enemyCtrl != null) return;

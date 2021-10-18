@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1012650309362030}
-  m_LocalRotation: {x: 0, y: 0, z: 0.08573463, w: 0.9963181}
+  m_LocalRotation: {x: 0, y: 0, z: 0.010714067, w: 0.9999426}
   m_LocalPosition: {x: -0.19, y: -0.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5185,7 +5185,7 @@ MonoBehaviour:
   Earrings: {fileID: 0}
   Glasses: {fileID: 0}
   Mask: {fileID: 0}
-  PrimaryMeleeWeapon: {fileID: 21300000, guid: 2be1851c3c804bf4b3f2d9013882d152, type: 3}
+  PrimaryMeleeWeapon: {fileID: 21300000, guid: 57bb3be99cde4093b0599403a0922e7c, type: 3}
   SecondaryMeleeWeapon: {fileID: 0}
   Armor:
   - {fileID: 21300004, guid: 2552032f57804288b1cf3512de976866, type: 3}
@@ -7728,7 +7728,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1471043012614032}
-  m_LocalRotation: {x: 0, y: 0, z: -0.0014264968, w: 0.999999}
+  m_LocalRotation: {x: 0, y: 0, z: -0.07647748, w: 0.9970713}
   m_LocalPosition: {x: 0.128, y: -0.175, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -19542,7 +19542,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1933805290767638}
-  m_LocalRotation: {x: 0, y: 0, z: 0.0014147, w: 0.999999}
+  m_LocalRotation: {x: 0, y: 0, z: 0.015963059, w: 0.9998726}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -26525,7 +26525,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 320
-  m_Sprite: {fileID: 21300000, guid: 2be1851c3c804bf4b3f2d9013882d152, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 57bb3be99cde4093b0599403a0922e7c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

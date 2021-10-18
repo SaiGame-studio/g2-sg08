@@ -16181,7 +16181,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 896847853}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Skill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25580,6 +25580,7 @@ GameObject:
   - component: {fileID: 1247887857}
   - component: {fileID: 1247887855}
   - component: {fileID: 1247887858}
+  - component: {fileID: 1247887859}
   m_Layer: 11
   m_Name: Larva
   m_TagString: Enemy
@@ -25606,6 +25607,7 @@ MonoBehaviour:
   enemyMovement: {fileID: 324465120}
   damageReceiver: {fileID: 1247887855}
   enemyLevel: {fileID: 1247887858}
+  scaleSpring: {fileID: 1247887859}
 --- !u!4 &1247887853
 Transform:
   m_ObjectHideFlags: 0
@@ -25699,6 +25701,25 @@ MonoBehaviour:
   canLevelUp: 0
   level: 0
   enemyCtrl: {fileID: 1247887852}
+--- !u!114 &1247887859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247887851}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1edd0d5a75f54f78b468b956b709eb26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 40
+  Period: 0
+  RandomPeriod: 0
+  SaveState: 0
+  From: 1
+  To: 1.1
+  Dumping: 2
 --- !u!1 &1248878662
 GameObject:
   m_ObjectHideFlags: 0
@@ -35039,6 +35060,7 @@ GameObject:
   - component: {fileID: 1585941741}
   - component: {fileID: 1585941742}
   - component: {fileID: 1585941743}
+  - component: {fileID: 1585941744}
   m_Layer: 11
   m_Name: Scarecrow
   m_TagString: Untagged
@@ -35065,6 +35087,7 @@ MonoBehaviour:
   enemyMovement: {fileID: 0}
   damageReceiver: {fileID: 1585941741}
   enemyLevel: {fileID: 1585941743}
+  scaleSpring: {fileID: 1585941744}
 --- !u!4 &1585941739
 Transform:
   m_ObjectHideFlags: 0
@@ -35109,6 +35132,7 @@ MonoBehaviour:
   hpMax: 2
   hp: 0
   deadEffect: EnemyDeath1
+  enemyCtrl: {fileID: 0}
 --- !u!54 &1585941742
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -35141,6 +35165,25 @@ MonoBehaviour:
   canLevelUp: 0
   level: 0
   enemyCtrl: {fileID: 1585941738}
+--- !u!114 &1585941744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585941737}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1edd0d5a75f54f78b468b956b709eb26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 40
+  Period: 0
+  RandomPeriod: 0
+  SaveState: 0
+  From: 1
+  To: 1.1
+  Dumping: 2
 --- !u!1 &1594703078
 GameObject:
   m_ObjectHideFlags: 0
@@ -35334,7 +35377,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1610375940}
   - component: {fileID: 1610375941}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: SkillSword
   m_TagString: Untagged
   m_Icon: {fileID: 0}

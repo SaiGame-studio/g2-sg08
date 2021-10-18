@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScarecrowDamReceive : DamageReceiver
+public class ScarecrowDamReceive : EnemyDamageReceiver
 {
     protected override void Despawn()
     {

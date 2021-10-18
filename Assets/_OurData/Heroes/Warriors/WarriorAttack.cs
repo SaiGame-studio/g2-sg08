@@ -26,5 +26,9 @@ public class WarriorAttack : SaiBehaviour
         skillObj.transform.position = this.warriorCtrl.strikePoint.position;
         skillObj.transform.parent = transform;
         skillObj.gameObject.SetActive(true);
+
+        DamageSender damageSender = skillObj.GetComponent<DamageSender>();
+        HeroLevel heroLevel = this.warriorCtrl.heroLevel;
+        damageSender.SetDamage(heroLevel.Get());
     }
 }
