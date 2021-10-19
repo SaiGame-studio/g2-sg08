@@ -1,11 +1,8 @@
 ﻿using UnityEngine;
 
-public class PlayerLevelUp : PlayerInteractable
+public class PlayerLevelUp : PlayerInteracByDistance
 {
     [Header("Player Level Up")]
-    [SerializeField] protected float distance = Mathf.Infinity;
-    [SerializeField] protected float distanceLimit = 1.5f;
-    [SerializeField] protected bool opened = false;
     [SerializeField] protected Transform chestOpened;
     [SerializeField] protected int cost = 50;
     [SerializeField] protected Vector3 spawnPos;
@@ -20,7 +17,6 @@ public class PlayerLevelUp : PlayerInteractable
     {
         if (this.chestOpened != null) return;
         this.chestOpened = transform.Find("ChestOpened");
-
         Debug.Log(transform.name + ": LoadChestOpened");
     }
 
@@ -30,23 +26,12 @@ public class PlayerLevelUp : PlayerInteractable
         this.ChestOpening();
     }
 
-    protected virtual void CheckDistance()
-    {
-        HeroCtrl hero = PlayerManager.instance.currentHero;
-        this.distance = Vector3.Distance(transform.position, hero.transform.position);
-
-        this.opened = false;
-        if (this.distance > this.distanceLimit) return;
-
-        this.opened = true;
-    }
-
     protected virtual void ChestOpening()
     {
         bool chestOpened = this.chestOpened.gameObject.activeSelf;
-        if (chestOpened == this.opened) return;
+        if (chestOpened == this.actived) return;
 
-        this.chestOpened.gameObject.SetActive(this.opened);
+        this.chestOpened.gameObject.SetActive(this.actived);
 
         chestOpened = this.chestOpened.gameObject.activeSelf;
         this.LinkToInput(chestOpened);
