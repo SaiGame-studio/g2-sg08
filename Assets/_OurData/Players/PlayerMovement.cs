@@ -79,7 +79,7 @@ public class PlayerMovement : SaiBehaviour
         return direction;
     }
 
-    protected virtual bool IsGrounded()
+    public virtual bool IsGrounded()
     {
         this.isGrounded = this.charCtrl.isGrounded;
 

@@ -1,4 +1,5 @@
 using Assets.HeroEditor.Common.ExampleScripts;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerManager : SaiBehaviour
@@ -38,6 +39,25 @@ public class PlayerManager : SaiBehaviour
         this.playerInput = transform.GetComponentInChildren<PlayerInput>();
 
         Debug.Log(transform.name + ": LoadPlayerComponents");
+    }
+
+    public virtual void LoadRandomPlayer()
+    {
+        HeroCtrl heroCtrl;
+        Vector3 vector3 = this.currentHero.transform.position;
+        vector3.x += 3;
+
+        heroCtrl = HeroManagers.instance.RandomHero();
+        heroCtrl.transform.parent = PlayersHolder.instance.transform;
+
+        heroCtrl.characterCtrl.enabled = false;
+        heroCtrl.transform.position = vector3;
+        heroCtrl.characterCtrl.enabled = true;
+
+
+        PlayersHolder.instance.heroCtrls.Add(heroCtrl);
+        this.SetPlayerCtrl(heroCtrl);
+        heroCtrl.gameObject.SetActive(true);
     }
 
     protected virtual void LoadFirstPlayer()
@@ -92,23 +112,17 @@ public class PlayerManager : SaiBehaviour
         this.playerMovement.ResetMyGround();
     }
 
-
-    public virtual bool ChoosePlayer(string chooseClass)
+    public virtual void ChoosePlayer(int playerIndex)
     {
-        Debug.Log("Choose:" + chooseClass);
+        playerIndex -= 1;
+        List<HeroCtrl> heroCtrls = PlayersHolder.instance.heroCtrls;
 
-        string profileClass;
-        foreach (HeroCtrl heroCtrl in PlayersHolder.instance.heroCtrls)
-        {
-            profileClass = heroCtrl.heroProfile.HeroClass();
-            if (profileClass == chooseClass)
-            {
-                this.SetPlayerCtrl(heroCtrl);
-                return true;
-            }
-        }
+        Debug.Log("playerIndex: " + playerIndex);
+        Debug.Log("heroCtrls.Count: " + heroCtrls.Count);
 
-        Debug.LogError("Class you choose not exist:" + chooseClass);
-        return false;
+        if (playerIndex >= heroCtrls.Count) return;
+
+        HeroCtrl heroCtrl = PlayersHolder.instance.heroCtrls[playerIndex];
+        this.SetPlayerCtrl(heroCtrl);
     }
 }
