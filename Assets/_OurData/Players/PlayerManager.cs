@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class PlayerManager : SaiBehaviour
 {
+    [Header("Manager")]
     public static PlayerManager instance;
-
     public HeroCtrl currentHero;
     public PlayerInput playerInput;
     public PlayerAttacking playerAttacking;
     public PlayerMovement playerMovement;
     public BowExample bowExample;
     [SerializeField] protected string firstClass = "Shooter";
+    [SerializeField] protected int playerIndex = 0;
 
     private void Awake()
     {
@@ -56,8 +57,11 @@ public class PlayerManager : SaiBehaviour
 
 
         PlayersHolder.instance.heroCtrls.Add(heroCtrl);
-        this.SetPlayerCtrl(heroCtrl);
         heroCtrl.gameObject.SetActive(true);
+
+        //this.SetPlayerCtrl(heroCtrl);
+        int newIndex = PlayersHolder.instance.heroCtrls.Count;
+        PlayerManager.instance.ChoosePlayer(newIndex);
     }
 
     protected virtual void LoadFirstPlayer()
@@ -114,6 +118,8 @@ public class PlayerManager : SaiBehaviour
 
     public virtual void ChoosePlayer(int playerIndex)
     {
+        this.playerIndex = playerIndex;
+
         playerIndex -= 1;
         List<HeroCtrl> heroCtrls = PlayersHolder.instance.heroCtrls;
 
