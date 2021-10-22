@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : SaiBehaviour
@@ -9,10 +10,12 @@ public class Spawner : SaiBehaviour
     [SerializeField] protected float spawnDelay = 2;
     [SerializeField] protected float finalSpawnDelay = 2;
     [SerializeField] protected float spawnTimer = 0;
+    public List<Transform> objests = new List<Transform>();
 
     private void FixedUpdate()
     {
         this.Spawning();
+        this.RemoveDespawn();
     }
 
     protected virtual void Spawning()
@@ -25,8 +28,28 @@ public class Spawner : SaiBehaviour
 
         this.BeforeSpawn();
         Transform obj = ObjPoolManager.instance.Spawn(this.EnemyName(), this.SpawnPos(), transform.rotation, transform);
+        this.objests.Add(obj);
+
         this.AfterSpawn(obj);
         obj.gameObject.SetActive(true);
+    }
+
+    protected virtual void RemoveDespawn()
+    {
+        //foreach (Transform obj in this.objests)
+        //{
+        //    if (obj.gameObject.activeSelf) continue;
+
+        //    this.objests.Remove(obj);
+        //}
+
+        for (int i = 0; i < this.objests.Count; i++)
+        {
+            Transform obj = this.objests[i];
+            if (obj.gameObject.activeSelf) continue;
+
+            this.objests.Remove(obj);
+        }
     }
 
     protected virtual string EnemyName()
@@ -75,7 +98,7 @@ public class Spawner : SaiBehaviour
     protected virtual int CountActiveObject()
     {
         int count = 0;
-        foreach(Transform child in transform)
+        foreach (Transform child in transform)
         {
             if (child.gameObject.activeSelf) count++;
         }

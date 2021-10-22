@@ -103,7 +103,11 @@ public class PlayerManager : SaiBehaviour
 
     public virtual void SetPlayerCtrl(HeroCtrl heroCtrl)
     {
+        HeroCtrl lastHero = this.currentHero;
+        if(lastHero) lastHero.playerAutoAttack.gameObject.SetActive(true);
+
         this.currentHero = heroCtrl;
+        this.currentHero.playerAutoAttack.gameObject.SetActive(false);
 
         this.playerAttacking.character = this.currentHero.character;
         this.playerAttacking.firearm = this.currentHero.firearm;
@@ -123,8 +127,8 @@ public class PlayerManager : SaiBehaviour
         playerIndex -= 1;
         List<HeroCtrl> heroCtrls = PlayersHolder.instance.heroCtrls;
 
-        Debug.Log("playerIndex: " + playerIndex);
-        Debug.Log("heroCtrls.Count: " + heroCtrls.Count);
+        //Debug.Log("playerIndex: " + playerIndex);
+        //Debug.Log("heroCtrls.Count: " + heroCtrls.Count);
 
         if (playerIndex >= heroCtrls.Count) return;
 

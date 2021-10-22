@@ -55,4 +55,10 @@ public class WarriorCtrl : HeroCtrl
         base.FixCharacter();
         this.strikePoint.parent = this.character.transform;
     }
+
+    public override void AutoAttack()
+    {
+        this.character.Slash();
+        //Debug.Log(transform.name + " AutoAttack");
+    }
 }

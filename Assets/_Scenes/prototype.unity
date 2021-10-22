@@ -265,6 +265,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 584167950}
   characterCtrl: {fileID: 59123237}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 882847438}
   firearmFire: {fileID: 882847437}
   armL: {fileID: 2090414472}
@@ -517,6 +518,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 623576035}
   characterCtrl: {fileID: 82765196}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 1131955796}
   firearmFire: {fileID: 1131955795}
   armL: {fileID: 518069113}
@@ -3994,6 +3996,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 949401338}
   characterCtrl: {fileID: 160739634}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 949401340}
   firearmFire: {fileID: 949401339}
   armL: {fileID: 949401341}
@@ -4244,6 +4247,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 454133495}
   characterCtrl: {fileID: 204593149}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 454133497}
   firearmFire: {fileID: 454133496}
   armL: {fileID: 454133498}
@@ -4472,6 +4476,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1500315048}
   characterCtrl: {fileID: 220902667}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 1110244248}
   firearmFire: {fileID: 1110244247}
   armL: {fileID: 1363268344}
@@ -4580,6 +4585,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 241467962}
   characterCtrl: {fileID: 229053639}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 241467964}
   firearmFire: {fileID: 241467963}
   armL: {fileID: 241467965}
@@ -4588,6 +4594,55 @@ MonoBehaviour:
   heroLevel: {fileID: 229053637}
   ammoShooted: 0
   magazineCapacity: 30
+--- !u!1 &233839179
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 233839180}
+  - component: {fileID: 233839182}
+  m_Layer: 8
+  m_Name: PlayerAutoAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &233839180
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233839179}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 971737362}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &233839182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233839179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f269f6e849473c45a7b9f1b8e0fec21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  heroCtrl: {fileID: 971737366}
+  target: {fileID: 0}
+  attackRange: 2
+  attackSpeed: 1
+  attackTimer: 0
 --- !u!1 &235663412
 GameObject:
   m_ObjectHideFlags: 0
@@ -4686,6 +4741,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 184644312}
   characterCtrl: {fileID: 235663416}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 1051508946}
   firearmFire: {fileID: 1051508945}
   armL: {fileID: 1741051823}
@@ -5148,6 +5204,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1839480690}
   characterCtrl: {fileID: 310548767}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 1839480692}
   firearmFire: {fileID: 1839480691}
   armL: {fileID: 1839480693}
@@ -10945,6 +11002,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 2117525001}
   characterCtrl: {fileID: 433434359}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 775368022}
   firearmFire: {fileID: 775368021}
   armL: {fileID: 1646576908}
@@ -11123,6 +11181,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 590887777}
   characterCtrl: {fileID: 445000805}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 590887779}
   firearmFire: {fileID: 590887778}
   armL: {fileID: 590887780}
@@ -11246,6 +11305,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 506859838}
   characterCtrl: {fileID: 451455455}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 894277175}
   firearmFire: {fileID: 894277174}
   armL: {fileID: 618474337}
@@ -11940,6 +12000,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 326803474}
   characterCtrl: {fileID: 551527593}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 639014253}
   firearmFire: {fileID: 639014252}
   armL: {fileID: 882606385}
@@ -15518,6 +15579,7 @@ MonoBehaviour:
   spawnDelay: 2
   finalSpawnDelay: 2
   spawnTimer: 0
+  objests: []
 --- !u!4 &656806288
 Transform:
   m_ObjectHideFlags: 0
@@ -15969,6 +16031,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 329920427}
   characterCtrl: {fileID: 674327123}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 329920429}
   firearmFire: {fileID: 329920428}
   armL: {fileID: 329920430}
@@ -16238,6 +16301,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1424233722}
   characterCtrl: {fileID: 704605204}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 443056105}
   firearmFire: {fileID: 443056104}
   armL: {fileID: 989945336}
@@ -16655,6 +16719,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 436751684}
   characterCtrl: {fileID: 725108747}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 710939850}
   firearmFire: {fileID: 710939849}
   armL: {fileID: 740517206}
@@ -16972,6 +17037,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 898701607}
   characterCtrl: {fileID: 740166185}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 1490166414}
   firearmFire: {fileID: 1490166413}
   armL: {fileID: 1436878352}
@@ -18638,6 +18704,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 749997682}
   characterCtrl: {fileID: 936362540}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 749997684}
   firearmFire: {fileID: 749997683}
   armL: {fileID: 749997685}
@@ -18761,6 +18828,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1937240979}
   characterCtrl: {fileID: 936864733}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 1709313060}
   firearmFire: {fileID: 1709313059}
   armL: {fileID: 314286827}
@@ -18949,6 +19017,7 @@ Transform:
   m_Children:
   - {fileID: 717837874}
   - {fileID: 1096025701}
+  - {fileID: 233839180}
   m_Father: {fileID: 734732257}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19015,6 +19084,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 717837876}
   characterCtrl: {fileID: 971737365}
+  playerAutoAttack: {fileID: 233839182}
   firearm: {fileID: 717837878}
   firearmFire: {fileID: 717837877}
   armL: {fileID: 717837879}
@@ -22027,6 +22097,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1307238438}
   characterCtrl: {fileID: 990358290}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 1307238440}
   firearmFire: {fileID: 1307238439}
   armL: {fileID: 1307238441}
@@ -22212,6 +22283,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1097163004}
   characterCtrl: {fileID: 991060071}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 2010653722}
   firearmFire: {fileID: 2010653721}
   armL: {fileID: 1379044495}
@@ -22320,6 +22392,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1737412325}
   characterCtrl: {fileID: 992699468}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 2054379001}
   firearmFire: {fileID: 2054379000}
   armL: {fileID: 648336035}
@@ -27142,6 +27215,55 @@ Transform:
   m_Father: {fileID: 1539003999}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1030133579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1030133580}
+  - component: {fileID: 1030133582}
+  m_Layer: 8
+  m_Name: PlayerAutoAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1030133580
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030133579}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1320517208}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1030133582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030133579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f269f6e849473c45a7b9f1b8e0fec21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  heroCtrl: {fileID: 1320517205}
+  target: {fileID: 0}
+  attackRange: 2
+  attackSpeed: 1
+  attackTimer: 0
 --- !u!1 &1041841371
 GameObject:
   m_ObjectHideFlags: 0
@@ -27479,6 +27601,7 @@ MonoBehaviour:
   spawnDelay: 2
   finalSpawnDelay: 2
   spawnTimer: 0
+  objests: []
   nameEnemies:
   - Larva
   target: {fileID: 686080499}
@@ -28035,6 +28158,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1046268684}
   characterCtrl: {fileID: 1179012343}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 210798981}
   firearmFire: {fileID: 210798980}
   armL: {fileID: 1738920688}
@@ -28712,6 +28836,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 915683963}
   characterCtrl: {fileID: 1248878666}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 915683965}
   firearmFire: {fileID: 915683964}
   armL: {fileID: 915683966}
@@ -28835,6 +28960,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1836879063}
   characterCtrl: {fileID: 1249668603}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 1909299213}
   firearmFire: {fileID: 1909299212}
   armL: {fileID: 1773809100}
@@ -28943,6 +29069,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 2103365148}
   characterCtrl: {fileID: 1250436319}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 2103365150}
   firearmFire: {fileID: 2103365149}
   armL: {fileID: 2103365151}
@@ -32075,6 +32202,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 853534720}
   characterCtrl: {fileID: 1266926458}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 853534722}
   firearmFire: {fileID: 853534721}
   armL: {fileID: 853534723}
@@ -32181,6 +32309,7 @@ MonoBehaviour:
   fire: {fileID: 279655980}
   cost: 50
   spawnPos: {x: 0, y: 0, z: 0}
+  playerMax: 7
 --- !u!4 &1298666934
 Transform:
   m_ObjectHideFlags: 0
@@ -32456,6 +32585,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 102850914}
   characterCtrl: {fileID: 1320517209}
+  playerAutoAttack: {fileID: 1030133582}
   firearm: {fileID: 102850913}
   firearmFire: {fileID: 102850912}
   armL: {fileID: 102850911}
@@ -32508,6 +32638,7 @@ Transform:
   m_Children:
   - {fileID: 102850910}
   - {fileID: 139451091}
+  - {fileID: 1030133580}
   m_Father: {fileID: 734732257}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -32876,6 +33007,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 720963487}
   characterCtrl: {fileID: 1399186493}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 720963489}
   firearmFire: {fileID: 720963488}
   armL: {fileID: 720963490}
@@ -33091,6 +33223,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1195917610}
   characterCtrl: {fileID: 1445847026}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 1195917609}
   firearmFire: {fileID: 1195917608}
   armL: {fileID: 1195917607}
@@ -33408,6 +33541,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1907958897}
   characterCtrl: {fileID: 1535001167}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 629201850}
   firearmFire: {fileID: 629201849}
   armL: {fileID: 627642276}
@@ -33455,6 +33589,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 495650748}
   characterCtrl: {fileID: 1539004003}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 285334609}
   firearmFire: {fileID: 285334608}
   armL: {fileID: 261856708}
@@ -33658,6 +33793,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1214345786}
   characterCtrl: {fileID: 1545536210}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 1806415528}
   firearmFire: {fileID: 1806415527}
   armL: {fileID: 1319848794}
@@ -33766,6 +33902,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1186598280}
   characterCtrl: {fileID: 1550788089}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 1186598282}
   firearmFire: {fileID: 1186598281}
   armL: {fileID: 1186598283}
@@ -39130,6 +39267,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1597455760}
   characterCtrl: {fileID: 1594202607}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 783642141}
   firearmFire: {fileID: 783642140}
   armL: {fileID: 591368628}
@@ -40013,6 +40151,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1857663535}
   characterCtrl: {fileID: 1694426382}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 1047076365}
   firearmFire: {fileID: 1047076364}
   armL: {fileID: 585963993}
@@ -40144,6 +40283,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 880410040}
   characterCtrl: {fileID: 1697764354}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 78329947}
   firearmFire: {fileID: 78329946}
   armL: {fileID: 1861123953}
@@ -40276,6 +40416,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1970874340}
   characterCtrl: {fileID: 1713996409}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 321528611}
   firearmFire: {fileID: 321528610}
   armL: {fileID: 1729320781}
@@ -40474,6 +40615,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 653754794}
   characterCtrl: {fileID: 1723433829}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 2091078543}
   firearmFire: {fileID: 2091078542}
   armL: {fileID: 1388363946}
@@ -40860,6 +41002,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 672678955}
   characterCtrl: {fileID: 1778069359}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 201820786}
   firearmFire: {fileID: 201820785}
   armL: {fileID: 1919241224}
@@ -40972,6 +41115,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1398713256}
   characterCtrl: {fileID: 1786270477}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 1503181747}
   firearmFire: {fileID: 1503181746}
   armL: {fileID: 1359853209}
@@ -41095,6 +41239,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1829511096}
   characterCtrl: {fileID: 1791222894}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 885302025}
   firearmFire: {fileID: 885302024}
   armL: {fileID: 1338091799}
@@ -41302,6 +41447,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1333250876}
   characterCtrl: {fileID: 1794123944}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 1333250878}
   firearmFire: {fileID: 1333250877}
   armL: {fileID: 1333250879}
@@ -41381,7 +41527,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heroManagers:
-  - {fileID: 2118954384}
   - {fileID: 734732256}
 --- !u!1 &1816712790
 GameObject:
@@ -41902,6 +42047,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1754986134}
   characterCtrl: {fileID: 1857850070}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 1193338326}
   firearmFire: {fileID: 1193338325}
   armL: {fileID: 34613026}
@@ -42093,6 +42239,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 681848662}
   characterCtrl: {fileID: 1870619133}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 924125573}
   firearmFire: {fileID: 924125572}
   armL: {fileID: 559575649}
@@ -42224,6 +42371,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 90966242}
   characterCtrl: {fileID: 1883461475}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 683998951}
   firearmFire: {fileID: 683998950}
   armL: {fileID: 1125279067}
@@ -42381,6 +42529,7 @@ MonoBehaviour:
   spawnDelay: 2
   finalSpawnDelay: 2
   spawnTimer: 0
+  objests: []
   height: 4.3
 --- !u!4 &1896473219
 Transform:
@@ -42511,6 +42660,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1595723077}
   characterCtrl: {fileID: 1898120429}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 2106402389}
   firearmFire: {fileID: 2106402388}
   armL: {fileID: 2079039247}
@@ -42686,6 +42836,7 @@ MonoBehaviour:
   playerMovement: {fileID: 306959738}
   bowExample: {fileID: 885178477}
   firstClass: Warrior
+  playerIndex: 0
 --- !u!1 &1932765370
 GameObject:
   m_ObjectHideFlags: 0
@@ -42784,6 +42935,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1762399504}
   characterCtrl: {fileID: 1932765374}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 1762399506}
   firearmFire: {fileID: 1762399505}
   armL: {fileID: 1762399507}
@@ -43179,6 +43331,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1454131616}
   characterCtrl: {fileID: 2009913707}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 1255656553}
   firearmFire: {fileID: 1255656552}
   armL: {fileID: 2080701566}
@@ -43446,6 +43599,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 704805224}
   characterCtrl: {fileID: 2045031178}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 1059317048}
   firearmFire: {fileID: 1059317047}
   armL: {fileID: 428420205}
@@ -43958,7 +44112,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2118954384
 MonoBehaviour:
   m_ObjectHideFlags: 0

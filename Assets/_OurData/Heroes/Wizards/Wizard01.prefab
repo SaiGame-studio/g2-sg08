@@ -5446,6 +5446,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 114665035978887628}
   characterCtrl: {fileID: 8715101830275086754}
+  playerAutoAttack: {fileID: 0}
   firearm: {fileID: 8293370062714381484}
   firearmFire: {fileID: 1283604481290215046}
   armL: {fileID: 4314069016542968}

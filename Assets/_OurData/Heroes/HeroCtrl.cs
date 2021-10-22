@@ -8,6 +8,7 @@ public class HeroCtrl : SaiBehaviour
     public HeroesManager heroesManager;
     public Character character;
     public CharacterController characterCtrl;
+    public PlayerAutoAttack playerAutoAttack;
     public Firearm firearm;
     public FirearmFire firearmFire;
     public Transform armL;
@@ -35,8 +36,16 @@ public class HeroCtrl : SaiBehaviour
         this.LoadHeroProfile();
         this.SetLayer();
         this.LoadHeroLevel();
+        this.LoadPlayerAutoAttack();
 
         this.magazineCapacity = this.firearm.Params.MagazineCapacity;
+    }
+
+    protected virtual void LoadPlayerAutoAttack()
+    {
+        if (this.playerAutoAttack != null) return;
+        this.playerAutoAttack = transform.Find("PlayerAutoAttack").GetComponent<PlayerAutoAttack>();
+        Debug.Log(transform.name + ": LoadPlayerAutoAttack");
     }
 
     protected virtual void LoadHeroLevel()
@@ -117,4 +126,16 @@ public class HeroCtrl : SaiBehaviour
         this.magazineCapacity = this.firearm.Params.MagazineCapacity;
     }
 
+    public virtual void AutoAttack()
+    {
+        Debug.Log(transform.name + " AutoAttack");
+    }
+
+    public virtual Vector3 GetTargetDirection()
+    {
+        Vector3 direction = PlayerManager.instance.playerMovement.MouseToChar();
+        if (this.playerAutoAttack.gameObject.activeSelf) direction = this.playerAutoAttack.TargetDir();
+
+        return direction;
+    }
 }

@@ -21,14 +21,20 @@ public class WarriorAttack : SaiBehaviour
 
     public virtual void Attack()
     {
-        Debug.Log(transform.name + ": WarriorAttack");
+        //Debug.Log(transform.name + ": WarriorAttack");
         Transform skillObj = ObjPoolManager.instance.Spawn(this.skillName);
         skillObj.transform.position = this.warriorCtrl.strikePoint.position;
         skillObj.transform.parent = transform;
-        skillObj.gameObject.SetActive(true);
 
         DamageSender damageSender = skillObj.GetComponent<DamageSender>();
         HeroLevel heroLevel = this.warriorCtrl.heroLevel;
         damageSender.SetDamage(heroLevel.Get());
+
+        Vector3 direction = this.warriorCtrl.GetTargetDirection();
+        SwordSkillCtrl swordSkillCtrl = skillObj.GetComponent<SwordSkillCtrl>();
+        swordSkillCtrl.Turn(direction);
+
+        skillObj.gameObject.SetActive(true);
+
     }
 }

@@ -3,9 +3,17 @@ using UnityEngine;
 
 public class EnemySpawner : Spawner
 {
+    public static EnemySpawner instance;
+
     [Header("Enemy")]
     [SerializeField] protected List<string> nameEnemies;
     [SerializeField] protected Transform target;
+
+    private void Awake()
+    {
+        if (EnemySpawner.instance != null) Debug.LogError("Only 1 EnemySpawner allow");
+        EnemySpawner.instance = this;
+    }
 
     protected override void ResetValue()
     {
