@@ -56,7 +56,6 @@ public class PlayerLevelUp : PlayerInteracByDistance
         HeroCtrl heroCtrl = heroesManager.GetNextHero(currentLevel);
 
         heroCtrl.transform.parent = PlayersHolder.instance.transform;
-        ObjPoolManager.instance.Despawn(currentHero.transform);
 
         PlayerManager.instance.playerMovement.inputHorizontalRaw = 1;
         this.spawnPos = currentHero.transform.position;
@@ -67,5 +66,6 @@ public class PlayerLevelUp : PlayerInteracByDistance
         heroCtrl.characterCtrl.enabled = true;
 
         PlayerManager.instance.SetPlayerCtrl(heroCtrl);
+        ObjPoolManager.instance.Despawn(currentHero.transform);
     }
 }

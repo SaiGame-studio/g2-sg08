@@ -22,7 +22,6 @@ public class PlayerManager : SaiBehaviour
 
     private void Start()
     {
-        //this.LoadPlayers();
         this.LoadFirstPlayer();
     }
 
@@ -38,7 +37,6 @@ public class PlayerManager : SaiBehaviour
         this.playerMovement = transform.GetComponentInChildren<PlayerMovement>();
         this.bowExample = transform.GetComponentInChildren<BowExample>();
         this.playerInput = transform.GetComponentInChildren<PlayerInput>();
-
         Debug.Log(transform.name + ": LoadPlayerComponents");
     }
 
@@ -55,13 +53,11 @@ public class PlayerManager : SaiBehaviour
         heroCtrl.transform.position = vector3;
         heroCtrl.characterCtrl.enabled = true;
 
-
-        PlayersHolder.instance.heroCtrls.Add(heroCtrl);
         heroCtrl.gameObject.SetActive(true);
+        PlayersHolder.instance.heroCtrls.Add(heroCtrl);
 
-        //this.SetPlayerCtrl(heroCtrl);
         int newIndex = PlayersHolder.instance.heroCtrls.Count;
-        PlayerManager.instance.ChoosePlayer(newIndex);
+        this.ChoosePlayer(newIndex);
     }
 
     protected virtual void LoadFirstPlayer()
@@ -77,27 +73,8 @@ public class PlayerManager : SaiBehaviour
             heroCtrl.transform.position = vector3;
             heroCtrl.transform.parent = PlayersHolder.instance.transform;
 
-            PlayersHolder.instance.heroCtrls.Add(heroCtrl);
-
             this.SetPlayerCtrl(heroCtrl);
-        }
-    }
-
-    protected virtual void LoadPlayers()
-    {
-        HeroCtrl heroCtrl;
-        Vector3 vector3 = transform.position;
-        vector3.x -= 7;
-        foreach (HeroesManager heroesManager in HeroManagers.instance.heroManagers)
-        {
-            vector3.x += 3;
-            heroCtrl = heroesManager.GetHero();
-            heroCtrl.transform.position = vector3;
-            heroCtrl.transform.parent = PlayersHolder.instance.transform;
-
             PlayersHolder.instance.heroCtrls.Add(heroCtrl);
-
-            this.SetPlayerCtrl(heroCtrl);
         }
     }
 
@@ -117,7 +94,8 @@ public class PlayerManager : SaiBehaviour
         this.playerMovement.character = this.currentHero.character;
         this.playerMovement.charCtrl = this.currentHero.characterCtrl;
 
-        this.playerMovement.ResetMyGround();
+        this.currentHero.gameObject.SetActive(true);//TODO: need for unknow bug fix
+        this.playerMovement.ResetMyGround();        
     }
 
     public virtual void ChoosePlayer(int playerIndex)
@@ -126,9 +104,6 @@ public class PlayerManager : SaiBehaviour
 
         playerIndex -= 1;
         List<HeroCtrl> heroCtrls = PlayersHolder.instance.heroCtrls;
-
-        //Debug.Log("playerIndex: " + playerIndex);
-        //Debug.Log("heroCtrls.Count: " + heroCtrls.Count);
 
         if (playerIndex >= heroCtrls.Count) return;
 

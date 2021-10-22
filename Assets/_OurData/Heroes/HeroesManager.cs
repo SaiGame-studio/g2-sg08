@@ -56,7 +56,6 @@ public class HeroesManager : SaiBehaviour
 
         GameObject heroObj = this.heroes[index].gameObject;
 
-        //GameObject hero = Instantiate(heroObj);
         Transform hero = ObjPoolManager.instance.Spawn(heroObj.name);
 
         HeroCtrl heroCtrl = hero.GetComponent<HeroCtrl>();
