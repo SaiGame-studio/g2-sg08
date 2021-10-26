@@ -76,10 +76,7 @@ public class PlayerAttacking : MonoBehaviour
                 return;
         }
 
-        if (character.IsReady())
-        {
-            RotateArm(arm, weapon, FixedArm ? arm.position + 1000 * Vector3.right : Camera.main.ScreenToWorldPoint(Input.mousePosition), -40, 40);
-        }
+        RotateArm(arm, weapon, FixedArm ? arm.position + 1000 * Vector3.right : Camera.main.ScreenToWorldPoint(Input.mousePosition), -40, 40);
     }
 
     /// <summary>

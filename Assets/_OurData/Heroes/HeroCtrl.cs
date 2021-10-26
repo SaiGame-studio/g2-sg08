@@ -44,7 +44,8 @@ public class HeroCtrl : SaiBehaviour
     protected virtual void LoadPlayerAutoAttack()
     {
         if (this.playerAutoAttack != null) return;
-        this.playerAutoAttack = transform.Find("PlayerAutoAttack").GetComponent<PlayerAutoAttack>();
+        Transform autoObj = transform.Find("PlayerAutoAttack");
+        this.playerAutoAttack = autoObj.GetComponent<PlayerAutoAttack>();
         Debug.Log(transform.name + ": LoadPlayerAutoAttack");
     }
 
@@ -129,6 +130,7 @@ public class HeroCtrl : SaiBehaviour
     public virtual void AutoAttack()
     {
         Debug.Log(transform.name + " AutoAttack");
+        StartCoroutine(this.firearmFire.Fire());
     }
 
     public virtual Vector3 GetTargetDirection()
