@@ -12,7 +12,7 @@ public class ShooterAutoAttack : PlayerAutoAttack
     protected override void ResetValue()
     {
         base.ResetValue();
-        this.attackRange = 9;
+        this.attackRange = 7;
     }
 
     protected virtual void AutoArm()
@@ -22,7 +22,6 @@ public class ShooterAutoAttack : PlayerAutoAttack
         Transform arm;
         Transform weapon;
         bool FixedArm = false;
-        //Vector3 targetDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3 targetDirection = this.target.position;
 
         arm = this.heroCtrl.armR;

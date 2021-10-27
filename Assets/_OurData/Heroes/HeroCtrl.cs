@@ -129,7 +129,6 @@ public class HeroCtrl : SaiBehaviour
 
     public virtual void AutoAttack()
     {
-        Debug.Log(transform.name + " AutoAttack");
         StartCoroutine(this.firearmFire.Fire());
     }
 

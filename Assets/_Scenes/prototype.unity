@@ -178,6 +178,57 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23110dbb70e652e4fab43806342f3e08, type: 3}
+--- !u!1 &33514063
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 33514064}
+  - component: {fileID: 33514065}
+  m_Layer: 8
+  m_Name: PlayerAutoAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &33514064
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33514063}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1786270474}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &33514065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33514063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e604a04d4cbee45ac2f456c0f8d57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  heroCtrl: {fileID: 1786270478}
+  target: {fileID: 0}
+  attackRange: 7
+  attackSpeed: 1
+  attackTimer: 0
+  targetDis: Infinity
+  targetDir: {x: 0, y: 0, z: 0}
 --- !u!4 &34613026 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4314069016542968, guid: b6172d6967e93964c8ab9f7e343f4b1e,
@@ -279,6 +330,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 853591188}
+  - {fileID: 875241764}
   m_Father: {fileID: 2118954385}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -316,7 +368,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 584167950}
   characterCtrl: {fileID: 59123237}
-  playerAutoAttack: {fileID: 0}
+  playerAutoAttack: {fileID: 875241765}
   firearm: {fileID: 882847438}
   firearmFire: {fileID: 882847437}
   armL: {fileID: 2090414472}
@@ -390,6 +442,57 @@ Transform:
   m_Father: {fileID: 1723433825}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &67489892
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 67489893}
+  - component: {fileID: 67489894}
+  m_Layer: 8
+  m_Name: PlayerAutoAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &67489893
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67489892}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 704605201}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &67489894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67489892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e604a04d4cbee45ac2f456c0f8d57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  heroCtrl: {fileID: 704605205}
+  target: {fileID: 0}
+  attackRange: 7
+  attackSpeed: 1
+  attackTimer: 0
+  targetDis: Infinity
+  targetDir: {x: 0, y: 0, z: 0}
 --- !u!1001 &74169665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -503,6 +606,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 623576034}
+  - {fileID: 1649920806}
   m_Father: {fileID: 2118954385}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -569,7 +673,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 623576035}
   characterCtrl: {fileID: 82765196}
-  playerAutoAttack: {fileID: 0}
+  playerAutoAttack: {fileID: 1649920807}
   firearm: {fileID: 1131955796}
   firearmFire: {fileID: 1131955795}
   armL: {fileID: 518069113}
@@ -896,6 +1000,57 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2461b0dd395ed8e43a2801b498cb73e4, type: 3}
+--- !u!1 &108852808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 108852809}
+  - component: {fileID: 108852810}
+  m_Layer: 8
+  m_Name: PlayerAutoAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &108852809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108852808}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 936362537}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &108852810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108852808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e604a04d4cbee45ac2f456c0f8d57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  heroCtrl: {fileID: 936362541}
+  target: {fileID: 0}
+  attackRange: 7
+  attackSpeed: 1
+  attackTimer: 0
+  targetDis: Infinity
+  targetDir: {x: 0, y: 0, z: 0}
 --- !u!1 &115106146
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,6 +1081,57 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &115942728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 115942729}
+  - component: {fileID: 115942730}
+  m_Layer: 8
+  m_Name: PlayerAutoAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &115942729
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115942728}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1266926455}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &115942730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115942728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e604a04d4cbee45ac2f456c0f8d57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  heroCtrl: {fileID: 1266926459}
+  target: {fileID: 0}
+  attackRange: 7
+  attackSpeed: 1
+  attackTimer: 0
+  targetDis: Infinity
+  targetDir: {x: 0, y: 0, z: 0}
 --- !u!1 &139451090
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,6 +1202,57 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7907995}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &146474348
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 146474349}
+  - component: {fileID: 146474350}
+  m_Layer: 8
+  m_Name: PlayerAutoAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &146474349
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146474348}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1932765371}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &146474350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146474348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e604a04d4cbee45ac2f456c0f8d57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  heroCtrl: {fileID: 1932765375}
+  target: {fileID: 0}
+  attackRange: 7
+  attackSpeed: 1
+  attackTimer: 0
+  targetDis: Infinity
+  targetDir: {x: 0, y: 0, z: 0}
 --- !u!1001 &146607825
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4335,6 +4592,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 454133493}
+  - {fileID: 1117486025}
   m_Father: {fileID: 2118954385}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4401,7 +4659,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 454133495}
   characterCtrl: {fileID: 204593149}
-  playerAutoAttack: {fileID: 0}
+  playerAutoAttack: {fileID: 1117486026}
   firearm: {fileID: 454133497}
   firearmFire: {fileID: 454133496}
   armL: {fileID: 454133498}
@@ -4725,6 +4983,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 241467960}
+  - {fileID: 1697755025}
   m_Father: {fileID: 2118954385}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4791,7 +5050,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 241467962}
   characterCtrl: {fileID: 229053639}
-  playerAutoAttack: {fileID: 0}
+  playerAutoAttack: {fileID: 1697755026}
   firearm: {fileID: 241467964}
   firearmFire: {fileID: 241467963}
   armL: {fileID: 241467965}
@@ -4883,6 +5142,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1560294571}
+  - {fileID: 1897710557}
   m_Father: {fileID: 2118954385}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4949,7 +5209,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 184644312}
   characterCtrl: {fileID: 235663416}
-  playerAutoAttack: {fileID: 0}
+  playerAutoAttack: {fileID: 1897710558}
   firearm: {fileID: 1051508946}
   firearmFire: {fileID: 1051508945}
   armL: {fileID: 1741051823}
@@ -5397,6 +5657,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1839480688}
+  - {fileID: 1893104979}
   m_Father: {fileID: 2118954385}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5463,7 +5724,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1839480690}
   characterCtrl: {fileID: 310548767}
-  playerAutoAttack: {fileID: 0}
+  playerAutoAttack: {fileID: 1893104980}
   firearm: {fileID: 1839480692}
   firearmFire: {fileID: 1839480691}
   armL: {fileID: 1839480693}
@@ -5657,6 +5918,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0105e23e272418c94b0bbf1e7d02dee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &322873496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 322873497}
+  - component: {fileID: 322873498}
+  m_Layer: 8
+  m_Name: PlayerAutoAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &322873497
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322873496}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 674327122}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &322873498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322873496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e604a04d4cbee45ac2f456c0f8d57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  heroCtrl: {fileID: 674327124}
+  target: {fileID: 0}
+  attackRange: 7
+  attackSpeed: 1
+  attackTimer: 0
+  targetDis: Infinity
+  targetDir: {x: 0, y: 0, z: 0}
 --- !u!1 &323218664
 GameObject:
   m_ObjectHideFlags: 0
@@ -6292,6 +6604,57 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42cc83e0f4626ac46b4275e59803e06d, type: 3}
+--- !u!1 &382729954
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 382729955}
+  - component: {fileID: 382729956}
+  m_Layer: 8
+  m_Name: PlayerAutoAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &382729955
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382729954}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1248878663}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &382729956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382729954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e604a04d4cbee45ac2f456c0f8d57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  heroCtrl: {fileID: 1248878667}
+  target: {fileID: 0}
+  attackRange: 7
+  attackSpeed: 1
+  attackTimer: 0
+  targetDis: Infinity
+  targetDir: {x: 0, y: 0, z: 0}
 --- !u!1 &398124555
 GameObject:
   m_ObjectHideFlags: 0
@@ -11195,6 +11558,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2117525000}
+  - {fileID: 664328944}
   m_Father: {fileID: 2118954385}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11261,7 +11625,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 2117525001}
   characterCtrl: {fileID: 433434359}
-  playerAutoAttack: {fileID: 0}
+  playerAutoAttack: {fileID: 664328945}
   firearm: {fileID: 775368022}
   firearmFire: {fileID: 775368021}
   armL: {fileID: 1646576908}
@@ -11374,6 +11738,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 590887775}
+  - {fileID: 1941303727}
   m_Father: {fileID: 2118954385}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11440,7 +11805,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 590887777}
   characterCtrl: {fileID: 445000805}
-  playerAutoAttack: {fileID: 0}
+  playerAutoAttack: {fileID: 1941303728}
   firearm: {fileID: 590887779}
   firearmFire: {fileID: 590887778}
   armL: {fileID: 590887780}
@@ -11687,6 +12052,57 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 454133492}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &456000778
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 456000779}
+  - component: {fileID: 456000780}
+  m_Layer: 8
+  m_Name: PlayerAutoAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &456000779
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456000778}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2045031175}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &456000780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456000778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e604a04d4cbee45ac2f456c0f8d57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  heroCtrl: {fileID: 2045031179}
+  target: {fileID: 0}
+  attackRange: 7
+  attackSpeed: 1
+  attackTimer: 0
+  targetDis: Infinity
+  targetDir: {x: 0, y: 0, z: 0}
 --- !u!1 &462890157
 GameObject:
   m_ObjectHideFlags: 0
@@ -15979,7 +16395,7 @@ MonoBehaviour:
   debug: 0
   heroCtrl: {fileID: 990358286}
   target: {fileID: 0}
-  attackRange: 9
+  attackRange: 7
   attackSpeed: 1
   attackTimer: 0
   targetDis: Infinity
@@ -16409,6 +16825,57 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!1 &664328943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 664328944}
+  - component: {fileID: 664328945}
+  m_Layer: 8
+  m_Name: PlayerAutoAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &664328944
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664328943}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 433434356}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &664328945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664328943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e604a04d4cbee45ac2f456c0f8d57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  heroCtrl: {fileID: 433434360}
+  target: {fileID: 0}
+  attackRange: 7
+  attackSpeed: 1
+  attackTimer: 0
+  targetDis: Infinity
+  targetDir: {x: 0, y: 0, z: 0}
 --- !u!4 &672678954 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4092847222685647, guid: e85ab2c8861a53d43aae2564686dd7e1,
@@ -16459,6 +16926,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 329920425}
+  - {fileID: 322873497}
   m_Father: {fileID: 2118954385}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16496,7 +16964,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 329920427}
   characterCtrl: {fileID: 674327123}
-  playerAutoAttack: {fileID: 0}
+  playerAutoAttack: {fileID: 322873498}
   firearm: {fileID: 329920429}
   firearmFire: {fileID: 329920428}
   armL: {fileID: 329920430}
@@ -16751,6 +17219,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1424233721}
+  - {fileID: 67489893}
   m_Father: {fileID: 2118954385}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16817,7 +17286,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1424233722}
   characterCtrl: {fileID: 704605204}
-  playerAutoAttack: {fileID: 0}
+  playerAutoAttack: {fileID: 67489894}
   firearm: {fileID: 443056105}
   firearmFire: {fileID: 443056104}
   armL: {fileID: 989945336}
@@ -17009,6 +17478,57 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 717837873}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &719903806
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 719903807}
+  - component: {fileID: 719903808}
+  m_Layer: 8
+  m_Name: PlayerAutoAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &719903807
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719903806}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1445847025}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &719903808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719903806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e604a04d4cbee45ac2f456c0f8d57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  heroCtrl: {fileID: 1445847022}
+  target: {fileID: 0}
+  attackRange: 7
+  attackSpeed: 1
+  attackTimer: 0
+  targetDis: Infinity
+  targetDir: {x: 0, y: 0, z: 0}
 --- !u!1001 &720963484
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18706,6 +19226,57 @@ MonoBehaviour:
   chestOpened: {fileID: 2144127975469609159}
   cost: 100
   spawnPos: {x: 0, y: 0, z: 0}
+--- !u!1 &875241763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 875241764}
+  - component: {fileID: 875241765}
+  m_Layer: 8
+  m_Name: PlayerAutoAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &875241764
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875241763}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 59123236}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &875241765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875241763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e604a04d4cbee45ac2f456c0f8d57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  heroCtrl: {fileID: 59123238}
+  target: {fileID: 0}
+  attackRange: 7
+  attackSpeed: 1
+  attackTimer: 0
+  targetDis: Infinity
+  targetDir: {x: 0, y: 0, z: 0}
 --- !u!4 &880410039 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4305107873441922, guid: a197dfbadf7f7fe45b23c2e8d758f4fc,
@@ -19258,6 +19829,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 749997680}
+  - {fileID: 108852809}
   m_Father: {fileID: 2118954385}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19324,7 +19896,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 749997682}
   characterCtrl: {fileID: 936362540}
-  playerAutoAttack: {fileID: 0}
+  playerAutoAttack: {fileID: 108852810}
   firearm: {fileID: 749997684}
   firearmFire: {fileID: 749997683}
   armL: {fileID: 749997685}
@@ -19571,6 +20143,57 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 949401335}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &953357405
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 953357406}
+  - component: {fileID: 953357407}
+  m_Layer: 8
+  m_Name: PlayerAutoAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &953357406
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953357405}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1399186490}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &953357407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953357405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e604a04d4cbee45ac2f456c0f8d57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  heroCtrl: {fileID: 1399186494}
+  target: {fileID: 0}
+  attackRange: 7
+  attackSpeed: 1
+  attackTimer: 0
+  targetDis: Infinity
+  targetDir: {x: 0, y: 0, z: 0}
 --- !u!1 &954281704
 GameObject:
   m_ObjectHideFlags: 0
@@ -23000,6 +23623,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1737412324}
+  - {fileID: 1573648356}
   m_Father: {fileID: 2118954385}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -23066,7 +23690,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1737412325}
   characterCtrl: {fileID: 992699468}
-  playerAutoAttack: {fileID: 0}
+  playerAutoAttack: {fileID: 1573648357}
   firearm: {fileID: 2054379001}
   firearmFire: {fileID: 2054379000}
   armL: {fileID: 648336035}
@@ -28638,6 +29262,57 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1117486024
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1117486025}
+  - component: {fileID: 1117486026}
+  m_Layer: 8
+  m_Name: PlayerAutoAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1117486025
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117486024}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 204593146}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1117486026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117486024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e604a04d4cbee45ac2f456c0f8d57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  heroCtrl: {fileID: 204593150}
+  target: {fileID: 0}
+  attackRange: 7
+  attackSpeed: 1
+  attackTimer: 0
+  targetDis: Infinity
+  targetDir: {x: 0, y: 0, z: 0}
 --- !u!1 &1122392909
 GameObject:
   m_ObjectHideFlags: 0
@@ -28713,6 +29388,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0105e23e272418c94b0bbf1e7d02dee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1136995046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1136995047}
+  - component: {fileID: 1136995048}
+  m_Layer: 8
+  m_Name: PlayerAutoAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1136995047
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136995046}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1550788086}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1136995048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136995046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e604a04d4cbee45ac2f456c0f8d57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  heroCtrl: {fileID: 1550788090}
+  target: {fileID: 0}
+  attackRange: 7
+  attackSpeed: 1
+  attackTimer: 0
+  targetDis: Infinity
+  targetDir: {x: 0, y: 0, z: 0}
 --- !u!4 &1161576026 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4957315015863976, guid: 116d97955cbad9041b8eac644c076a88,
@@ -29498,6 +30224,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 915683961}
+  - {fileID: 382729955}
   m_Father: {fileID: 2118954385}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -29564,7 +30291,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 915683963}
   characterCtrl: {fileID: 1248878666}
-  playerAutoAttack: {fileID: 0}
+  playerAutoAttack: {fileID: 382729956}
   firearm: {fileID: 915683965}
   firearmFire: {fileID: 915683964}
   armL: {fileID: 915683966}
@@ -29732,6 +30459,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2103365146}
+  - {fileID: 1396727767}
   m_Father: {fileID: 2118954385}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -29798,7 +30526,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 2103365148}
   characterCtrl: {fileID: 1250436319}
-  playerAutoAttack: {fileID: 0}
+  playerAutoAttack: {fileID: 1396727768}
   firearm: {fileID: 2103365150}
   firearmFire: {fileID: 2103365149}
   armL: {fileID: 2103365151}
@@ -32865,6 +33593,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 853534718}
+  - {fileID: 115942729}
   m_Father: {fileID: 2118954385}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -32931,7 +33660,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 853534720}
   characterCtrl: {fileID: 1266926458}
-  playerAutoAttack: {fileID: 0}
+  playerAutoAttack: {fileID: 115942730}
   firearm: {fileID: 853534722}
   firearmFire: {fileID: 853534721}
   armL: {fileID: 853534723}
@@ -33671,6 +34400,57 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 253493448}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1396727766
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1396727767}
+  - component: {fileID: 1396727768}
+  m_Layer: 8
+  m_Name: PlayerAutoAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1396727767
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396727766}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1250436316}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1396727768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396727766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e604a04d4cbee45ac2f456c0f8d57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  heroCtrl: {fileID: 1250436320}
+  target: {fileID: 0}
+  attackRange: 7
+  attackSpeed: 1
+  attackTimer: 0
+  targetDis: Infinity
+  targetDir: {x: 0, y: 0, z: 0}
 --- !u!4 &1398713255 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4092847222685647, guid: cf8043ff50eecff42bb21233cd462c93,
@@ -33721,6 +34501,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 720963485}
+  - {fileID: 953357406}
   m_Father: {fileID: 2118954385}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -33787,7 +34568,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 720963487}
   characterCtrl: {fileID: 1399186493}
-  playerAutoAttack: {fileID: 0}
+  playerAutoAttack: {fileID: 953357407}
   firearm: {fileID: 720963489}
   firearmFire: {fileID: 720963488}
   armL: {fileID: 720963490}
@@ -33877,6 +34658,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9bab99a464f488298c9d9629a889d97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1427483310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1427483311}
+  - component: {fileID: 1427483312}
+  m_Layer: 8
+  m_Name: PlayerAutoAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1427483311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427483310}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1713996406}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1427483312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427483310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e604a04d4cbee45ac2f456c0f8d57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  heroCtrl: {fileID: 1713996410}
+  target: {fileID: 0}
+  attackRange: 7
+  attackSpeed: 1
+  attackTimer: 0
+  targetDis: Infinity
+  targetDir: {x: 0, y: 0, z: 0}
 --- !u!4 &1436878352 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4314069016542968, guid: af31a4c62ee80b342bcc3045162af3a5,
@@ -34003,7 +34835,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1195917610}
   characterCtrl: {fileID: 1445847026}
-  playerAutoAttack: {fileID: 0}
+  playerAutoAttack: {fileID: 719903808}
   firearm: {fileID: 1195917609}
   firearmFire: {fileID: 1195917608}
   armL: {fileID: 1195917607}
@@ -34053,6 +34885,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1195917606}
+  - {fileID: 719903807}
   m_Father: {fileID: 2118954385}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -34721,6 +35554,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1186598278}
+  - {fileID: 1136995047}
   m_Father: {fileID: 2118954385}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -34787,7 +35621,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1186598280}
   characterCtrl: {fileID: 1550788089}
-  playerAutoAttack: {fileID: 0}
+  playerAutoAttack: {fileID: 1136995048}
   firearm: {fileID: 1186598282}
   firearmFire: {fileID: 1186598281}
   armL: {fileID: 1186598283}
@@ -35136,6 +35970,57 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6172d6967e93964c8ab9f7e343f4b1e, type: 3}
+--- !u!1 &1573648355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1573648356}
+  - component: {fileID: 1573648357}
+  m_Layer: 8
+  m_Name: PlayerAutoAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1573648356
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573648355}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 992699465}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1573648357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573648355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e604a04d4cbee45ac2f456c0f8d57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  heroCtrl: {fileID: 992699469}
+  target: {fileID: 0}
+  attackRange: 7
+  attackSpeed: 1
+  attackTimer: 0
+  targetDis: Infinity
+  targetDir: {x: 0, y: 0, z: 0}
 --- !u!1 &1580727861
 GameObject:
   m_ObjectHideFlags: 0
@@ -40787,6 +41672,57 @@ MonoBehaviour:
   attackTimer: 0
   targetDis: Infinity
   targetDir: {x: 0, y: 0, z: 0}
+--- !u!1 &1649920805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1649920806}
+  - component: {fileID: 1649920807}
+  m_Layer: 8
+  m_Name: PlayerAutoAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1649920806
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649920805}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 82765193}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1649920807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649920805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e604a04d4cbee45ac2f456c0f8d57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  heroCtrl: {fileID: 82765197}
+  target: {fileID: 0}
+  attackRange: 7
+  attackSpeed: 1
+  attackTimer: 0
+  targetDis: Infinity
+  targetDir: {x: 0, y: 0, z: 0}
 --- !u!4 &1664766029 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4957315015863976, guid: fc328d4f1572153409eb25c3e287d4cd,
@@ -40892,6 +41828,57 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1572649288}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1676492468
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1676492469}
+  - component: {fileID: 1676492470}
+  m_Layer: 8
+  m_Name: PlayerAutoAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1676492469
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676492468}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1778069356}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1676492470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676492468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e604a04d4cbee45ac2f456c0f8d57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  heroCtrl: {fileID: 1778069360}
+  target: {fileID: 0}
+  attackRange: 7
+  attackSpeed: 1
+  attackTimer: 0
+  targetDis: Infinity
+  targetDir: {x: 0, y: 0, z: 0}
 --- !u!1 &1684940117
 GameObject:
   m_ObjectHideFlags: 0
@@ -41106,6 +42093,57 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1328666126}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1697755024
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1697755025}
+  - component: {fileID: 1697755026}
+  m_Layer: 8
+  m_Name: PlayerAutoAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1697755025
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697755024}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 229053636}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1697755026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697755024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e604a04d4cbee45ac2f456c0f8d57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  heroCtrl: {fileID: 229053640}
+  target: {fileID: 0}
+  attackRange: 7
+  attackSpeed: 1
+  attackTimer: 0
+  targetDis: Infinity
+  targetDir: {x: 0, y: 0, z: 0}
 --- !u!1 &1697764349
 GameObject:
   m_ObjectHideFlags: 0
@@ -41340,6 +42378,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1970874339}
+  - {fileID: 1427483311}
   m_Father: {fileID: 2118954385}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -41406,7 +42445,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1970874340}
   characterCtrl: {fileID: 1713996409}
-  playerAutoAttack: {fileID: 0}
+  playerAutoAttack: {fileID: 1427483312}
   firearm: {fileID: 321528611}
   firearmFire: {fileID: 321528610}
   armL: {fileID: 1729320781}
@@ -41978,6 +43017,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 672678954}
+  - {fileID: 1676492469}
   m_Father: {fileID: 2118954385}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -42044,7 +43084,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 672678955}
   characterCtrl: {fileID: 1778069359}
-  playerAutoAttack: {fileID: 0}
+  playerAutoAttack: {fileID: 1676492470}
   firearm: {fileID: 201820786}
   firearmFire: {fileID: 201820785}
   armL: {fileID: 1919241224}
@@ -42091,6 +43131,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1398713255}
+  - {fileID: 33514064}
   m_Father: {fileID: 2118954385}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -42157,7 +43198,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1398713256}
   characterCtrl: {fileID: 1786270477}
-  playerAutoAttack: {fileID: 0}
+  playerAutoAttack: {fileID: 33514065}
   firearm: {fileID: 1503181747}
   firearmFire: {fileID: 1503181746}
   armL: {fileID: 1359853209}
@@ -42424,6 +43465,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1333250874}
+  - {fileID: 2140268275}
   m_Father: {fileID: 2118954385}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -42490,7 +43532,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1333250876}
   characterCtrl: {fileID: 1794123944}
-  playerAutoAttack: {fileID: 0}
+  playerAutoAttack: {fileID: 2140268276}
   firearm: {fileID: 1333250878}
   firearmFire: {fileID: 1333250877}
   armL: {fileID: 1333250879}
@@ -43590,6 +44632,57 @@ Transform:
   m_Father: {fileID: 1697764350}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1893104978
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1893104979}
+  - component: {fileID: 1893104980}
+  m_Layer: 8
+  m_Name: PlayerAutoAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1893104979
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893104978}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 310548764}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1893104980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893104978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e604a04d4cbee45ac2f456c0f8d57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  heroCtrl: {fileID: 310548768}
+  target: {fileID: 0}
+  attackRange: 7
+  attackSpeed: 1
+  attackTimer: 0
+  targetDis: Infinity
+  targetDir: {x: 0, y: 0, z: 0}
 --- !u!1 &1896473217
 GameObject:
   m_ObjectHideFlags: 0
@@ -43642,6 +44735,57 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1897710556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1897710557}
+  - component: {fileID: 1897710558}
+  m_Layer: 8
+  m_Name: PlayerAutoAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1897710557
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897710556}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 235663413}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1897710558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897710556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e604a04d4cbee45ac2f456c0f8d57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  heroCtrl: {fileID: 235663417}
+  target: {fileID: 0}
+  attackRange: 7
+  attackSpeed: 1
+  attackTimer: 0
+  targetDis: Infinity
+  targetDir: {x: 0, y: 0, z: 0}
 --- !u!1 &1898120424
 GameObject:
   m_ObjectHideFlags: 0
@@ -44069,6 +45213,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1762399502}
+  - {fileID: 146474349}
   m_Father: {fileID: 2118954385}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -44135,7 +45280,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 1762399504}
   characterCtrl: {fileID: 1932765374}
-  playerAutoAttack: {fileID: 0}
+  playerAutoAttack: {fileID: 146474350}
   firearm: {fileID: 1762399506}
   firearmFire: {fileID: 1762399505}
   armL: {fileID: 1762399507}
@@ -44162,6 +45307,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9bab99a464f488298c9d9629a889d97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1941303726
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1941303727}
+  - component: {fileID: 1941303728}
+  m_Layer: 8
+  m_Name: PlayerAutoAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1941303727
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941303726}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 445000802}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1941303728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941303726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e604a04d4cbee45ac2f456c0f8d57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  heroCtrl: {fileID: 445000806}
+  target: {fileID: 0}
+  attackRange: 7
+  attackSpeed: 1
+  attackTimer: 0
+  targetDis: Infinity
+  targetDir: {x: 0, y: 0, z: 0}
 --- !u!4 &1970874339 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4092847222685647, guid: ffadca29a5f6be4419a7f5a7652b8135,
@@ -44734,6 +45930,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 704805223}
+  - {fileID: 456000779}
   m_Father: {fileID: 2118954385}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -44800,7 +45997,7 @@ MonoBehaviour:
   heroesManager: {fileID: 0}
   character: {fileID: 704805224}
   characterCtrl: {fileID: 2045031178}
-  playerAutoAttack: {fileID: 0}
+  playerAutoAttack: {fileID: 456000780}
   firearm: {fileID: 1059317048}
   firearmFire: {fileID: 1059317047}
   armL: {fileID: 428420205}
@@ -45661,6 +46858,57 @@ Transform:
   m_Father: {fileID: 1594202603}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2140268274
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2140268275}
+  - component: {fileID: 2140268276}
+  m_Layer: 8
+  m_Name: PlayerAutoAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2140268275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140268274}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1794123941}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2140268276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140268274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e604a04d4cbee45ac2f456c0f8d57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  heroCtrl: {fileID: 1794123945}
+  target: {fileID: 0}
+  attackRange: 7
+  attackSpeed: 1
+  attackTimer: 0
+  targetDis: Infinity
+  targetDir: {x: 0, y: 0, z: 0}
 --- !u!212 &2144127975469609152
 SpriteRenderer:
   m_ObjectHideFlags: 0
