@@ -33,7 +33,6 @@ public class HeroManagers : MonoBehaviour
     public virtual HeroCtrl RandomHero()
     {
         int maxRan = this.heroManagers.Length;
-        //int ran1 = Random.RandomRange(0, maxRan);
         int ran = Random.Range(0, maxRan);
         HeroesManager heroesManager = this.heroManagers[ran];
         HeroCtrl heroCtrl = heroesManager.GetHero();

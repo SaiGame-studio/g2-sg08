@@ -22,7 +22,8 @@ public class PlayerManager : SaiBehaviour
 
     private void Start()
     {
-        this.LoadFirstPlayer();
+        //this.LoadFirstPlayer();
+        this.LoadRandomPlayer();
     }
 
     protected override void LoadComponents()
@@ -43,8 +44,13 @@ public class PlayerManager : SaiBehaviour
     public virtual void LoadRandomPlayer()
     {
         HeroCtrl heroCtrl;
-        Vector3 vector3 = this.currentHero.transform.position;
-        vector3.x += 3;
+        Vector3 vector3 = transform.position;
+
+        if (this.currentHero != null)
+        {
+            vector3 = this.currentHero.transform.position;
+            vector3.x += 3;
+        }
 
         heroCtrl = HeroManagers.instance.RandomHero();
         heroCtrl.transform.parent = PlayersHolder.instance.transform;
@@ -81,7 +87,7 @@ public class PlayerManager : SaiBehaviour
     public virtual void SetPlayerCtrl(HeroCtrl heroCtrl)
     {
         HeroCtrl lastHero = this.currentHero;
-        if(lastHero) lastHero.playerAutoAttack.gameObject.SetActive(true);
+        if (lastHero) lastHero.playerAutoAttack.gameObject.SetActive(true);
 
         this.currentHero = heroCtrl;
         this.currentHero.playerAutoAttack.gameObject.SetActive(false);
@@ -95,7 +101,7 @@ public class PlayerManager : SaiBehaviour
         this.playerMovement.charCtrl = this.currentHero.characterCtrl;
 
         this.currentHero.gameObject.SetActive(true);//TODO: need for unknow bug fix
-        this.playerMovement.ResetMyGround();        
+        this.playerMovement.ResetMyGround();
     }
 
     public virtual void ChoosePlayer(int playerIndex)
