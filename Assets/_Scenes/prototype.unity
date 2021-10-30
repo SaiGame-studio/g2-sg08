@@ -6102,6 +6102,7 @@ MonoBehaviour:
   debug: 0
   enemyCtrl: {fileID: 1247887852}
   target: {fileID: 0}
+  originSpeed: 1
   speed: 1
   direction: {x: 0, y: 0, z: 0}
 --- !u!4 &326803473 stripped
@@ -16195,10 +16196,11 @@ MonoBehaviour:
   finalSpawnLimit: 2
   spawnDelay: 2
   finalSpawnDelay: 2
-  spawnTimer: 0
+  spawnTimer: Infinity
   objests: []
   nameEnemies:
   - Boss1
+  lastSpawnLevel: 0
   spawnLevel: 5
   canSpawn: 0
 --- !u!4 &614426503
@@ -17423,6 +17425,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 705377005}
   _collider: {fileID: 705377004}
   enemy: {fileID: 1753632503}
+  monster: {fileID: 1167034459}
   enemyMovement: {fileID: 0}
   damageReceiver: {fileID: 705377003}
   enemyLevel: {fileID: 705377002}
@@ -17554,6 +17557,18 @@ Transform:
   m_Father: {fileID: 451455451}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &709688108 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5684636669627360493, guid: 917c62cb18828b74f9d5b1adba8a411c,
+    type: 3}
+  m_PrefabInstance: {fileID: 739198391}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62b9a7e211ea2074c83a96a2ab1e590f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &710939849 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1283604481290215046, guid: 23110dbb70e652e4fab43806342f3e08,
@@ -18161,7 +18176,7 @@ PrefabInstance:
     - target: {fileID: 5771025906570419322, guid: 917c62cb18828b74f9d5b1adba8a411c,
         type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: Larva
       objectReference: {fileID: 0}
     - target: {fileID: 5771025906570419322, guid: 917c62cb18828b74f9d5b1adba8a411c,
         type: 3}
@@ -29111,7 +29126,7 @@ MonoBehaviour:
   finalSpawnLimit: 2
   spawnDelay: 2
   finalSpawnDelay: 2
-  spawnTimer: 0
+  spawnTimer: Infinity
   objests: []
   nameEnemies:
   - Larva
@@ -29656,6 +29671,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 743883988}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1167034459 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 250127699055009285, guid: 13c8d084bda939e44ad19967dbedeeea,
+    type: 3}
+  m_PrefabInstance: {fileID: 1753632502}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62b9a7e211ea2074c83a96a2ab1e590f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1179012338
 GameObject:
   m_ObjectHideFlags: 0
@@ -30287,6 +30314,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1247887856}
   _collider: {fileID: 1247887854}
   enemy: {fileID: 817246507}
+  monster: {fileID: 709688108}
   enemyMovement: {fileID: 324465120}
   damageReceiver: {fileID: 1247887855}
   enemyLevel: {fileID: 1247887858}
@@ -41033,6 +41061,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 1585941742}
   _collider: {fileID: 1585941740}
   enemy: {fileID: 1722010045}
+  monster: {fileID: 0}
   enemyMovement: {fileID: 0}
   damageReceiver: {fileID: 1585941741}
   enemyLevel: {fileID: 1585941743}
@@ -43035,7 +43064,7 @@ PrefabInstance:
     - target: {fileID: 117150395161187363, guid: 13c8d084bda939e44ad19967dbedeeea,
         type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: Troll
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13c8d084bda939e44ad19967dbedeeea, type: 3}
@@ -47062,7 +47091,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
+  enemyCtrl: {fileID: 705377000}
   target: {fileID: 0}
+  buffSpeed: 3
   spawnDelay: 10
   spawnTimer: 0
 --- !u!1 &2127431071

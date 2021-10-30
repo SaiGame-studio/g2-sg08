@@ -76,8 +76,9 @@ public class EnemySpawner : Spawner
         Debug.Log(transform.name + ": LoadTarget");
     }
 
-    public virtual void RandomEnemy()
+    public virtual Transform RandomEnemy()
     {
-
+        int rand = Random.Range(0, this.objests.Count);
+        return this.objests[rand];
     }
 }

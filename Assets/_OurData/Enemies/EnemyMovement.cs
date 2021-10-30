@@ -5,6 +5,7 @@ public class EnemyMovement : SaiBehaviour
     [Header("Enemy")]
     [SerializeField] protected EnemyCtrl enemyCtrl;
     [SerializeField] protected Transform target;
+    [SerializeField] protected float originSpeed = 1f;
     [SerializeField] protected float speed = 1f;
     [SerializeField] protected Vector3 direction = new Vector3(0, 0, 0);
 
@@ -28,6 +29,7 @@ public class EnemyMovement : SaiBehaviour
     {
         this.enemyCtrl._rigidbody.velocity = Vector3.zero;
         this.enemyCtrl._rigidbody.angularVelocity = Vector3.zero;
+        this.speed = this.originSpeed;
     }
 
     protected override void LoadComponents()
@@ -81,5 +83,10 @@ public class EnemyMovement : SaiBehaviour
     public virtual void SetTarget(Transform target)
     {
         this.target = target;
+    }
+
+    public virtual void SetSpeed(float newSpeed)
+    {
+        this.speed = newSpeed;
     }
 }

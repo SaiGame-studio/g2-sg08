@@ -84,6 +84,13 @@ public class ObjPoolManager : SaiBehaviour
         return this.Pool().Spawn(objName, pos, rot);
     }
 
+    public virtual Transform Spawn(string objName, Vector3 pos)
+    {
+        Transform obj = this.Pool().Spawn(objName, pos, Quaternion.identity);
+        obj.Rotate(0, 0, Random.Range(0f, 360.0f));
+        return obj;
+    }
+
     public virtual Transform Spawn(string objName, Vector3 pos, Quaternion rot, Transform parent)
     {
         return this.Pool().Spawn(objName, pos, rot, parent);
@@ -96,7 +103,7 @@ public class ObjPoolManager : SaiBehaviour
             PrefabPool prefabPool = this.prefabPools[i];
             if (prefabPool.despawned.Contains(instance))
             {
-                Debug.LogWarning("despawned.Contains: "+ instance.name);
+                Debug.LogWarning("despawned.Contains: " + instance.name);
                 return;
             }
         }

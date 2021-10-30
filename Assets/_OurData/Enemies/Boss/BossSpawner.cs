@@ -45,8 +45,9 @@ public class BossSpawner : Spawner
         enemyCtrl.enemyLevel.Set(gameLevel);
 
         Vector3 position = enemyCtrl.transform.position;
-        Quaternion rotation = enemyCtrl.transform.rotation;
-        ObjPoolManager.instance.Spawn("EnemyDeath1", position, rotation);
+
+        Transform effect = ObjPoolManager.instance.Spawn("EnemyDeath1", position);
+        effect.gameObject.SetActive(true);
 
         this.canSpawn = false;
     }

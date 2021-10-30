@@ -1,4 +1,5 @@
-﻿using Assets.HeroEditor.FantasyHeroes.TestRoom.Scripts.Tweens;
+﻿using Assets.FantasyMonsters.Scripts;
+using Assets.HeroEditor.FantasyHeroes.TestRoom.Scripts.Tweens;
 using UnityEngine;
 
 public class EnemyCtrl : SaiBehaviour
@@ -7,6 +8,7 @@ public class EnemyCtrl : SaiBehaviour
     public Rigidbody _rigidbody;
     public Collider _collider;
     public Transform enemy;
+    public Monster monster;
     public EnemyMovement enemyMovement;
     public DamageReceiver damageReceiver;
     public EnemyLevel enemyLevel;
@@ -68,7 +70,8 @@ public class EnemyCtrl : SaiBehaviour
     protected virtual void LoadEnemy()
     {
         if (this.enemy != null) return;
-        this.enemy = transform.Find("Enemy");
+        this.monster = transform.GetComponentInChildren<Monster>();
+        this.enemy = this.monster.transform;
         Debug.Log(transform.name + ": LoadEnemy");
     }
 

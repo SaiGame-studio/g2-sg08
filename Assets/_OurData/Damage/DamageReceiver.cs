@@ -59,7 +59,7 @@ public class DamageReceiver : SaiBehaviour
 
     protected virtual void ShowDeadEffect()
     {
-        Transform effect = ObjPoolManager.instance.Spawn(this.deadEffect, transform.position, transform.rotation);
+        Transform effect = ObjPoolManager.instance.Spawn(this.deadEffect, transform.position);
         effect.gameObject.SetActive(true);
     }
 

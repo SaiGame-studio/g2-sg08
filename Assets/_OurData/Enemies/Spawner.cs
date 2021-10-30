@@ -9,7 +9,7 @@ public class Spawner : SaiBehaviour
     [SerializeField] protected int finalSpawnLimit = 2;
     [SerializeField] protected float spawnDelay = 2;
     [SerializeField] protected float finalSpawnDelay = 2;
-    [SerializeField] protected float spawnTimer = 0;
+    [SerializeField] protected float spawnTimer = Mathf.Infinity;
     public List<Transform> objests = new List<Transform>();
 
     private void FixedUpdate()

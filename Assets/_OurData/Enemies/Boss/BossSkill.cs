@@ -5,13 +5,34 @@ using UnityEngine;
 public class BossSkill : SaiBehaviour
 {
     [Header("Boss Skill")]
-    [SerializeField] protected EnemyCtrl target;
+    [SerializeField] protected EnemyCtrl enemyCtrl;
+    [SerializeField] protected Transform target;
+    [SerializeField] protected float buffSpeed = 3;
     [SerializeField] protected float spawnDelay = 10;
     [SerializeField] protected float spawnTimer = 0;
 
     private void FixedUpdate()
     {
         this.Attacking();
+    }
+
+    private void OnDisable()
+    {
+        CancelInvoke();
+    }
+
+    protected override void LoadComponents()
+    {
+        base.LoadComponents();
+        this.LoadEnemyCtrl();
+    }
+
+    protected virtual void LoadEnemyCtrl()
+    {
+        if (this.enemyCtrl != null) return;
+        this.enemyCtrl = transform.parent.GetComponent<EnemyCtrl>();
+
+        Debug.Log(transform.name + ": LoadEnemyCtrl");
     }
 
     protected virtual void Attacking()
@@ -21,7 +42,20 @@ public class BossSkill : SaiBehaviour
         this.spawnTimer = 0;
 
         Debug.Log("Attacking");
-        //this.target = EnemySpawner.instance.RandomEnemy();
+        this.target = EnemySpawner.instance.RandomEnemy();
+        EnemyCtrl enemyCtrl = this.target.GetComponent<EnemyCtrl>();
+        enemyCtrl.enemyMovement.SetSpeed(this.buffSpeed);
+
+        Transform effect = ObjPoolManager.instance.Spawn("EnemyDeath1", this.target.position);
+        effect.gameObject.SetActive(true);
+
+        this.enemyCtrl.monster.Animator.SetBool("Action", true);
+        this.enemyCtrl.monster.Attack();
+        Invoke("ResetAction", 1f);
     }
 
+    protected virtual void ResetAction()
+    {
+        this.enemyCtrl.monster.Animator.SetBool("Action", false);
+    }
 }
