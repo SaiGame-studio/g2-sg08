@@ -31,4 +31,9 @@ public class GameLevelManager : MonoBehaviour
     {
         return this.level;
     }
+
+    public virtual float Timer()
+    {
+        return this.timer;
+    }
 }

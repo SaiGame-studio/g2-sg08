@@ -75,4 +75,9 @@ public class EnemySpawner : Spawner
 
         Debug.Log(transform.name + ": LoadTarget");
     }
+
+    public virtual void RandomEnemy()
+    {
+
+    }
 }

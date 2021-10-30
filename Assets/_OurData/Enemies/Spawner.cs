@@ -36,13 +36,6 @@ public class Spawner : SaiBehaviour
 
     protected virtual void RemoveDespawn()
     {
-        //foreach (Transform obj in this.objests)
-        //{
-        //    if (obj.gameObject.activeSelf) continue;
-
-        //    this.objests.Remove(obj);
-        //}
-
         for (int i = 0; i < this.objests.Count; i++)
         {
             Transform obj = this.objests[i];
