@@ -1,17 +1,44 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
 public class PlayerNew : PlayerInteracByDistance
 {
     [Header("Player New")]
     [SerializeField] protected Transform fire;
-    [SerializeField] protected int cost = 50;
+    [SerializeField] protected TextMeshPro textPlayerCost;
+    [SerializeField] protected int costBase = 100;
+    [SerializeField] protected int costCurrent = 100;
     [SerializeField] protected Vector3 spawnPos;
     [SerializeField] protected int playerMax = 7;
+
+    private void FixedUpdate()
+    {
+        this.CheckCosting();
+        this.CheckDistance();
+        this.ChestOpening();
+    }
 
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadFire();
+        this.LoadTextPlayerCost();
+    }
+
+    protected virtual void LoadTextPlayerCost()
+    {
+        if (this.textPlayerCost != null) return;
+        Transform hpObj = transform.Find("TextPlayerCost");
+        if (hpObj == null) return;
+        if (hpObj) this.textPlayerCost = hpObj.GetComponent<TextMeshPro>();
+        Debug.Log(transform.name + ": LoadTextLevelCost");
+    }
+
+    protected virtual void CheckCosting()
+    {
+        int currentLevel = PlayersHolder.instance.heroCtrls.Count;
+        this.costCurrent = this.costBase * currentLevel;
+        this.textPlayerCost.text = "-" + this.costCurrent.ToString() + "G";
     }
 
     protected virtual void LoadFire()
@@ -20,12 +47,6 @@ public class PlayerNew : PlayerInteracByDistance
         this.fire = transform.Find("Campfire").Find("Fire");
 
         Debug.Log(transform.name + ": LoadFire");
-    }
-
-    private void FixedUpdate()
-    {
-        this.CheckDistance();
-        this.ChestOpening();
     }
 
     protected virtual void ChestOpening()
@@ -45,6 +66,8 @@ public class PlayerNew : PlayerInteracByDistance
     {
         if (!this.IsGrounded()) return;
         if (this.IsPlayerMax()) return;
+
+        if (!ScoreManager.instance.GoldDeduct(this.costCurrent)) return;
 
         PlayerManager.instance.LoadRandomPlayer();
     }

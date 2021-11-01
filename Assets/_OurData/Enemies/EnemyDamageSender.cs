@@ -26,7 +26,7 @@ public class EnemyDamageSender : DamageSender
         if (damageReveiver == null) return;
 
         int currentHP = this.enemyCtrl.damageReceiver.HP();
-        damageReveiver.Receive(currentHP, this);
+        damageReveiver.Receive(1, this);
         this.enemyCtrl.damageReceiver.Receive(currentHP);
     }
 }

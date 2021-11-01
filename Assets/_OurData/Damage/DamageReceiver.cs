@@ -72,15 +72,7 @@ public class DamageReceiver : SaiBehaviour
 
     public virtual bool Heal()
     {
-        int loseHp = this.hpMax - this.hp;
-        int currentGold = ScoreManager.instance.GetGold();
-
-        int cost = loseHp;
-
-        if (currentGold <= loseHp) cost = currentGold;
-        if (!ScoreManager.instance.GoldDeduct(cost)) return false;
-
-        this.hp += cost;
+        this.hp = this.hpMax;
 
         return true;
     }

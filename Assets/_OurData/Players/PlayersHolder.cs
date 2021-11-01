@@ -6,7 +6,6 @@ public class PlayersHolder : MonoBehaviour
     public static PlayersHolder instance;
     public List<HeroCtrl> heroCtrls;
 
-
     private void Awake()
     {
         if (PlayersHolder.instance != null) Debug.LogError("Only 1 PlayersHolder allow");
@@ -22,6 +21,31 @@ public class PlayersHolder : MonoBehaviour
     {
         this.RemoveInactive();
         this.AddActive();
+        this.ShowTextIndex();
+    }
+
+    protected virtual void ShowTextIndex()
+    {
+        HeroCtrl heroCtrl;
+
+        if (this.heroCtrls.Count == 1)
+        {
+            heroCtrl = this.heroCtrls[0];
+            heroCtrl.textPlayerIndex.text = "";
+            return;
+        }
+
+        for (int i = 1; i <= this.heroCtrls.Count; i++)
+        {
+            heroCtrl = this.heroCtrls[i - 1];
+            heroCtrl.textPlayerIndex.text = i.ToString();
+            heroCtrl.textPlayerIndex.color = Color.white;
+
+            if (heroCtrl == PlayerManager.instance.currentHero)
+            {
+                heroCtrl.textPlayerIndex.color = Color.green;
+            }
+        }
     }
 
     protected virtual void RemoveInactive()

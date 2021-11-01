@@ -1,16 +1,28 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
 public class PlayerLevelUp : PlayerInteracByDistance
 {
     [Header("Player Level Up")]
     [SerializeField] protected Transform chestOpened;
-    [SerializeField] protected int cost = 50;
+    [SerializeField] protected TextMeshPro textLevelCost;
+    [SerializeField] protected int costBase = 50;
+    [SerializeField] protected int costCurrent = 50;
     [SerializeField] protected Vector3 spawnPos;
+
+
+    private void FixedUpdate()
+    {
+        this.CheckCosting();
+        this.CheckDistance();
+        this.ChestOpening();
+    }
 
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadChestOpened();
+        this.LoadTextLevelCost();
     }
 
     protected virtual void LoadChestOpened()
@@ -20,10 +32,13 @@ public class PlayerLevelUp : PlayerInteracByDistance
         Debug.Log(transform.name + ": LoadChestOpened");
     }
 
-    private void FixedUpdate()
+    protected virtual void LoadTextLevelCost()
     {
-        this.CheckDistance();
-        this.ChestOpening();
+        if (this.textLevelCost != null) return;
+        Transform hpObj = transform.Find("TextLevelCost");
+        if (hpObj == null) return;
+        if (hpObj) this.textLevelCost = hpObj.GetComponent<TextMeshPro>();
+        Debug.Log(transform.name + ": LoadTextLevelCost");
     }
 
     protected virtual void ChestOpening()
@@ -35,6 +50,14 @@ public class PlayerLevelUp : PlayerInteracByDistance
 
         chestOpened = this.chestOpened.gameObject.activeSelf;
         this.LinkToInput(chestOpened);
+    }
+
+    protected virtual void CheckCosting()
+    {
+        HeroCtrl currentHero = PlayerManager.instance.currentHero;
+        int currentLevel = currentHero.heroLevel.Get();
+        this.costCurrent = this.costBase * currentLevel;
+        this.textLevelCost.text = "-" + this.costCurrent.ToString() + "G";
     }
 
     public override void Interact()
@@ -50,8 +73,7 @@ public class PlayerLevelUp : PlayerInteracByDistance
             return;
         }
 
-        int levelCost = this.cost * currentLevel;
-        if (!ScoreManager.instance.GoldDeduct(levelCost)) return;
+        if (!ScoreManager.instance.GoldDeduct(this.costCurrent)) return;
 
         HeroCtrl heroCtrl = heroesManager.GetNextHero(currentLevel);
 

@@ -1,10 +1,12 @@
 using Assets.HeroEditor.Common.CharacterScripts;
 using Assets.HeroEditor.Common.CharacterScripts.Firearms;
+using TMPro;
 using UnityEngine;
 
 public class HeroCtrl : SaiBehaviour
 {
     [Header("Hero")]
+    public TextMeshPro textPlayerIndex;
     public HeroesManager heroesManager;
     public Character character;
     public CharacterController characterCtrl;
@@ -37,8 +39,18 @@ public class HeroCtrl : SaiBehaviour
         this.SetLayer();
         this.LoadHeroLevel();
         this.LoadPlayerAutoAttack();
+        this.LoadTextPlayerIndex();
 
         this.magazineCapacity = this.firearm.Params.MagazineCapacity;
+    }
+
+    protected virtual void LoadTextPlayerIndex()
+    {
+        if (this.textPlayerIndex != null) return;
+        Transform hpObj = transform.Find("TextPlayerIndex");
+        if (hpObj == null) return;
+        if (hpObj) this.textPlayerIndex = hpObj.GetComponent<TextMeshPro>();
+        Debug.Log(transform.name + ": LoadTextPlayerIndex");
     }
 
     protected virtual void LoadPlayerAutoAttack()

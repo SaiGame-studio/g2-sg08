@@ -1,9 +1,11 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
 public class StatueDamageReceiver : DamageReceiver
 {
     [Header("Statue")]
     public StatueCtrl statueCtrl;
+
 
     protected override void LoadComponents()
     {
@@ -34,13 +36,27 @@ public class StatueDamageReceiver : DamageReceiver
 
     public override bool Heal()
     {
-        bool healed = base.Heal();
-        if (!healed) return false;
+        int cost = this.HealCost();
+
+        if (!ScoreManager.instance.GoldDeduct(cost)) return false;
+
+        this.hp += cost;
 
         this.statueCtrl.statue.gameObject.SetActive(true);
         this.statueCtrl.gravestone.gameObject.SetActive(false);
         gameObject.layer = MyLayerManager.instance.layerStatue;
 
         return true;
+    }
+
+    public virtual int HealCost()
+    {
+        int loseHp = this.hpMax - this.hp;
+        int currentGold = ScoreManager.instance.GetGold();
+
+        int cost = loseHp;
+
+        if (currentGold <= loseHp) cost = currentGold;
+        return cost;
     }
 }

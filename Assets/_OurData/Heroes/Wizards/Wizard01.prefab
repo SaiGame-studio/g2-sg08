@@ -5443,6 +5443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
+  textPlayerIndex: {fileID: 0}
   heroesManager: {fileID: 0}
   character: {fileID: 114665035978887628}
   characterCtrl: {fileID: 8715101830275086754}

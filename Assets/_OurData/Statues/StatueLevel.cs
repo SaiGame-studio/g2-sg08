@@ -48,10 +48,16 @@ public class StatueLevel : MyLevel
     {
         base.Up(up);
 
-        int newHpMax = this.level * this.levelCost;
+        int newHpMax = this.LevelCost(this.level);
         this.statueCtrl.statueDamageReceiver.SetHPMax(newHpMax);
         this.statueCtrl.statueDamageReceiver.SetHP(newHpMax);
 
         return this.level;
+    }
+
+    public virtual int LevelCost(int level)
+    {
+        int newHpMax = level * this.levelCost;
+        return newHpMax;
     }
 }
