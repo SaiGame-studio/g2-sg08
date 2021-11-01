@@ -18,7 +18,7 @@ TagManager:
   - Ground
   - Ceiling
   - Enemy
-  - Bullet
+  - 
   - Statue
   - StatueBroken
   - 
@@ -37,7 +37,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Bullet
   m_SortingLayers:
   - name: Default
     uniqueID: 0

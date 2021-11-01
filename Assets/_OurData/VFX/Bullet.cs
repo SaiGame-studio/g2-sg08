@@ -22,7 +22,7 @@ public class Bullet : SaiBehaviour
             transform.right = _rigidbody.velocity.normalized;
         }
 
-        this.Raycasting();
+        //this.Raycasting();
     }
 
     private void FixedUpdate()
@@ -135,7 +135,7 @@ public class Bullet : SaiBehaviour
         this.LoadRender();
         this.LoadRigibody();
         this.LoadCollider();
-        this.LoadLayerManager();
+        //this.LoadLayerManager();
     }
 
     protected virtual void LoadLayerManager()

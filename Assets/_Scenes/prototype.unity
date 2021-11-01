@@ -18999,7 +18999,7 @@ MonoBehaviour:
   layerGround: 9
   layerCeiling: 10
   layerEnemy: 11
-  layerBullet: 12
+  layerBullet: 31
   layerStatue: 13
   layerStatueBroken: 14
 --- !u!4 &831044247

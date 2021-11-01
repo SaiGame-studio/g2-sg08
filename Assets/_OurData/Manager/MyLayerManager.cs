@@ -27,6 +27,9 @@ public class MyLayerManager : SaiBehaviour
         Physics.IgnoreLayerCollision(this.layerHero, this.layerBullet, true);
         Physics.IgnoreLayerCollision(this.layerEnemy, this.layerEnemy, true);
         Physics.IgnoreLayerCollision(this.layerEnemy, this.layerStatueBroken, true);
+        Physics.IgnoreLayerCollision(this.layerBullet, this.layerCeiling, true);
+        Physics.IgnoreLayerCollision(this.layerBullet, this.layerGround, true);
+        Physics.IgnoreLayerCollision(this.layerBullet, this.layerHero, true);
     }
 
     protected override void LoadComponents()

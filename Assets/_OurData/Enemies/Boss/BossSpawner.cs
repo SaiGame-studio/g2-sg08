@@ -83,6 +83,10 @@ public class BossSpawner : Spawner
 
     protected override bool CanSpawn()
     {
+        int childCount = this.CountActiveObject();
+
+        if (childCount >= this.SpwamnLimit()) return false;
+
         return this.canSpawn;
     }
 
