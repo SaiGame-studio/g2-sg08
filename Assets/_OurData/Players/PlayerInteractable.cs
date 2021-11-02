@@ -13,4 +13,10 @@ public class PlayerInteractable : SaiBehaviour
         if (link) playerManager.playerInput.interactable = this;
         else playerManager.playerInput.interactable = null;
     }
+
+    public virtual void LinkToNull()
+    {
+        PlayerManager playerManager = PlayerManager.instance;
+        playerManager.playerInput.interactable = null;
+    }
 }

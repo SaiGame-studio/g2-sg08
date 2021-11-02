@@ -37,6 +37,7 @@ public class StatueDamageReceiver : DamageReceiver
     public override bool Heal()
     {
         int cost = this.HealCost();
+        Debug.Log(transform.name + ": Heal " + cost.ToString());
 
         if (!ScoreManager.instance.GoldDeduct(cost)) return false;
 

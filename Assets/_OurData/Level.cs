@@ -3,7 +3,7 @@
 public class Level : SaiBehaviour
 {
     [Header("Level")]
-    [SerializeField] protected bool canLevelUp = false;
+    public bool canLevelUp = false;
     [SerializeField] protected int level;
 
     public virtual int Get()

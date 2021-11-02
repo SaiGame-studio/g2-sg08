@@ -18,35 +18,11 @@ public class StatueLevel : MyLevel
         Debug.Log(transform.name + ": LoadStatueCtrl");
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        this.CheckActor(other.gameObject, true);
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        this.CheckActor(other.gameObject, false);
-    }
-
-    protected virtual void CheckActor(GameObject gameObject, bool status)
-    {
-        if (this.canLevelUp == status) return;
-
-        int layer = gameObject.layer;
-        if (layer != MyLayerManager.instance.layerHero) return;
-
-        this.canLevelUp = status;
-
-        PlayerManager playerManager = PlayerManager.instance;
-        if (status) playerManager.playerInput.interactable = this.statueCtrl.statueInteractable;
-        else playerManager.playerInput.interactable = null;
-
-        //Debug.Log(transform.name + ": Level Up "+ status.ToString());
-    }
-
     public override int Up(int up)
     {
         base.Up(up);
+
+        Debug.Log(transform.name + ": Up " + up.ToString());
 
         int newHpMax = this.LevelCost(this.level);
         this.statueCtrl.statueDamageReceiver.SetHPMax(newHpMax);

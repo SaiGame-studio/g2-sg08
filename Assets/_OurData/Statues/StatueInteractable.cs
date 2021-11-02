@@ -58,11 +58,18 @@ public class StatueInteractable : PlayerInteracByDistance
 
     protected virtual void CheckActivate()
     {
+        if (!this.IsGrounded()) return;
+
         GameObject statuActive = this.statueCtrl.statueActive.gameObject;
         bool chestOpened = statuActive.activeSelf;
-        if (chestOpened == this.actived) return;
+
+        PlayerManager playerManager = PlayerManager.instance;
+        bool isInteractable = playerManager.playerInput.interactable;
+
+        if (isInteractable && chestOpened == this.actived) return;
 
         statuActive.SetActive(this.actived);
+        this.statueCtrl.statueLevel.canLevelUp = this.actived;
 
         chestOpened = statuActive.activeSelf;
         this.LinkToInput(chestOpened);
@@ -72,5 +79,10 @@ public class StatueInteractable : PlayerInteracByDistance
     {
         if (this.statueCtrl.statueDamageReceiver.IsHPFull()) this.statueCtrl.statueLevel.Up(1);
         else this.statueCtrl.statueDamageReceiver.Heal();
+    }
+
+    protected virtual bool IsGrounded()
+    {
+        return PlayerManager.instance.playerMovement.IsGrounded();
     }
 }

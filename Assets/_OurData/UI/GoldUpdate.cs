@@ -28,6 +28,7 @@ public class GoldUpdate : SaiBehaviour
 
     protected virtual void GoldUpdating()
     {
-        this.textGold.text = ScoreManager.instance.GetGold().ToString();
+        int gold = ScoreManager.instance.GetGold();
+        this.textGold.text = gold.ToString("N0");
     }
 }
