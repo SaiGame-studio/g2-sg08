@@ -7,7 +7,7 @@ public class BossSkill : SaiBehaviour
     [Header("Boss Skill")]
     [SerializeField] protected EnemyCtrl enemyCtrl;
     [SerializeField] protected Transform target;
-    [SerializeField] protected float buffSpeed = 3;
+    [SerializeField] protected float buffSpeed = 2;
     [SerializeField] protected float spawnDelay = 10;
     [SerializeField] protected float spawnTimer = 0;
 
@@ -41,10 +41,11 @@ public class BossSkill : SaiBehaviour
         if (this.spawnTimer < this.spawnDelay) return;
         this.spawnTimer = 0;
 
-        Debug.Log("Attacking");
         this.target = EnemySpawner.instance.RandomEnemy();
         EnemyCtrl enemyCtrl = this.target.GetComponent<EnemyCtrl>();
-        enemyCtrl.enemyMovement.SetSpeed(this.buffSpeed);
+
+        float newSpeed = enemyCtrl.enemyMovement.GetSpeed() + this.buffSpeed;
+        enemyCtrl.enemyMovement.SetSpeed(newSpeed);
 
         Transform effect = ObjPoolManager.instance.Spawn("EnemyDeath1", this.target.position);
         effect.gameObject.SetActive(true);

@@ -25,6 +25,7 @@ public class StatueDamageReceiver : DamageReceiver
         int senderLayer = sender.gameObject.layer;
         if (senderLayer != MyLayerManager.instance.layerEnemy) return;
         this.Receive(damage);
+        ScoreManager.instance.GoldDeduct(1);
     }
 
     protected override void Despawn()

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class GoldUpdate : SaiBehaviour
+public class UIGoldUpdate : SaiBehaviour
 {
     public TextMeshProUGUI textGold;
 

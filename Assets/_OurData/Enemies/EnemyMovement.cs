@@ -5,8 +5,8 @@ public class EnemyMovement : SaiBehaviour
     [Header("Enemy")]
     [SerializeField] protected EnemyCtrl enemyCtrl;
     [SerializeField] protected Transform target;
-    [SerializeField] protected float originSpeed = 1f;
-    [SerializeField] protected float speed = 1f;
+    [SerializeField] protected float originSpeed = 4f;
+    [SerializeField] protected float speed = 4f;
     [SerializeField] protected Vector3 direction = new Vector3(0, 0, 0);
 
     private void Update()
@@ -88,5 +88,10 @@ public class EnemyMovement : SaiBehaviour
     public virtual void SetSpeed(float newSpeed)
     {
         this.speed = newSpeed;
+    }
+
+    public virtual float GetSpeed()
+    {
+        return this.speed;
     }
 }

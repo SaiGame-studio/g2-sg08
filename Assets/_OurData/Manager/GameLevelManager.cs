@@ -6,7 +6,7 @@ public class GameLevelManager : MonoBehaviour
 
     [Header("Game Level")]
     [SerializeField] protected int level = 0;
-    [SerializeField] protected float secondPerLevel = 30;
+    [SerializeField] protected float secondPerLevel = 20;
     [SerializeField] protected float timer = 0;
 
     private void Awake()
