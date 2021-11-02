@@ -5,17 +5,18 @@ public class EnemyMovement : SaiBehaviour
     [Header("Enemy")]
     [SerializeField] protected EnemyCtrl enemyCtrl;
     [SerializeField] protected Transform target;
-    [SerializeField] protected float originSpeed = 4f;
-    [SerializeField] protected float speed = 4f;
+    [SerializeField] protected float originSpeed = 1f;
+    [SerializeField] protected float speed = 1f;
     [SerializeField] protected Vector3 direction = new Vector3(0, 0, 0);
 
     private void Update()
     {
-        this.Moving();
+        //this.Moving();
     }
 
     private void FixedUpdate()
     {
+        this.Moving();
         this.Turning();
     }
 
@@ -50,7 +51,7 @@ public class EnemyMovement : SaiBehaviour
     {
         if (!this.IsTargetActive()) return;
 
-        Vector3 tempVec = this.GetDirection() * Time.deltaTime * this.speed;
+        Vector3 tempVec = this.GetDirection() * Time.fixedDeltaTime * this.speed;
         this.enemyCtrl._rigidbody.MovePosition(transform.position + tempVec);
     }
 
