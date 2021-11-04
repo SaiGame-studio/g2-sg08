@@ -30,7 +30,6 @@ public class StatueCtrl : SaiBehaviour
 
         this.gravestone = transform.Find("Gravestone");
 
-
         this.gravestone.gameObject.SetActive(false);
 
         Debug.Log(transform.name + ": LoadStatue");
@@ -59,5 +58,16 @@ public class StatueCtrl : SaiBehaviour
         this.statueDamageReceiver = GetComponent<StatueDamageReceiver>();
 
         Debug.Log(transform.name + ": LoadStatueDamageReceiver");
+    }
+
+    public virtual void GameRenew()
+    {
+        this.statueDamageReceiver.Revival();
+        this.statueLevel.GameRenew();
+
+        this.statue.gameObject.SetActive(true);
+        this.gravestone.gameObject.SetActive(false);
+
+        this.gameObject.layer = MyLayerManager.instance.layerStatue;
     }
 }

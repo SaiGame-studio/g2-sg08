@@ -8,7 +8,7 @@ public class BossSpawner : Spawner
     [Header("Boss")]
     [SerializeField] protected List<string> nameEnemies;
     [SerializeField] protected int lastSpawnLevel = 0;
-    [SerializeField] protected int spawnLevel = 5;
+    [SerializeField] protected int spawnLevel = 7;
     [SerializeField] protected bool canSpawn = false;
 
     private void Awake()
@@ -30,6 +30,7 @@ public class BossSpawner : Spawner
         this.nameEnemies.Add("Boss1");
         this.spawnLimit = 1;
         this.spawnDelay = 2;
+        this.spawnLimitOrigin = 1;
     }
 
     protected override void BeforeSpawn()
@@ -77,7 +78,6 @@ public class BossSpawner : Spawner
         {
             this.canSpawn = true;
             this.lastSpawnLevel = limit;
-            Debug.Log(transform.name + " CheckCanSpawn");
         }
     }
 
@@ -98,5 +98,11 @@ public class BossSpawner : Spawner
     protected override float SpawnDelay()
     {
         return this.spawnDelay;
+    }
+
+    public override void GameRenew()
+    {
+        base.GameRenew();
+        this.canSpawn = false;
     }
 }

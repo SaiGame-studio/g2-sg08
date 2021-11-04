@@ -5,8 +5,10 @@ public class Spawner : SaiBehaviour
 {
     [Header("Spawner")]
     [SerializeField] protected string enemyName = "Cube";
+    [SerializeField] protected int spawnLimitOrigin = 2;
     [SerializeField] protected int spawnLimit = 2;
     [SerializeField] protected int finalSpawnLimit = 2;
+    [SerializeField] protected float spawnDelayOrigin = 2;
     [SerializeField] protected float spawnDelay = 2;
     [SerializeField] protected float finalSpawnDelay = 2;
     [SerializeField] protected float spawnTimer = Mathf.Infinity;
@@ -20,6 +22,7 @@ public class Spawner : SaiBehaviour
 
     protected virtual void Spawning()
     {
+        if (GameLevelManager.instance.gameOver) return;
         if (!this.CanSpawn()) return;
 
         this.spawnTimer += Time.fixedDeltaTime;
@@ -97,5 +100,23 @@ public class Spawner : SaiBehaviour
         }
 
         return count;
+    }
+
+    public virtual void GameRenew()
+    {
+        Transform obj;
+        for (int i = 0; i < this.objests.Count; i++)
+        {
+            obj = this.objests[i];
+            ObjPoolManager.instance.Despawn(obj);
+        }
+
+        this.ResetNumber();
+    }
+
+    protected virtual void ResetNumber()
+    {
+        this.spawnDelay = this.spawnDelayOrigin;
+        this.spawnLimit = this.spawnLimitOrigin;
     }
 }

@@ -15,6 +15,7 @@ public class EnemySpawner : Spawner
         EnemySpawner.instance = this;
     }
 
+
     protected override void ResetValue()
     {
         base.ResetValue();

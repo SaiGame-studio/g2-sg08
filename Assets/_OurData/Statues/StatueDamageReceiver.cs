@@ -6,7 +6,6 @@ public class StatueDamageReceiver : DamageReceiver
     [Header("Statue")]
     public StatueCtrl statueCtrl;
 
-
     protected override void LoadComponents()
     {
         this.LoadStatueCtrl();
@@ -25,10 +24,9 @@ public class StatueDamageReceiver : DamageReceiver
         int senderLayer = sender.gameObject.layer;
         if (senderLayer != MyLayerManager.instance.layerEnemy) return;
         this.Receive(damage);
-        ScoreManager.instance.GoldDeduct(1);
     }
 
-    protected override void Despawn()
+    public override void Despawn()
     {
         this.statueCtrl.statue.gameObject.SetActive(false);
         this.statueCtrl.gravestone.gameObject.SetActive(true);

@@ -8,7 +8,7 @@ public class BossSkill : SaiBehaviour
     [SerializeField] protected EnemyCtrl enemyCtrl;
     [SerializeField] protected Transform target;
     [SerializeField] protected float buffSpeed = 2;
-    [SerializeField] protected float spawnDelay = 10;
+    [SerializeField] protected float spawnDelay = 5;
     [SerializeField] protected float spawnTimer = 0;
 
     private void FixedUpdate()

@@ -3,7 +3,7 @@
 public class BossLevel : EnemyLevel
 {
     [Header("Boss")]
-    [SerializeField] protected int hpMulti = 2;
+    [SerializeField] protected int hpMulti = 4;
 
 
     public override int Set(int newLevel)

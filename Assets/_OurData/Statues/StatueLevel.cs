@@ -36,4 +36,9 @@ public class StatueLevel : MyLevel
         int newHpMax = level * this.levelCost;
         return newHpMax;
     }
+
+    public virtual void GameRenew()
+    {
+        this.level = 0;
+    }
 }

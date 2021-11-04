@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScarecrowDamReceive : EnemyDamageReceiver
 {
-    protected override void Despawn()
+    public override void Despawn()
     {
         base.Despawn();
         ScarecrowSpawner.instance.ScarecrowDead();

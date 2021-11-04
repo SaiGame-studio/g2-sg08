@@ -29,7 +29,17 @@ public class EnemyDamageReceiver : DamageReceiver
         Debug.Log(transform.name + ": LoadEnemyCtrl");
     }
 
-    protected override void Despawn()
+    protected override void Dying()
+    {
+        if (!this.IsDead()) return;
+
+        base.Dying();
+
+        ScoreManager.instance.Kill();
+        ScoreManager.instance.GoldAdd(1);
+    }
+
+    public override void Despawn()
     {
         base.Despawn();
         this.enemyCtrl._collider.enabled = false;

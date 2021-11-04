@@ -17,6 +17,7 @@ public class ScarecrowSpawner : Spawner
     {
         this.enemyName = "Scarecrow";
         this.spawnLimit = 1;
+        this.spawnLimitOrigin = 1;
     }
 
     protected override Vector3 SpawnPos()

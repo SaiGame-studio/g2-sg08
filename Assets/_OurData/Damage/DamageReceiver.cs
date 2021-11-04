@@ -27,7 +27,7 @@ public class DamageReceiver : SaiBehaviour
         return this.hp;
     }
 
-    protected virtual void Revival()
+    public virtual void Revival()
     {
         this.hp = this.hpMax;
     }
@@ -53,7 +53,6 @@ public class DamageReceiver : SaiBehaviour
     {
         if (!this.IsDead()) return;
 
-        this.ShowDeadEffect();
         this.Despawn();
     }
 
@@ -63,11 +62,10 @@ public class DamageReceiver : SaiBehaviour
         effect.gameObject.SetActive(true);
     }
 
-    protected virtual void Despawn()
+    public virtual void Despawn()
     {
+        this.ShowDeadEffect();
         ObjPoolManager.instance.Despawn(transform);
-        ScoreManager.instance.Kill();
-        ScoreManager.instance.GoldAdd(1);
     }
 
     public virtual bool Heal()
