@@ -21,6 +21,7 @@ public class EnemyDamageReceiver : DamageReceiver
         this.enemyCtrl.scaleSpring.enabled = true;
         base.Receive(damage);
         TextManager.instance.TextGold(damage, transform.position);
+        ScoreManager.instance.GoldAdd(damage);
     }
 
     protected virtual void LoadEnemyCtrl()
@@ -37,7 +38,7 @@ public class EnemyDamageReceiver : DamageReceiver
         base.Dying();
 
         ScoreManager.instance.Kill();
-        ScoreManager.instance.GoldAdd(1);
+        //ScoreManager.instance.GoldAdd(1);
     }
 
     public override void Despawn()

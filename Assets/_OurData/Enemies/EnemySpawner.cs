@@ -15,7 +15,6 @@ public class EnemySpawner : Spawner
         EnemySpawner.instance = this;
     }
 
-
     protected override void ResetValue()
     {
         base.ResetValue();
@@ -58,6 +57,7 @@ public class EnemySpawner : Spawner
     {
         int level = GameLevelManager.instance.Level();
         this.finalSpawnLimit = this.spawnLimit * level;
+        if (this.finalSpawnLimit > this.spawmMax) this.finalSpawnLimit = this.spawmMax;
         return this.finalSpawnLimit;
     }
 

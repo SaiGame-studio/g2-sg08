@@ -5084,6 +5084,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 203904677}
+  - component: {fileID: 203904678}
   m_Layer: 0
   m_Name: EnemyDeath1
   m_TagString: Untagged
@@ -5106,6 +5107,21 @@ Transform:
   m_Father: {fileID: 1869259300}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &203904678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203904676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54ed88a5cd7f788479f1ffca824059b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  limit: 2
+  timer: 0
 --- !u!1 &204593145
 GameObject:
   m_ObjectHideFlags: 0
@@ -19454,6 +19470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 0
   enemyName: Cube
+  spawmMax: 300
   spawnLimitOrigin: 1
   spawnLimit: 1
   finalSpawnLimit: 2
@@ -34720,6 +34737,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 0
   enemyName: Cube
+  spawmMax: 300
   spawnLimitOrigin: 2
   spawnLimit: 2
   finalSpawnLimit: 2
@@ -42207,7 +42225,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 8400373277211131859}
+  - {fileID: 5173146092015071221}
   m_Father: {fileID: 2127431072}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -42224,6 +42244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: 0
+  textGold: {fileID: 5173146092015071223}
 --- !u!4 &1379044495 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4314069016542968, guid: ecc038a5e5d9ec446b0a08034eda6b1c,
@@ -54590,8 +54611,6 @@ MonoBehaviour:
   - {fileID: 1247887853}
   - {fileID: 705376999}
   - {fileID: 1854133156}
-  - {fileID: 8400373277211131859}
-  - {fileID: 5173146092015071221}
   prefabPools: []
 --- !u!4 &1869259300
 Transform:
@@ -54611,8 +54630,6 @@ Transform:
   - {fileID: 1247887853}
   - {fileID: 705376999}
   - {fileID: 1854133156}
-  - {fileID: 8400373277211131859}
-  - {fileID: 5173146092015071221}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -55073,6 +55090,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 0
   enemyName: Scarecrow
+  spawmMax: 300
   spawnLimitOrigin: 1
   spawnLimit: 1
   finalSpawnLimit: 2
@@ -59055,13 +59073,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5173146092015071220}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 4.180025, y: -0.7440933, z: -1.9072632}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5173146091914544489}
   - {fileID: 5173146091660731402}
-  m_Father: {fileID: 1869259300}
-  m_RootOrder: 8
+  m_Father: {fileID: 1373392134}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!210 &5173146092015071222
 SortingGroup:
@@ -59166,10 +59184,10 @@ MonoBehaviour:
   enableMovement: 1
   moveType: 0
   lerpSettings:
-    minX: -0.4
-    maxX: 0.4
+    minX: -0.2
+    maxX: 0.2
     minY: 0.2
-    maxY: 0.4
+    maxY: 2.7
     speed: 10
   velocitySettings:
     minX: -1
@@ -59222,7 +59240,7 @@ MonoBehaviour:
     closeScale: 2
     farScale: 0.5
   cameraOverride: {fileID: 0}
-  enablePooling: 0
+  enablePooling: 1
   poolSize: 30
   position: {x: 0, y: 0, z: 0}
 --- !u!198 &5310570325089138122
@@ -88226,13 +88244,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8400373277211131868}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 4.180025, y: -1.7440933, z: -1.9072632}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8400373276976109823}
   - {fileID: 8400373277896274635}
-  m_Father: {fileID: 1869259300}
-  m_RootOrder: 7
+  m_Father: {fileID: 1373392134}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8400373277211131868
 GameObject:

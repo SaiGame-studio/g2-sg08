@@ -4,6 +4,7 @@ using UnityEngine;
 public class TextManager : SaiBehaviour
 {
     public static TextManager instance;
+    [SerializeField] protected DamageNumber textGold;
 
     private void Awake()
     {
@@ -11,24 +12,33 @@ public class TextManager : SaiBehaviour
         TextManager.instance = this;
     }
 
-    public virtual Transform TextCombining(int damage, Vector3 position)
+    protected override void LoadComponents()
     {
-        return Text("TextCombining", damage, position);
+        base.LoadComponents();
+        this.LoadTexts();
     }
 
-    public virtual Transform TextGold(int damage, Vector3 position)
+    protected virtual void LoadTexts()
     {
-        return Text("TextGold", damage, position);
+        if (this.textGold != null) return;
+        Transform tGold = transform.Find("TextGold");
+        this.textGold = tGold.GetComponent<DamageNumber>();
+        tGold.gameObject.SetActive(false);
+
+        Debug.Log(transform.name + "LoadTexts");
     }
 
-    public virtual Transform Text(string textName, int damage, Vector3 position)
+    public virtual DamageNumber TextGold(int damage, Vector3 position)
     {
-        Transform trans = ObjPoolManager.instance.Spawn(textName);
-        DamageNumber dn = trans.GetComponent<DamageNumber>();
-        dn.number = damage;
+        return Text(this.textGold, damage, position);
+    }
 
-        trans.gameObject.SetActive(true);
-        trans.position = position;
-        return trans;
+    public virtual DamageNumber Text(DamageNumber dn, int damage, Vector3 position)
+    {
+        DamageNumber newDamageNumber = dn.CreateNew(damage, position);
+
+        newDamageNumber.transform.gameObject.SetActive(true);
+        newDamageNumber.transform.position = position;
+        return newDamageNumber;
     }
 }

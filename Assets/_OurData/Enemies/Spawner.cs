@@ -5,6 +5,7 @@ public class Spawner : SaiBehaviour
 {
     [Header("Spawner")]
     [SerializeField] protected string enemyName = "Cube";
+    [SerializeField] protected int spawmMax = 270;
     [SerializeField] protected int spawnLimitOrigin = 2;
     [SerializeField] protected int spawnLimit = 2;
     [SerializeField] protected int finalSpawnLimit = 2;
