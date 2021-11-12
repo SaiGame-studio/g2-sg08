@@ -38,7 +38,7 @@ public class PlayerNew : PlayerInteracByDistance
     {
         int currentLevel = PlayersHolder.instance.heroCtrls.Count;
         this.costCurrent = this.costBase * currentLevel;
-        this.textPlayerCost.text = "-" + this.costCurrent.ToString() + "G";
+        this.textPlayerCost.text = this.costCurrent.ToString() + "G";
     }
 
     protected virtual void LoadFire()

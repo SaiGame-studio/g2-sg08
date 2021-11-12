@@ -57,7 +57,7 @@ public class PlayerLevelUp : PlayerInteracByDistance
         HeroCtrl currentHero = PlayerManager.instance.currentHero;
         int currentLevel = currentHero.heroLevel.Get();
         this.costCurrent = this.costBase * currentLevel;
-        this.textLevelCost.text = "-" + this.costCurrent.ToString() + "G";
+        this.textLevelCost.text = this.costCurrent.ToString() + "G";
     }
 
     public override void Interact()

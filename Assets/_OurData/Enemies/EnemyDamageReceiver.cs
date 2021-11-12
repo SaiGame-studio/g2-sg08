@@ -20,6 +20,7 @@ public class EnemyDamageReceiver : DamageReceiver
     {
         this.enemyCtrl.scaleSpring.enabled = true;
         base.Receive(damage);
+        TextManager.instance.TextGold(damage, transform.position);
     }
 
     protected virtual void LoadEnemyCtrl()

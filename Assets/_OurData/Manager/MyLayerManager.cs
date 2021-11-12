@@ -14,6 +14,7 @@ public class MyLayerManager : SaiBehaviour
     public int layerBullet;
     public int layerStatue;
     public int layerStatueBroken;
+    public int layerBoundary;
 
     private void Awake()
     {
@@ -27,9 +28,11 @@ public class MyLayerManager : SaiBehaviour
         Physics.IgnoreLayerCollision(this.layerHero, this.layerBullet, true);
         Physics.IgnoreLayerCollision(this.layerEnemy, this.layerEnemy, true);
         Physics.IgnoreLayerCollision(this.layerEnemy, this.layerStatueBroken, true);
+        Physics.IgnoreLayerCollision(this.layerEnemy, this.layerBoundary, true);
         Physics.IgnoreLayerCollision(this.layerBullet, this.layerCeiling, true);
         Physics.IgnoreLayerCollision(this.layerBullet, this.layerGround, true);
         Physics.IgnoreLayerCollision(this.layerBullet, this.layerHero, true);
+        Physics.IgnoreLayerCollision(this.layerBullet, this.layerBoundary, true);
     }
 
     protected override void LoadComponents()
@@ -49,6 +52,7 @@ public class MyLayerManager : SaiBehaviour
         this.layerBullet = LayerMask.NameToLayer("Bullet");
         this.layerStatue = LayerMask.NameToLayer("Statue");
         this.layerStatueBroken = LayerMask.NameToLayer("StatueBroken");
+        this.layerBoundary = LayerMask.NameToLayer("Boundary");
 
         if (this.layerHero < 0) Debug.LogError("Layer Hero is mising");
         if (this.layerGround < 0) Debug.LogError("Layer Ground is mising");
@@ -56,6 +60,7 @@ public class MyLayerManager : SaiBehaviour
         if (this.layerBullet < 0) Debug.LogError("Layer Bullet is mising");
         if (this.layerStatue < 0) Debug.LogError("Layer Statue is mising");
         if (this.layerStatueBroken < 0) Debug.LogError("Layer StatueBroken is mising");
+        if (this.layerBoundary < 0) Debug.LogError("Layer Boundary is mising");
 
         Debug.Log(transform.name + ": GetPlayers");
     }

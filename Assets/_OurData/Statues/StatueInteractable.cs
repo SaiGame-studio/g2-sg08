@@ -45,7 +45,7 @@ public class StatueInteractable : PlayerInteracByDistance
         if (this.statueCtrl.statueDamageReceiver.IsHPFull()) cost = this.statueCtrl.statueLevel.LevelCost(level);
         else cost = this.statueCtrl.statueDamageReceiver.HealCost();
 
-        this.textLevelCost.text = "-" + cost.ToString() + "G";
+        this.textLevelCost.text = cost.ToString() + "G";
     }
 
     protected virtual void LoadStatueCtrl()
