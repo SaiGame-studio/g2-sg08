@@ -103,7 +103,7 @@ public class ObjPoolManager : SaiBehaviour
             PrefabPool prefabPool = this.prefabPools[i];
             if (prefabPool.despawned.Contains(instance))
             {
-                Debug.LogWarning("despawned.Contains: " + instance.name);
+                //Debug.LogWarning("despawned.Contains: " + instance.name);
                 return;
             }
         }

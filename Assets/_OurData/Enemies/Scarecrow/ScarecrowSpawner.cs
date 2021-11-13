@@ -29,8 +29,12 @@ public class ScarecrowSpawner : Spawner
 
     public virtual void ScarecrowDead()
     {
-        int gold = (int) this.spawnDelay * 2;
-        ScoreManager.instance.GoldAdd(gold);
         this.spawnDelay += 2;
+    }
+
+    public virtual int GoldOnDead()
+    {
+        int gold = (int)this.spawnDelay * 2;
+        return gold;
     }
 }

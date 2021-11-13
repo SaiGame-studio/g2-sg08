@@ -20,8 +20,6 @@ public class EnemyDamageReceiver : DamageReceiver
     {
         this.enemyCtrl.scaleSpring.enabled = true;
         base.Receive(damage);
-        TextManager.instance.TextGold(damage, transform.position);
-        ScoreManager.instance.GoldAdd(damage);
     }
 
     protected virtual void LoadEnemyCtrl()
@@ -35,10 +33,14 @@ public class EnemyDamageReceiver : DamageReceiver
     {
         if (!this.IsDead()) return;
 
-        base.Dying();
-
         ScoreManager.instance.Kill();
-        //ScoreManager.instance.GoldAdd(1);
+
+        int gold = Mathf.RoundToInt(this.hpMax / 5);
+        if (gold < 1) gold = 1;
+        TextManager.instance.TextGold(gold, transform.position);
+        ScoreManager.instance.GoldAdd(gold);
+
+        base.Dying();
     }
 
     public override void Despawn()

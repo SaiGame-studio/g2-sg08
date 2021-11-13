@@ -8,6 +8,7 @@ public class PlayerNew : PlayerInteracByDistance
     [SerializeField] protected TextMeshPro textPlayerCost;
     [SerializeField] protected int costBase = 100;
     [SerializeField] protected int costCurrent = 100;
+    [SerializeField] protected int costMulti = 2;
     [SerializeField] protected Vector3 spawnPos;
     [SerializeField] protected int playerMax = 7;
 
@@ -37,7 +38,8 @@ public class PlayerNew : PlayerInteracByDistance
     protected virtual void CheckCosting()
     {
         int currentLevel = PlayersHolder.instance.heroCtrls.Count;
-        this.costCurrent = this.costBase * currentLevel;
+        this.costCurrent = this.costBase * (currentLevel * this.costMulti);
+
         this.textPlayerCost.text = this.costCurrent.ToString() + "G";
     }
 

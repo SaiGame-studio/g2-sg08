@@ -4,12 +4,15 @@ public class PlayerInput : SaiBehaviour
 {
     [Header("Player Input")]
     public PlayerInteractable interactable;
+    public KeyCode fireButton = KeyCode.Mouse0;
+    public KeyCode ReloadButton = KeyCode.R;
 
     private void Update()
     {
         this.Interacting();
         this.Moving();
         this.ChoosePlayer();
+        this.Attacking();
     }
 
     protected virtual void Interacting()
@@ -40,5 +43,11 @@ public class PlayerInput : SaiBehaviour
         if (Input.GetKeyUp(KeyCode.Alpha7)) playerIndex = 7;
 
         if (playerIndex > 0) PlayerManager.instance.ChoosePlayer(playerIndex);
+    }
+
+    protected virtual void Attacking()
+    {
+        PlayerAttacking playerAttacking = PlayerManager.instance.playerAttacking;
+        playerAttacking.attacking = Input.GetKey(this.fireButton);
     }
 }

@@ -6,8 +6,10 @@ public class PlayerLevelUp : PlayerInteracByDistance
     [Header("Player Level Up")]
     [SerializeField] protected Transform chestOpened;
     [SerializeField] protected TextMeshPro textLevelCost;
-    [SerializeField] protected int costBase = 50;
-    [SerializeField] protected int costCurrent = 50;
+    [SerializeField] protected int costBase = 70;
+    [SerializeField] protected float costIncrease = 0.4f;
+    [SerializeField] protected float costMulti = 7f;
+    [SerializeField] protected int costCurrent = 0;
     [SerializeField] protected Vector3 spawnPos;
 
 
@@ -56,8 +58,16 @@ public class PlayerLevelUp : PlayerInteracByDistance
     {
         HeroCtrl currentHero = PlayerManager.instance.currentHero;
         int currentLevel = currentHero.heroLevel.Get();
+        float levelIncrease = currentLevel / 100;
+        if (currentLevel > 5) levelIncrease *= this.costMulti;
+        if (currentLevel > 10) levelIncrease *= this.costMulti;
+        if (currentLevel > 15) levelIncrease *= this.costMulti;
+        if (currentLevel > 20) levelIncrease *= this.costMulti;
+
         this.costCurrent = this.costBase * currentLevel;
-        this.textLevelCost.text = this.costCurrent.ToString() + "G";
+        this.costCurrent += Mathf.RoundToInt(this.costCurrent * (this.costIncrease+ levelIncrease));
+
+        this.textLevelCost.text = this.costCurrent.ToString("N0") + "G";
     }
 
     public override void Interact()

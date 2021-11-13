@@ -22,7 +22,7 @@ public class StatueLevel : MyLevel
     {
         base.Up(up);
 
-        Debug.Log(transform.name + ": Up " + up.ToString());
+        //Debug.Log(transform.name + ": Up " + up.ToString());
 
         int newHpMax = this.LevelCost(this.level);
         this.statueCtrl.statueDamageReceiver.SetHPMax(newHpMax);

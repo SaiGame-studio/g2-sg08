@@ -7,6 +7,14 @@ using UnityEngine;
 
 public class PlayerAttacking : MonoBehaviour
 {
+    [Header("Attack")]
+    public bool attacking = false;
+    [SerializeField] protected float attackSpeed = 0.5f;
+    [SerializeField] protected float finalAttackSpeed = 0.5f;
+    [SerializeField] protected float attackSpeedMax = 0.1f;
+    [SerializeField] protected float attackTimer = Mathf.Infinity;
+
+    [Header("Hero Editor")]
     public Character character;
     public BowExample BowExample;
     public Firearm firearm;
@@ -15,6 +23,11 @@ public class PlayerAttacking : MonoBehaviour
     public KeyCode FireButton = KeyCode.Mouse0;
     public KeyCode ReloadButton = KeyCode.R;
     public bool FixedArm;
+
+    protected void FixedUpdate()
+    {
+        this.Attacking();
+    }
 
     public void Update()
     {
@@ -77,6 +90,28 @@ public class PlayerAttacking : MonoBehaviour
         }
 
         RotateArm(arm, weapon, FixedArm ? arm.position + 1000 * Vector3.right : Camera.main.ScreenToWorldPoint(Input.mousePosition), -40, 40);
+    }
+
+    protected virtual void Attacking()
+    {
+        if (!this.attacking) return;
+        this.attackTimer += Time.fixedDeltaTime;
+        this.GetAttackSpeed();
+        if (this.attackTimer < this.finalAttackSpeed) return;
+        this.attackTimer = 0;
+
+        PlayerManager.instance.currentHero.AutoAttack();
+    }
+
+    protected virtual float GetAttackSpeed()
+    {
+        this.finalAttackSpeed = this.attackSpeed;
+        float level = PlayerManager.instance.currentHero.heroLevel.Get();
+        level *= 2;
+        level = (float)level / 100;
+        this.finalAttackSpeed -= level;
+
+        return finalAttackSpeed;
     }
 
     /// <summary>

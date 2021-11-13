@@ -8,7 +8,7 @@ public class BossSpawner : Spawner
     [Header("Boss")]
     [SerializeField] protected List<string> nameEnemies;
     [SerializeField] protected int lastSpawnLevel = 0;
-    [SerializeField] protected int spawnLevel = 7;
+    [SerializeField] protected int spawnLevel = 10;
     [SerializeField] protected bool canSpawn = false;
 
     private void Awake()
@@ -27,7 +27,7 @@ public class BossSpawner : Spawner
     protected override void ResetValue()
     {
         base.ResetValue();
-        this.nameEnemies.Add("Boss1");
+        this.nameEnemies.Add("BossTroll");
         this.spawnLimit = 1;
         this.spawnDelay = 2;
         this.spawnLimitOrigin = 1;

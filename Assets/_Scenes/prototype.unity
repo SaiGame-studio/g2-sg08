@@ -7807,6 +7807,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 0
   interactable: {fileID: 0}
+  fireButton: 323
+  ReloadButton: 114
 --- !u!1001 &349538241
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23181,8 +23183,10 @@ MonoBehaviour:
   actived: 0
   chestOpened: {fileID: 2144127975469609159}
   textLevelCost: {fileID: 292048205}
-  costBase: 50
-  costCurrent: 50
+  costBase: 70
+  costIncrease: 0.7
+  costMulti: 7
+  costCurrent: 0
   spawnPos: {x: 0, y: 0, z: 0}
 --- !u!1 &868406937
 GameObject:
@@ -34737,7 +34741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 0
   enemyName: Cube
-  spawmMax: 300
+  spawmMax: 270
   spawnLimitOrigin: 2
   spawnLimit: 2
   finalSpawnLimit: 2
@@ -41044,6 +41048,7 @@ MonoBehaviour:
   textPlayerCost: {fileID: 1390675876}
   costBase: 100
   costCurrent: 100
+  costMulti: 2
   spawnPos: {x: 0, y: 0, z: 0}
   playerMax: 7
 --- !u!4 &1298666934
@@ -53834,6 +53839,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e9a40f0ea330904ab0dbb7b40463c91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attacking: 0
+  attackSpeed: 0.5
+  finalAttackSpeed: 0.5
+  attackSpeedMax: 0.1
+  attackTimer: Infinity
   character: {fileID: 0}
   BowExample: {fileID: 0}
   firearm: {fileID: 0}
