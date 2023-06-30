@@ -21507,6 +21507,8 @@ MonoBehaviour:
   petCtrl: {fileID: 1123072075}
   target: {fileID: 0}
   speed: 2
+  currentDis: Infinity
+  limitDis: 2.7
   direction: {x: 0, y: 0, z: 0}
   startPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &725108742
