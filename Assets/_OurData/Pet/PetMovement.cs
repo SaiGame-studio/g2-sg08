@@ -7,32 +7,23 @@ public class PetMovement : SaiBehaviour
     [Header("Pet")]
     [SerializeField] protected PetCtrl petCtrl;
     [SerializeField] protected Transform target;
-    [SerializeField] protected float originSpeed = 1f;
-    [SerializeField] protected float speed = 1f;
-    [SerializeField] protected Vector3 direction = new Vector3(0, 0, 0);
+    [SerializeField] protected float speed = 2f;
+    [SerializeField] protected float currentDis = Mathf.Infinity;
+    [SerializeField] protected float limitDis = 2f;
+    [SerializeField] protected Vector3 direction = Vector3.zero;
+    [SerializeField] protected Vector3 startPosition = Vector3.zero;
 
-    private void Update()
+    private void Start()
     {
-        //this.Moving();
+        this.startPosition = transform.position;
     }
 
     private void FixedUpdate()
     {
+        this.GetCurrentDis();
+        this.GetDirection();
         this.Moving();
         this.Turning();
-    }
-
-    private void OnEnable()
-    {
-        //Debug.Log(transform.name + ": OnEnable");
-        this.Renew();
-    }
-
-    protected virtual void Renew()
-    {
-        this.petCtrl._rigidbody.velocity = Vector3.zero;
-        this.petCtrl._rigidbody.angularVelocity = Vector3.zero;
-        this.speed = this.originSpeed;
     }
 
     protected override void LoadComponents()
@@ -48,12 +39,27 @@ public class PetMovement : SaiBehaviour
         Debug.LogWarning(transform.name + ": LoadEnemyCtrl");
     }
 
+    protected virtual void GetCurrentDis()
+    {
+        this.currentDis = Vector3.Distance(transform.position, this.target.position);
+    }
+
     protected virtual void Moving()
     {
         if (!this.IsTargetActive()) return;
+        if (this.currentDis < this.limitDis) return;
 
-        Vector3 tempVec = this.GetDirection() * Time.fixedDeltaTime * this.speed;
-        this.petCtrl._rigidbody.MovePosition(transform.position + tempVec);
+        float t = Time.fixedDeltaTime * this.speed;
+        this.startPosition = transform.position;
+        transform.parent.position = Vector2.Lerp(this.startPosition, this.GetTargetPositon(), t);
+    }
+
+    protected virtual Vector3 GetTargetPositon()
+    {
+        Vector3 pos = this.target.position;
+        //pos.x += Random.Range(-5, 5);
+        //pos.z += Random.Range(-5, 5);
+        return pos;
     }
 
     protected virtual Vector3 GetDirection()
