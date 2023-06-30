@@ -92,6 +92,8 @@ public class PlayerManager : SaiBehaviour
         this.currentHero = heroCtrl;
         this.currentHero.playerAutoAttack.gameObject.SetActive(false);
 
+        PetManager.instance.currentPet.petMovement.SetTarget(this.currentHero.transform);
+
         this.playerAttacking.character = this.currentHero.character;
         this.playerAttacking.firearm = this.currentHero.firearm;
         this.playerAttacking.armL = this.currentHero.armL;

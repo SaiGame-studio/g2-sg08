@@ -77,6 +77,4 @@ public class PlayersHolder : MonoBehaviour
     {
         return this.heroCtrls[0];
     }
-
-
 }
