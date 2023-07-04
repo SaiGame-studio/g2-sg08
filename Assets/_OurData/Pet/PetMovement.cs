@@ -7,9 +7,14 @@ public class PetMovement : SaiBehaviour
     [Header("Pet")]
     [SerializeField] protected PetCtrl petCtrl;
     [SerializeField] protected Transform target;
+    public Transform Target => target;
+
     [SerializeField] protected float speed = 2f;
     [SerializeField] protected float currentDis = Mathf.Infinity;
     [SerializeField] protected float limitDis = 2f;
+    public float CurrentDis => currentDis;
+    public float LimitDis => limitDis;
+
     [SerializeField] protected Vector3 direction = Vector3.zero;
     [SerializeField] protected Vector3 startPosition = Vector3.zero;
 
